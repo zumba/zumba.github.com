@@ -17,16 +17,13 @@
 .navbar .nav > li > a { margin-top: 30px; color: #333; text-shadow: none; }
 .navbar .nav > li > a:hover { color: #666; }
 
-/*.navbar .nav > li > a { margin-top: 30px; padding: 4px 10px 4px; color: #333; text-shadow: none; }*/
-/*.navbar .nav > li > a:hover { background-color: #eee; }*/
-
 .brand:hover { text-decoration: none; }
 
 .subheader { background-color: #F8F8F8; border-bottom: 1px solid #EFEFEF; }
 .subheader .container { padding: 15px 5px; }
 .subheader .container .row .span12 .h1 { font-family: monospace; }
 
-.main { min-height: 600px; }
+.main { min-height: 500px; }
 
 footer {
 	padding-top: 30px;
