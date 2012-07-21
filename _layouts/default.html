@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="{{ page.author }}">
+
+	<!-- v2.0.4 -->
+    <link href="http://daigon.s3.amazonaws.com/developer/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://daigon.s3.amazonaws.com/developer/public/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="/css/screen.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="/favicon.ico">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand header-brand" href="/">
+			<img src="/img/main-logo-light.jpg" />
+		  </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="https://github.com/zumba">Open Source</a></li>
+              <li><a href="https://zumbacareers.silkroad.com/">Careers</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+	<div class="subheader">
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<h1 style="font-family: monospace;">ENGINEERING</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+    <div class="container main">
+		<br/>
+		<div class="row">
+			<div class="span9">
+				{{ content }}
+			</div>
+			<div class="span3">
+				<div class="well sidebar-nav">
+					<ul class="nav nav-list">
+					  <li class="nav-header">Navigation</li>
+					  <li><a href="https://github.com/zumba">Open Source</a></li>
+					  <li><a href="https://zumbacareers.silkroad.com/">Careers</a></li>
+					  <li class="nav-header">Recent Posts</li>
+					  {% for post in site.posts limit:5 %}
+						<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+					  {% endfor %}
+					  <li class="nav-header">Zumba</li>
+					  <li><a href="http://www.zumba.com">Home Page</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    </div> <!-- /container -->
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+					<a href="/"><img src="/img/main-logo.png"></a>
+				</div>
+				<div class="span3">
+					<h4>Zumba Engineering</h4>
+					<p>Zumba Fitness is dedicated to delivering the best technology to its customers.</p>
+				</div>
+				<span class="span3">
+					<h4>Contact Us</h4>
+					<a href="mailto:jobs@zumba.com">jobs@zumba.com</a>
+				</span>
+				<span class="span3">
+					<h4>Follow Us</h4>
+					<a href="http://twitter.com/zumba">@zumba</a> <br>
+					<a href="http://twitter.com/zumbatech">@zumbatech</a>
+				</span>
+			</div>
+		</div>
+		<br>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="span6">
+						Copyright &copy; 2012 Zumba Fitness, LLC.  All rights reserved.
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://daigon.s3.amazonaws.com/developer/public/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
