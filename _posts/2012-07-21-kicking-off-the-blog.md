@@ -4,7 +4,7 @@ title: Kicking Off the Blog
 author: cjsaylor
 ---
 
-Zumba's techology department will begin blogging about the technology that we use,
+Zumba Fitness<sup>&reg;</sup>'s techology department will begin blogging about the technology that we use,
 the problems that we encounter, and the cool things that's in development.
 
 We'll also use this as a platform to announce projects that our team has decided to
