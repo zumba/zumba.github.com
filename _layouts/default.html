@@ -68,7 +68,7 @@
 					  <li><a href="https://zumbacareers.silkroad.com/">Careers</a></li>
 					  <li class="nav-header">Recent Posts</li>
 					  {% for post in site.posts limit:5 %}
-						<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+						<li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
 					  {% endfor %}
 					  <li class="nav-header">Zumba</li>
 					  <li><a href="http://www.zumba.com">Zumba.com</a></li>
