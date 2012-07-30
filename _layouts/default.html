@@ -1,130 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="{{ page.author }}">
-    <meta name="copyright" content="Zumba Fitness LLC">
+	<head>
+		<meta charset="utf-8">
+		<title>{{ page.title }}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="{{ page.author }}">
+		<meta name="copyright" content="Zumba Fitness LLC">
 
-	<!-- v2.0.4 -->
-    <link href="http://daigon.s3.amazonaws.com/developer/public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://daigon.s3.amazonaws.com/developer/public/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link href="{{ site.url }}/css/screen.css" rel="stylesheet">
+		<!-- v2.0.4 -->
+		<link href="http://daigon.s3.amazonaws.com/developer/public/css/bootstrap.min.css" rel="stylesheet">
+		<link href="http://daigon.s3.amazonaws.com/developer/public/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="{{ site.url }}/css/screen.css" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 
-    <link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
-  </head>
+		<link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
+	</head>
 
-  <body itemscope itemtype="http://schema.org/Blog">
-  <header>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand header-brand" href="{{ site.url }}/" rel="home">
-			<img src="{{ site.url }}/img/main-logo-light.jpg" />
-		  </a>
-          <nav class="nav-collapse">
-            <ul class="nav">
-			  <li><a href="{{ site.url }}/blog.html">Blog</a></li>
-              <li><a href="https://github.com/zumba">Open Source</a></li>
-              <li><a href="https://zumbacareers.silkroad.com/">Careers</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-
-	<div class="subheader">
-		<div class="container">
-			<div class="row">
-				<div class="span12">
-					<h1 style="font-family: monospace;">ENGINEERING</h1>
+	<body itemscope itemtype="http://schema.org/Blog">
+		<header>
+			<div class="navbar navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</a>
+						<a class="brand header-brand" href="{{ site.url }}/" rel="home">
+							<img src="{{ site.url }}/img/main-logo-light.jpg" />
+						</a>
+						<nav class="nav-collapse">
+							<ul class="nav">
+								<li><a href="{{ site.url }}/blog.html">Blog</a></li>
+								<li><a href="https://github.com/zumba">Open Source</a></li>
+								<li><a href="https://zumbacareers.silkroad.com/">Careers</a></li>
+							</ul>
+						</nav>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	</header>
 
-    <div class="container main">
-		<br/>
-		<div class="row">
-			<div class="span9">
-				{{ content }}
+			<div class="subheader">
+				<div class="container">
+					<div class="row">
+						<div class="span12">
+							<h1 style="font-family: monospace;">ENGINEERING</h1>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="span3">
-				<aside class="well sidebar-nav">
-					<nav>
-						<ul class="nav nav-list">
-							<li class="nav-header">Navigation</li>
-							<li><a href="{{ site.url }}/blog.html">Blog</a></li>
-							<li><a href="https://github.com/zumba">Open Source</a></li>
-							<li><a href="https://zumbacareers.silkroad.com/">Careers</a></li>
-							<li class="nav-header">Recent Posts</li>
-							{% for post in site.posts limit:5 %}
-							<li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
-							{% endfor %}
-							<li class="nav-header">Zumba</li>
-							<li><a href="http://www.zumba.com">Zumba.com</a></li>
-						</ul>
-					</nav>
-				</aside>
-			</div>
-		</div>
-    </div> <!-- /container -->
+		</header>
 
-	<footer>
-		<div class="container">
+		<div class="container main">
+			<br/>
 			<div class="row">
-				<div class="span3">
-					<a href="{{ site.url }}/"><img src="{{ site.url }}/img/main-logo.png"></a>
+				<div class="span9">
+					{{ content }}
 				</div>
 				<div class="span3">
-					<h4>Engineering at Zumba Fitness<sup>&reg;</sup></h4>
-					<p>Zumba Fitness<sup>&reg;</sup> is dedicated to delivering the best technology to its customers.</p>
+					<aside class="well sidebar-nav">
+						<nav>
+							<ul class="nav nav-list">
+								<li class="nav-header">Navigation</li>
+								<li><a href="{{ site.url }}/blog.html">Blog</a></li>
+								<li><a href="https://github.com/zumba">Open Source</a></li>
+								<li><a href="https://zumbacareers.silkroad.com/">Careers</a></li>
+								<li class="nav-header">Recent Posts</li>
+								{% for post in site.posts limit:5 %}
+								<li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+								{% endfor %}
+								<li class="nav-header">Zumba</li>
+								<li><a href="http://www.zumba.com">Zumba.com</a></li>
+							</ul>
+						</nav>
+					</aside>
 				</div>
-				<span class="span3">
-					<h4>Contact Us</h4>
-					<a href="mailto:careers@zumba.com">careers@zumba.com</a>
-				</span>
-				<span class="span3">
-					<h4>Follow Us</h4>
-					<a href="http://twitter.com/zumba">@zumba</a> <br>
-					<a href="http://twitter.com/zumbatech">@zumbatech</a>
-				</span>
 			</div>
-		</div>
-		<br>
-		<div class="copyright">
+		</div> <!-- /container -->
+
+		<footer>
 			<div class="container">
 				<div class="row">
-					<div class="span9">
-						Copyright &copy;
-						<span itemprop="copyrightYear">2012</span>
-						<span itemprop="copyrightHolder">Zumba Fitness, LLC</span>.
-						All rights reserved.
+					<div class="span3">
+						<a href="{{ site.url }}/"><img src="{{ site.url }}/img/main-logo.png"></a>
 					</div>
-					<nav class="span3">
-						<a href="{{ site.url }}/atom.xml">Atom Feed</a>
-						| <a href="{{ site.url }}/blog.html">Blog</a>
-						| <a href="https://github.com/zumba">Open Source</a>
-						| <a href="https://zumbacareers.silkroad.com/">Careers</a>
-					</nav>
+					<div class="span3">
+						<h4>Engineering at Zumba Fitness<sup>&reg;</sup></h4>
+						<p>Zumba Fitness<sup>&reg;</sup> is dedicated to delivering the best technology to its customers.</p>
+					</div>
+					<span class="span3">
+						<h4>Contact Us</h4>
+						<a href="mailto:careers@zumba.com">careers@zumba.com</a>
+					</span>
+					<span class="span3">
+						<h4>Follow Us</h4>
+						<a href="http://twitter.com/zumba">@zumba</a> <br>
+						<a href="http://twitter.com/zumbatech">@zumbatech</a>
+					</span>
 				</div>
 			</div>
-		</div>
-	</footer>
+			<br>
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="span9">
+							Copyright &copy;
+							<span itemprop="copyrightYear">2012</span>
+							<span itemprop="copyrightHolder">Zumba Fitness, LLC</span>.
+							All rights reserved.
+						</div>
+						<nav class="span3">
+							<a href="{{ site.url }}/atom.xml">Atom Feed</a>
+							| <a href="{{ site.url }}/blog.html">Blog</a>
+							| <a href="https://github.com/zumba">Open Source</a>
+							| <a href="https://zumbacareers.silkroad.com/">Careers</a>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="http://daigon.s3.amazonaws.com/developer/public/js/bootstrap.min.js"></script>
-
-  </body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="http://daigon.s3.amazonaws.com/developer/public/js/bootstrap.min.js"></script>
+	</body>
 </html>
