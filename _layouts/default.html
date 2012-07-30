@@ -5,6 +5,7 @@
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="{{ page.author }}">
+    <meta name="copyright" content="Zumba Fitness LLC">
 
 	<!-- v2.0.4 -->
     <link href="http://daigon.s3.amazonaws.com/developer/public/css/bootstrap.min.css" rel="stylesheet">
@@ -18,8 +19,8 @@
     <link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
   </head>
 
-  <body>
-
+  <body itemscope itemtype="http://schema.org/Blog">
+  <header>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -28,16 +29,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand header-brand" href="{{ site.url }}/">
+          <a class="brand header-brand" href="{{ site.url }}/" rel="home">
 			<img src="{{ site.url }}/img/main-logo-light.jpg" />
 		  </a>
-          <div class="nav-collapse">
+          <nav class="nav-collapse">
             <ul class="nav">
 			  <li><a href="{{ site.url }}/blog.html">Blog</a></li>
               <li><a href="https://github.com/zumba">Open Source</a></li>
               <li><a href="https://zumbacareers.silkroad.com/">Careers</a></li>
             </ul>
-          </div><!--/.nav-collapse -->
+          </nav>
         </div>
       </div>
     </div>
@@ -51,7 +52,7 @@
 			</div>
 		</div>
 	</div>
-	
+	</header>
 
     <div class="container main">
 		<br/>
@@ -60,20 +61,22 @@
 				{{ content }}
 			</div>
 			<div class="span3">
-				<div class="well sidebar-nav">
-					<ul class="nav nav-list">
-					  <li class="nav-header">Navigation</li>
-					  <li><a href="{{ site.url }}/blog.html">Blog</a></li>
-					  <li><a href="https://github.com/zumba">Open Source</a></li>
-					  <li><a href="https://zumbacareers.silkroad.com/">Careers</a></li>
-					  <li class="nav-header">Recent Posts</li>
-					  {% for post in site.posts limit:5 %}
-						<li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
-					  {% endfor %}
-					  <li class="nav-header">Zumba</li>
-					  <li><a href="http://www.zumba.com">Zumba.com</a></li>
-					</ul>
-				</div>
+				<aside class="well sidebar-nav">
+					<nav>
+						<ul class="nav nav-list">
+							<li class="nav-header">Navigation</li>
+							<li><a href="{{ site.url }}/blog.html">Blog</a></li>
+							<li><a href="https://github.com/zumba">Open Source</a></li>
+							<li><a href="https://zumbacareers.silkroad.com/">Careers</a></li>
+							<li class="nav-header">Recent Posts</li>
+							{% for post in site.posts limit:5 %}
+							<li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+							{% endfor %}
+							<li class="nav-header">Zumba</li>
+							<li><a href="http://www.zumba.com">Zumba.com</a></li>
+						</ul>
+					</nav>
+				</aside>
 			</div>
 		</div>
     </div> <!-- /container -->
@@ -104,14 +107,17 @@
 			<div class="container">
 				<div class="row">
 					<div class="span9">
-						Copyright &copy; 2012 Zumba Fitness, LLC.  All rights reserved.
+						Copyright &copy;
+						<span itemprop="copyrightYear">2012</span>
+						<span itemprop="copyrightHolder">Zumba Fitness, LLC</span>.
+						All rights reserved.
 					</div>
-					<div class="span3">
+					<nav class="span3">
 						<a href="{{ site.url }}/atom.xml">Atom Feed</a>
 						| <a href="{{ site.url }}/blog.html">Blog</a>
 						| <a href="https://github.com/zumba">Open Source</a>
 						| <a href="https://zumbacareers.silkroad.com/">Careers</a>
-					</div>
+					</nav>
 				</div>
 			</div>
 		</div>

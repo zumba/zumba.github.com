@@ -2,15 +2,25 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
-<h4>{{ page.date | date: "%B %d, %Y" }}</h4>
-<h4>By: <a href="https://github.com/{{ page.author }}">{{ page.author }}</a></h4>
-<br/>
+<article itemscope itemtype="http://schema.org/BlogPosting">
+	<header>
+		<h1 itemprop="name headline">{{ page.title }}</h1>
+		<time itemprop="datePublished" pubdate datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %d, %Y" }}</time>
+		<address itemprop="author" itemscope itemtype="http://schema.org/Person">
+			By <a rel="author" itemprop="url" href="https://github.com/{{ page.nickname }}"><span itemprop="name">{{ page.author }}</span></a>
+		</address>
+	</header>
 
-{{ content }}
+	<div itemprop="articleBody">
+		{{ content }}
+	</div>
 
-<br>
- <div id="disqus_thread"></div>
+	<section class="comments">
+		<div id="disqus_thread" itemprop="review" itemscope itemtype="http://schema.org/Review"></div>
+		<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	</section>
+</article>
+
 <script type="text/javascript">
 	var disqus_shortname = 'zumbaengineering';
 	var disqus_identifier = '{{ site.url }}{{ page.url }}';
@@ -21,4 +31,3 @@ layout: default
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 	})();
 </script>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>

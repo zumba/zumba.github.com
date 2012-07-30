@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Kicking Off the Blog
-author: cjsaylor
+author: Chris Saylor
+nickname: cjsaylor
 ---
 
 Zumba Fitness<sup>&reg;</sup>'s techology department will begin blogging about the technology that we use,
