@@ -5,21 +5,21 @@ layout: nil
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Zumba Fitness Engineering</title>
- <link href="http://engineering.zumba.com/atom.xml" rel="self"/>
- <link href="http://engineering.zumba.com/"/>
+ <link href="{{ site.url }}/atom.xml" rel="self"/>
+ <link href="{{ site.url }}"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://engineering.zumba.com/</id>
+ <id>{{ site.url }}</id>
  <author>
    <name>Zumba Engineering</name>
-   <email>jobs@zumba.com</email>
+   <email>{{ site.engineer_email }}</email>
  </author>
 
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://engineering.zumba.com{{ post.url }}"/>
+   <link href="{{ site.url }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://engineering.zumba.com{{ post.id }}</id>
+   <id>{{ site.url }}{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
