@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Kicking Off the Blog
+description: Explain the objective of this blog
+tags: []
 author: Chris Saylor
 nickname: cjsaylor
 ---
