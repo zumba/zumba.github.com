@@ -42,6 +42,8 @@ So, with jQuery we loop thru all the controllers and actions and generate the pa
 have a search with jQuery to filter results, making the life much easier to front end
 developers.
 
+<img src="http://daigon.s3.amazonaws.com/developer/service_documentation.png" alt="Service Documentation Sample View">
+
 Before you ask why we separate the HTML in one file and the content in an AJAX, the answer is
 simple. Our web-service is designed to performance and always response in JSON (yes, we can
 support different outputs, but it is our internal web-service and we don't want to add more
