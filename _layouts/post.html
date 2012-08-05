@@ -2,10 +2,10 @@
 layout: default
 ---
 
-<article itemscope itemtype="http://schema.org/BlogPosting">
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 	<header>
 		<h1 itemprop="name headline">{{ page.title }}</h1>
-		<time itemprop="datePublished" pubdate datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %d, %Y" }}</time>
+		<time itemprop="datePublished" datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %d, %Y" }}</time>
 		<address itemprop="author" itemscope itemtype="http://schema.org/Person">
 			By <a rel="author" itemprop="url" href="https://github.com/{{ page.nickname }}"><span itemprop="name">{{ page.author }}</span></a>
 		</address>

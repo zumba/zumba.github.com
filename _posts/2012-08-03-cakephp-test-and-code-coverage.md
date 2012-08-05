@@ -12,7 +12,7 @@ When we put the code in [Jenkins CI](http://jenkins-ci.org/) to a continuous int
 and in the reports we got couple CakePHP core files as not covered.
 
 Our application doesn't care about cover Cake files, and we also don't want to include Cake core tests in our
-<acronym title="Continuous Integration">CI</acronym>. Leaving these files give reports that our code is not well covered,
+<abbr title="Continuous Integration">CI</abbr>. Leaving these files give reports that our code is not well covered,
 where is not true and hide the uncovered code from our app.
 
 As CakePHP, we also use [PHPUnit](http://www.phpunit.de) in other project, but there we use the `phpunit.xml`
