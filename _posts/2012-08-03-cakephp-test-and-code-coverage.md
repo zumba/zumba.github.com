@@ -18,11 +18,11 @@ covered, which it is not true and hide the uncovered code from our app.
 As CakePHP, we also use [PHPUnit](http://www.phpunit.de) in other project, but there we use the `phpunit.xml`
 configuration file. Using the configuration file is easy to put folders/files on
 [black and white lists](http://www.phpunit.de/manual/current/en/code-coverage-analysis.html), but it is not possible when
-using CakePHP because it has their own runner system. So, our solution was figure out a way using code. So, we changed our
+using CakePHP because it has their own runner system. Our solution was figure out a way using code. We changed our
 test suite to do it, see below.
 
 <script type="text/javascript" src="https://gist.github.com/3260166.js"> </script>
 
-So, with the code above you can run in your console: `./Console/cake test app AllApp --coverage-html=./report`
+With the code above you can run in your console: `./Console/cake test app AllApp --coverage-html=./report`
 
 You can replace the `--coverage-html` by `--coverage-clover` to use in Jenkins (or both, like in our case).
