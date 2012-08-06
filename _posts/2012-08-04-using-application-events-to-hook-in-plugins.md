@@ -33,9 +33,9 @@ Many frameworks have started to provide this kind of application runtime events 
 
 ### Plug and Play
 
-Now that we have our event system in place, it's time to use it for our plugins.  There are many ways to include a "plugin" structure, that I won't cover here.  What I will cover is once you have your plugin included, how to use our event system to call it.
+Now that we have our event system in place, it's time to use it for our plugins.  There are many ways to include a "plugin" structure that I won't cover here.  What I will cover is once you have your plugin included, how to use our event system to call it.
 
-We have several uses for plugins for our cart system, chief among them is refreshing the status of the items in the cart on certain actions, such as when adding an item to the cart.  When structuring our plugin using an event system, we just need to expose a registration method that registers its own callbacks to all the events that it should listen for and react to when operations occur on the cart.  For example:
+We have several uses for plugins for our cart system. Chief among them is refreshing the status of the items in the cart on certain actions, such as when adding an item to the cart.  When structuring our plugin using an event system, we just need to expose a registration method that registers its own callbacks to all the events that it should listen for and react to when operations occur on the cart.  For example:
 
 <script src="https://gist.github.com/9acaa7d1504e57ece36e.js"> </script>
 
