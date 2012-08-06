@@ -15,6 +15,11 @@ layout: default
 		{{ content }}
 	</div>
 
+	<section class="post_share">
+		{% if site.share_twitter == true %}<a href="https://twitter.com/share" class="twitter-share-button" data-via="zumbatech">Tweet</a>{% endif %}
+		{% if site.share_google == true %}<div class="g-plusone" data-size="medium"></div>{% endif %}
+		{% if site.share_facebook == true %}<div class="fb-like" data-send="false" data-layout="button_count" data-width="150" data-show-faces="false"></div>{% endif %}
+	</section>
 	<section class="post_nav">
 		{% if page.previous.url %}
 		&laquo;&nbsp;<a href="{{ page.previous.url }}" rel="previous" title="{{ page.previous.title }}">{{ page.previous.title }}</a>

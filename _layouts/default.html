@@ -114,10 +114,9 @@
 						<h4>Contact Us</h4>
 						<a href="mailto:careers@zumba.com">careers@zumba.com</a>
 					</div>
-					<div class="span3">
-						<h4>Follow Us</h4>
-						<a href="http://twitter.com/zumba">@zumba</a> <br>
-						<a href="http://twitter.com/zumbatech">@zumbatech</a>
+					<div class="span3"></div>
+						<a href="https://twitter.com/zumba" class="twitter-follow-button" data-show-count="false">Follow @zumba</a><br>
+						<a href="https://twitter.com/zumbatech" class="twitter-follow-button" data-show-count="false">Follow @zumbatech</a>
 					</div>
 				</div>
 			</div>
@@ -144,5 +143,26 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script src="http://daigon.s3.amazonaws.com/developer/public/js/bootstrap.min.js"></script>
+
+		{% if site.share_twitter == true %}
+		<!-- Twitter -->
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		{% endif %}
+		{% if site.share_google == true %}
+		<!-- Google Plus -->
+		<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+		{% endif %}
+		{% if site.share_facebook == true %}
+		<!-- Facebook -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+		{% endif %}
 	</body>
 </html>

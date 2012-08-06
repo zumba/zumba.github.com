@@ -7,3 +7,7 @@ permalink: /:year/:month/:day/:title
 disqus_short_name: zumbaengineering
 
 analytics_code: UA-33869562-1
+
+share_twitter: true
+share_google: true
+share_facebook: false

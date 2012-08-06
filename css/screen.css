@@ -27,7 +27,8 @@
 
 .main h2, .main h3 { padding-bottom: 10px; }
 
-.post_nav { text-align: center; }
+.post_share { margin-top: 15px; }
+.post_nav { margin-top: 20px; text-align: center; }
 
 footer {
 	padding-top: 30px;
