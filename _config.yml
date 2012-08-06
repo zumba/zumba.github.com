@@ -1,2 +1,9 @@
 pygments: true
 exclude: README.md
+
+# url: http://engineering.zumba.com
+permalink: /:year/:month/:day/:title
+
+disqus_short_name: zumbaengineering
+
+analytics_code: UA-33869562-1
