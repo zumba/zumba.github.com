@@ -7,7 +7,7 @@ layout: default
 		<h1 itemprop="name headline">{{ page.title }}</h1>
 		<time itemprop="datePublished" datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %d, %Y" }}</time>
 		<address class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-			<img itemprop="image" id="author_image" src="https://secure.gravatar.com/avatar/{{ site.authors[page.author].gravatar }}?s=40&d=mm" alt="{{ site.authors[page.author].name }}">
+			<img itemprop="image" id="author_image" src="https://secure.gravatar.com/avatar/{{ site.authors[page.author].gravatar }}?s=40&amp;d=mm" alt="{{ site.authors[page.author].name }}">
 			By <span itemprop="name">{{ site.authors[page.author].name }}</span> ({{ page.author }})
 			<div class="author_sites">
 				{% if site.authors[page.author].github %}
