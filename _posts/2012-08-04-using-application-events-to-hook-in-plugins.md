@@ -3,8 +3,7 @@ layout: post
 title: Using Application Events to Hook in Plugins 
 description: How to use application level events to encapsulate core code from add-on code. 
 tags: [events, plugins, add-ons, modules]
-author: Chris Saylor
-nickname: cjsaylor
+author: cjsaylor
 ---
 
 In many instances, having a plugin system (even for closed-source applications) is a convenient and safe approach to adding functionality to a product.  It minimizes risk by not having to modify the core of the source.  In this article, I'll be discussing how we implemented a plugin system for our cart software to allow for plugins.

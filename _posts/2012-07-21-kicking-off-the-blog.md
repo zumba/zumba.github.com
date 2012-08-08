@@ -3,8 +3,7 @@ layout: post
 title: Kicking Off the Blog
 description: Explain the objective of this blog
 tags: []
-author: Chris Saylor
-nickname: cjsaylor
+author: cjsaylor
 ---
 
 Zumba Fitness<sup>&reg;</sup>'s techology department will begin blogging about the technology that we use,

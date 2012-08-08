@@ -14,3 +14,15 @@ analytics_code: UA-33869562-1
 share_twitter: true
 share_google: true
 share_facebook: false
+
+authors:
+  cjsaylor:
+    name: Chris Saylor
+    github: cjsaylor
+    twitter: cjsaylor
+    gravatar: 53c40ddf10f397ab4494fc55078125dc
+  jrbasso:
+    name: Juan Basso
+    github: jrbasso
+    twitter: jrbasso
+    gravatar: 1333d11249a2ed342d612c49a7c1e913

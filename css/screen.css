@@ -27,6 +27,10 @@
 
 .main h2, .main h3 { padding-bottom: 10px; }
 
+#author_image { float: left; padding-right: 5px; }
+.author_sites { padding-left: 65px }
+article div.body { clear: both; }
+
 .post_share { margin-top: 15px; }
 .post_nav { margin-top: 20px; text-align: center; }
 

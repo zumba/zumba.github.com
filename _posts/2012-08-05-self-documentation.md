@@ -3,8 +3,7 @@ layout: post
 title: Creating Self Documentation to your API
 description: Show an idea how to self document the API endpoints using code
 tags: [api, documentation, annotation]
-author: Juan Basso
-nickname: jrbasso
+author: jrbasso
 ---
 
 When we started our internal web-service we had a problem between the team that works in

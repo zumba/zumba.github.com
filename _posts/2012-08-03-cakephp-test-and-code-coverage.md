@@ -3,8 +3,7 @@ layout: post
 title: CakePHP and Code Coverage
 description: How to ignore CakePHP core files from code coverage in Jenkins when testing the application.
 tags: [cakephp, code-coverage, unit-test, phpunit, jenkins]
-author: Juan Basso
-nickname: jrbasso
+author: jrbasso
 ---
 
 Recently we started a new API application in [CakePHP](http://www.cakephp.org) 2.2 and put some code and unit tests.
