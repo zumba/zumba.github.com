@@ -16,16 +16,16 @@ layout: nil
 
  {% for post in site.posts %}
  <entry>
-   <title>{{ post.title }}</title>
+   <title>{{ post.title | xml_escape }}</title>
+   <summary>{{ post.description | xml_escape }}</summary>
    <link href="{{ site.url }}{{ post.url }}"/>
    <author>
-	<name>{{ site.authors[post.author].name }}</name>
-	<email>{{ site.authors[post.author].email }}</email>
+	<name>{{ site.authors[post.author].name | xml_escape }}</name>
+	<email>{{ site.authors[post.author].email | xml_escape }}</email>
    </author>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
-   <summary>{{ post.description }}</summary>
  </entry>
  {% endfor %}
  
