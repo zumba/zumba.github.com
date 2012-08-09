@@ -39,7 +39,11 @@
 		</script>
 	</head>
 
+	{% if page.type %}
+	<body itemscope itemtype="http://schema.org/{{ page.type }}">
+	{% else %}
 	<body itemscope itemtype="http://schema.org/Blog">
+	{% endif %}
 		<header>
 			<div class="navbar navbar-fixed-top">
 				<div class="navbar-inner">
