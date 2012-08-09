@@ -19,8 +19,8 @@ layout: nil
    <title>{{ post.title }}</title>
    <link href="{{ site.url }}{{ post.url }}"/>
    <author>
-	<name>{{ post.author }}</name>
-	<email>{{ site.engineer_email }}</email>
+	<name>{{ site.authors[post.author].name }}</name>
+	<email>{{ site.authors[post.author].email }}</email>
    </author>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ site.url }}{{ post.id }}</id>
