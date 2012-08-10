@@ -1,10 +1,9 @@
 ---
 layout: post
-title: Frisby.js or: How I Learned to Stop Worrying and Love the Service Test
+title: Frisby.js or&#58; How I Learned to Stop Worrying and Love the Service Test
 description: Using Frisby.js to test API endpoints at the request level.
 tags: [frisby.js, nodejs, node-jasmine, BDD, unit testing]
-author: Chris Saylor
-nickname: cjsaylor
+author: cjsaylor
 ---
 
 Writing a public facing API can be a daunting task, and making sure your endpoints behave how your customers and partners expect is always a challenge.  In this article, I will go over how to use [NodeJS](http://nodejs.org/), [Frisby.js](http://frisbyjs.com/), and [Jasmine-node](https://github.com/mhevery/jasmine-node/) to test your API, and how to involve your customers and partners in the process.
