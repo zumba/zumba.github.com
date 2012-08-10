@@ -30,7 +30,7 @@ With the use of [Github](https://github.com), a partner can fork our testing rep
 
 ### Caveats
 
-There is a small drawback to service-level testing (as opposed to unit testing).  Since you'll be making actual requests to your API, you don't have the luxery of fixtures creating clean databases after the test case is run.  So, depending on the data changed in the request, you'd have to chain a cleanup method after the test case is run.
+There is a small drawback to service-level testing (as opposed to unit testing).  Since you'll be making actual requests to your API, you don't have the luxury of fixtures creating clean databases after the test case is run.  So, depending on the data changed in the request, you'd have to chain a cleanup method after the test case is run.
 
 Also, as opposed to unit tests, the failed test will not pinpoint in the code where the error happens, so you'd need to rely on other tools, such as logging, to find the issue in the source.
 
