@@ -169,5 +169,12 @@
 			}(document, 'script', 'facebook-jssdk'));
 		</script>
 		{% endif %}
+		{% if site.share_reddit == true %}
+		<!-- Reddit -->
+		<script type="text/javascript">
+			// Fix the layout from Reddit
+			$('iframe[src*="reddit"]').attr('height', 20);
+		</script>
+		{% endif %}
 	</body>
 </html>
