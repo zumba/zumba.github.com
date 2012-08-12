@@ -20,7 +20,7 @@ author: jrbasso
 	<h2>Contributors</h2>
 	<ul id="contributors">
 		{% for contributor in site.authors %}
-		<li itemprop="employee" itemscope itemtype="http://schema.org/Person">
+		<li id="{{ contributor[0] }}" itemprop="employee" itemscope itemtype="http://schema.org/Person">
 			<div class="member_info">
 				<div class="member_image"><img itemprop="image" src="https://secure.gravatar.com/avatar/{{ contributor[1].gravatar }}?s=100&amp;d=mm" alt="{{ contributor[1].name }}"></div>
 				<div class="member_name"><span itemprop="name">{{ contributor[1].name }}</span></div>
