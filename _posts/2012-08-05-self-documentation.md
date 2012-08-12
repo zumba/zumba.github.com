@@ -49,3 +49,8 @@ support different outputs, but it is our internal web-service and we don't want 
 complexity). The HTML portion is a static file, not a PHP file. Another reason is make
 this method reusable, like we have for our web test interface (I will describe in another
 post).
+
+<script type="text/javascript">
+	// Hack to fix the reddit link, because this link was inserted without the end slash
+	reddit_url = 'http://engineering.zumba.com/2012/08/05/self-documentation';
+</script>
