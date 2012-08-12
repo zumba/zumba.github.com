@@ -1,0 +1,50 @@
+---
+layout: default
+title: About Zumba &reg; Engineering Blog
+description: Detail about the department and people involved with this blog
+type: AboutPage
+author: jrbasso
+---
+
+<h2>About this blog</h2>
+
+<p>This blog is a place to our department share some ideas, solutions, events, etc.</p>
+
+<section class="credits" itemprop="provider" itemscope itemtype="http://schema.org/Organization">
+	<h2>Sponsor</h2>
+	<p>
+		This blog is sponsored by <a href="http://www.zumba.com" itemprop="url"><span itemprop="name">Zumba Fitness</span><sup>&reg;</sup></a>.
+		They incentivate people in technology department to write posts and bring new ideas, making the application better.
+	</p>
+
+	<h2>Contributors</h2>
+	<ul id="contributors">
+		{% for contributor in site.authors %}
+		<li itemprop="employee" itemscope itemtype="http://schema.org/Person">
+			<div class="member_info">
+				<div class="member_image"><img itemprop="image" src="https://secure.gravatar.com/avatar/{{ contributor[1].gravatar }}?s=100&amp;d=mm" alt="{{ contributor[1].name }}"></div>
+				<div class="member_name"><span itemprop="name">{{ contributor[1].name }}</span></div>
+				<div class="member_sites">
+					{% if contributor[1].github %}
+					<a itemprop="url" href="https://github.com/{{ contributor[1].github }}"><img src="{{ site.url }}/img/github.png" alt="GitHub Profile"></a>
+					{% endif %}
+
+					{% if contributor[1].twitter %}
+					<a itemprop="url" href="https://twitter.com/{{ contributor[1].twitter }}"><img src="{{ site.url }}/img/twitter.png" alt="Twitter Profile"></a>
+					{% endif %}
+				</div>
+				<div class="member_position">Work as <span itemprop="jobTitle">{{ contributor[1].position }}</span>, since <time datetime="{{ contributor[1].start_date | date:"%Y-%m-%d" }}">{{ contributor[1].start_date | date:"%B, %Y" }}</time>.</div>
+				<div class="member_description">{{ contributor[1].about }}</div>
+			</div>
+			<div class="member_posts">
+				<h3>User Posts</h3>
+				<ul>
+					{% for post in site.posts %}{% if post.author == contributor[0] %}
+					<li><a href="{{ post.url }}">{{ post.title }}</a> (<time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%B %d, %Y" }}</time>)</li>
+					{% endif %}{% endfor %}
+				</ul>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+</section>

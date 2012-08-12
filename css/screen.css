@@ -52,3 +52,35 @@ footer .copyright {
 }
 
 footer .h4 { margin-bottom: 5px; }
+
+/* About page */
+#contributors, #contributors .member_posts > ul {
+	list-style-type: none;
+	margin: 0;
+}
+#contributors > li {
+	border: 1px solid #333;
+	border-radius: 25px;
+	padding: 25px;
+	margin-bottom: 20px;
+}
+#contributors .member_image {
+	float: left;
+	padding-right: 5px;
+}
+#contributors .member_name {
+	font-size: 20px;
+	font-weight: bold;
+	float: left;
+	padding-right: 5px;
+}
+#contributors .member_position {
+	margin-bottom: 10px;
+}
+#contributors .member_posts {
+	clear: both;
+}
+#contributors .member_posts > h3 {
+	padding: 10px 0 2px 0;
+	font-size: 14px;
+}

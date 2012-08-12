@@ -15,16 +15,25 @@ share_twitter: true
 share_google: true
 share_facebook: false
 
+# Put the authors in alphabetical order
 authors:
   cjsaylor:
     name: Chris Saylor
     email: christopher.saylor@zumba.com
+    position: Lead Developer
+    start_date: 2011-02-01
     github: cjsaylor
     twitter: cjsaylor
     gravatar: 53c40ddf10f397ab4494fc55078125dc
+    about: Besides Zumba<sup>&reg;</sup>, he is the author of the
+      <span itemscope itemtype="http://schema.org/MobileApplication"><a href="http://boxmeupapp.com/" itemprop="url"><span itemprop="name">Boxmeup</span></a></span>.
+      Loves <a href="http://nodejs.org">Node.js</a> and has couple of open source application using this plataform.
   jrbasso:
     name: Juan Basso
     email: juan.basso@zumba.com
+    position: Technical Architect
+    start_date: 2010-12-01
     github: jrbasso
     twitter: jrbasso
     gravatar: 1333d11249a2ed342d612c49a7c1e913
+    about: Besides Zumba<sup>&reg;</sup>, he is core developer of <a href="http://cakephp.org">CakePHP framework</a> and author of many CakePHP plugins. Likes code quality, standards, and crazy for performance.
