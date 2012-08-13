@@ -26,6 +26,7 @@
 
 		<link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
 
+		{% if site.analytics_code %}{% if site.url == 'http://engineering.zumba.com' %}
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', '{{ site.analytics_code }}']);
@@ -37,6 +38,7 @@
 				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 		</script>
+		{% endif %}{% endif %}
 	</head>
 
 	{% if page.type %}
