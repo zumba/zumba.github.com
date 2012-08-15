@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+<article itemscope itemtype="http://schema.org/BlogPosting">
 	<header>
 		<h1 itemprop="name headline">{{ page.title }}</h1>
 		<time itemprop="datePublished" datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %d, %Y" }}</time>
@@ -47,7 +47,7 @@ layout: default
 
 	<section class="comments">
 		<h2>Comments</h2>
-		<div id="disqus_thread" itemprop="review" itemscope itemtype="http://schema.org/Review"></div>
+		<div id="disqus_thread"></div>
 		<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 	</section>
 </article>
