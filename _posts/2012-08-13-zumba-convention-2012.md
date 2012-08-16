@@ -30,5 +30,5 @@ Left to right: Daniel Matsinger, Girish Raut, Cristiano da Silva, Chris Saylor, 
 If you think it is just one more convention, look how is that convention…
 
 <div style="text-align: center">
-	<iframe width="560" height="315" src="http://www.youtube.com/embed/77TsW8NAOA8" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+	<iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/aiTfMQw2Joc" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
 </div>
