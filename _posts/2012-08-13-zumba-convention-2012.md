@@ -24,11 +24,12 @@ and relaxed, what is improving the productivity.
 Below you can see a picture with few people from our department in the convention. Yes, we are with this
 sleepy-face because we were in the Daddy Yankee show in the previous night.
 
-<img src="{{ site.url }}/img/blog/it_conv2012.jpg" alt="IT Team Picture">
+![IT Team Picture]({{ site.url }}/img/blog/it_conv2012.jpg)
 Left to right: Daniel Matsinger, Girish Raut, Cristiano da Silva, Chris Saylor, Ralph Valdes, Juan Basso
 
 If you think it is just one more convention, look how is that convention…
 
-<div style="text-align: center">
-	<iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/aiTfMQw2Joc" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
+<div style="text-align: center" itemprop="video" itemscope="itemscope" itemtype="http://schema.org/VideoObject">
+	<meta itemprop="url" content="http://youtu.be/aiTfMQw2Joc"/>
+	<iframe itemprop="embedUrl" width="560" height="315" src="http://www.youtube-nocookie.com/embed/aiTfMQw2Joc" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
 </div>
