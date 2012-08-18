@@ -32,6 +32,10 @@ author: jrbasso
 					{% if contributor[1].twitter %}
 					<a itemprop="url" href="https://twitter.com/{{ contributor[1].twitter }}"><img src="{{ site.url }}/img/twitter.png" alt="Twitter Profile"></a>
 					{% endif %}
+
+					{% if contributor[1].gplus %}
+					<link rel="author" itemprop="url" href="https://plus.google.com/{{ contributor[1].gplus }}">
+					{% endif %}
 				</div>
 				<div class="member_position">Work as <span itemprop="jobTitle">{{ contributor[1].position }}</span>, since <time datetime="{{ contributor[1].start_date | date:"%Y-%m-%d" }}">{{ contributor[1].start_date | date:"%B, %Y" }}</time>.</div>
 				<div class="member_description">{{ contributor[1].about }}</div>

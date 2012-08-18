@@ -16,6 +16,9 @@ layout: default
 				{% if site.authors[page.author].twitter %}
 				<a rel="author" itemprop="url" href="https://twitter.com/{{ site.authors[page.author].twitter }}"><img src="{{ site.url }}/img/twitter.png" alt="Twitter Profile"></a>
 				{% endif %}
+				{% if site.authors[page.author].gplus %}
+				<link rel="author" itemprop="url" href="https://plus.google.com/{{ site.authors[page.author].gplus }}">
+				{% endif %}
 			</div>
 		</address>
 	</header>
