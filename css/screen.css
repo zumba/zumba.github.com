@@ -21,7 +21,7 @@
 
 .subheader { background-color: #F8F8F8; border-bottom: 1px solid #EFEFEF; }
 .subheader .container { padding: 15px 5px; }
-.subheader .container .row .span12 .h1 { font-family: monospace; }
+.page-title { font-family: monospace; text-transform: uppercase; font-weight: bold; font-size: 30px; line-height: 36px; }
 
 .main { min-height: 500px; }
 
