@@ -58,8 +58,8 @@
 						<nav class="nav-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement">
 							<ul class="nav">
 								<li><a href="{{ site.url }}/blog.html">Blog</a></li>
-								<li><a href="https://github.com/zumba">Open Source</a></li>
-								<li><a href="https://zumbacareers.silkroad.com/">Careers</a></li>
+								<li><a onclick="_gaq.push(['_trackEvent', 'GitHub', 'site'])" href="https://github.com/zumba">Open Source</a></li>
+								<li><a onclick="_gaq.push(['_trackEvent', 'Careers', 'site'])"href="https://zumbacareers.silkroad.com/">Careers</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -93,14 +93,14 @@
 							<ul class="nav nav-list">
 								<li class="nav-header">Navigation</li>
 								<li><a href="{{ site.url }}/blog.html">Blog</a></li>
-								<li><a href="https://github.com/zumba">Open Source</a></li>
-								<li><a href="https://zumbacareers.silkroad.com/">Careers</a></li>
+								<li><a onclick="_gaq.push(['_trackEvent', 'GitHub', 'site'])" href="https://github.com/zumba">Open Source</a></li>
+								<li><a onclick="_gaq.push(['_trackEvent', 'Careers', 'site'])" href="https://zumbacareers.silkroad.com/">Careers</a></li>
 								<li class="nav-header">Recent Posts</li>
 								{% for post in site.posts limit:5 %}
-								<li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+								<li><a onclick="_gaq.push(['_trackEvent', 'Recent Post', 'click', '{{ post.title }}'])" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
 								{% endfor %}
 								<li class="nav-header">Zumba</li>
-								<li><a href="http://www.zumba.com">Zumba.com</a></li>
+								<li><a onclick="_gaq.push(['_trackEvent', 'Zumba Site', 'site'])" href="http://www.zumba.com">Zumba.com</a></li>
 							</ul>
 						</nav>
 					</aside>
@@ -120,7 +120,7 @@
 					</div>
 					<div class="span3">
 						<h4>Contact Us</h4>
-						<a href="mailto:{{ site.career_email }}">{{ site.career_email }}</a>
+						<a onclick="_gaq.push(['_trackEvent', 'Careers', 'email'])" href="mailto:{{ site.career_email }}">{{ site.career_email }}</a>
 					</div>
 					<div class="span3"></div>
 						<a href="https://twitter.com/zumba" class="twitter-follow-button" data-show-count="false">Follow @zumba</a><br>
@@ -139,10 +139,10 @@
 							All rights reserved.
 						</div>
 						<nav class="span3">
-							<a href="http://feeds.feedburner.com/zumba_engineering">Atom Feed</a>
+							<a onclick="_gaq.push(['_trackEvent', 'Feed', 'click'])" href="http://feeds.feedburner.com/zumba_engineering">Atom Feed</a>
 							| <a href="{{ site.url }}/blog.html">Blog</a>
-							| <a href="https://github.com/zumba">Open Source</a>
-							| <a href="https://zumbacareers.silkroad.com/">Careers</a>
+							| <a onclick="_gaq.push(['_trackEvent', 'GitHub', 'site'])" href="https://github.com/zumba">Open Source</a>
+							| <a onclick="_gaq.push(['_trackEvent', 'Careers', 'site'])" href="https://zumbacareers.silkroad.com/">Careers</a>
 						</nav>
 					</div>
 				</div>
@@ -151,10 +151,25 @@
 
 		<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
 		<script src="http://daigon.s3.amazonaws.com/developer/public/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://analytics-api-samples.googlecode.com/svn/trunk/src/tracking/javascript/v5/social/ga_social_tracking.js"></script>
 
 		{% if site.share_twitter == true %}
 		<!-- Twitter -->
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		<script type="text/javascript">
+			window.twttr = function(d,s,id){
+				var js,fjs=d.getElementsByTagName(s)[0];
+				if(!d.getElementById(id)){
+					js=d.createElement(s);
+					js.id=id;
+					js.src="//platform.twitter.com/widgets.js";
+					fjs.parentNode.insertBefore(js,fjs);
+				}
+				return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+			}(document,"script","twitter-wjs");
+			twttr.ready(function(twttr) {
+				_ga.trackTwitter(); // Google Analytics tracking
+			});
+		</script>
 		{% endif %}
 		{% if site.share_google == true %}
 		<!-- Google Plus -->
@@ -163,7 +178,11 @@
 		{% if site.share_facebook == true %}
 		<!-- Facebook -->
 		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
+		<script type="text/javascript">
+			window.fbAsyncInit = function() {
+				_ga.trackFacebook(); // Google Analytics tracking
+			}
+			(function(d, s, id) {
 			var js, fjs = d.getElementsByTagName(s)[0];
 				if (d.getElementById(id)) return;
 				js = d.createElement(s); js.id = id;
