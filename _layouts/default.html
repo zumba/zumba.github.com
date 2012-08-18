@@ -42,7 +42,7 @@
 		{% endif %}{% endif %}
 	</head>
 
-	<body>
+	<body itemscope itemtype="http://schema.org/WebPage">
 		<header>
 			<div class="navbar navbar-fixed-top">
 				<div class="navbar-inner">
@@ -55,7 +55,7 @@
 						<a class="brand header-brand" href="{{ site.url }}/" rel="home">
 							<img src="{{ site.url }}/img/main-logo-light.jpg" alt="Zumba Fitness">
 						</a>
-						<nav class="nav-collapse">
+						<nav class="nav-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement">
 							<ul class="nav">
 								<li><a href="{{ site.url }}/blog.html">Blog</a></li>
 								<li><a href="https://github.com/zumba">Open Source</a></li>
@@ -81,9 +81,9 @@
 			<br>
 			<div class="row">
 				{% if page.type %}
-				<div class="span9" itemscope itemtype="http://schema.org/{{ page.type }}">
+				<div class="span9" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/{{ page.type }}">
 				{% else %}
-				<div class="span9">
+				<div class="span9" itemprop="mainContentOfPage">
 				{% endif %}
 					{{ content }}
 				</div>
@@ -133,7 +133,9 @@
 				<div class="container">
 					<div class="row">
 						<div class="span9">
-							Copyright &copy; 2012 Zumba Fitness, LLC.
+							Copyright &copy;
+							<span itemprop="copyrightYear">2012</span>
+							<span itemprop="copyrightHolder publisher">Zumba Fitness, LLC</span>.
 							All rights reserved.
 						</div>
 						<nav class="span3">
