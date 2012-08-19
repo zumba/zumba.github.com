@@ -172,6 +172,9 @@
 			}(document,"script","twitter-wjs");
 			twttr.ready(function(twttr) {
 				_ga.trackTwitter(); // Google Analytics tracking
+				twttr.events.bind('follow', function (event) { // Google sample do not track follow actions
+					_gaq.push(_ga.getSocialActionTrackers_('twitter', 'follow-' + event.data.screen_name));
+				});
 			});
 		</script>
 		{% endif %}
