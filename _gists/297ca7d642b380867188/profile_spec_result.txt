@@ -1,0 +1,6 @@
+Frisby Test: Test getting a user's profile.
+  Test getting a user's profile
+	[ GET http://yourhostname.com/user/profile/1 ]
+
+Finished in 0.188 seconds
+1 tests, 2 assertions, 0 failures

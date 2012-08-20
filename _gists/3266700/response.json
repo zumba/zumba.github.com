@@ -1,0 +1,44 @@
+{
+    "data": {
+        "ControllerName": [{
+            "resource": "ControllerName",
+            "http_method": "GET",
+            "uri": "\/controller_name",
+            "params": [],
+            "doc_comment": {
+                "description": "List all the things",
+                "tags": {
+                    "inputParam": {
+                        "filter": {
+                            "description": "Describe what is the expected value",
+                            "optional": true
+                        }
+                    },
+                    "return": {
+                        "type": "array",
+                        "description": ""
+                    },
+                    "returnParam": {
+                        "[][reference]": {
+                            "description": "Reference for some record",
+                            "optional": false
+                        },
+                        "[][name]": {
+                            "description": "Another field",
+                            "optional": false
+                        }
+                    },
+                    "since": {
+                        "version": "v1.0",
+                        "description": ""
+                    }
+                }
+            },
+            "location": {
+                "class": "Zumba\\Service\\Controller\\ControllerName",
+                "method": "getList",
+                "line": 53
+            }
+        }]
+    }
+}
