@@ -37,7 +37,7 @@ parameters required for that.
 Below is an example of our JSON response:
 
 <script type="text/javascript" src="https://gist.github.com/3266700.js"> </script>
-<noscript><p>The code is available on <a href="https://gist.github.com/3266700">https://gist.github.com/3266700</a></p></noscript>
+<noscript>The code is available on <a href="https://gist.github.com/3266700">https://gist.github.com/3266700</a></noscript>
 
 With jQuery we loop thru all the controllers and actions and generate the page. Also we
 have a search with jQuery to filter results, making the life much easier to front end
