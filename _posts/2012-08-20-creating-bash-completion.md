@@ -41,7 +41,8 @@ my script like `job __check__` to get the available classes or `job __check__ Sp
 the available methods.
 
 The PHP portion is basically that:
-{% gist 3398491 %}
+<script type="text/javascript" src="https://gist.github.com/3398491.js"> </script>
+<noscript><p>The code is available on <a href="https://gist.github.com/3398491">https://gist.github.com/3398491</a></p></noscript>
 
 With that, from the console we are able to execute the check (`job __check__`) and the list of available jobs:
 `Job1 MyCustom MyApp TopSecret StopTheCompany`
@@ -52,7 +53,8 @@ execute the `job __check__ StopTheCompany` we get something like: `shutdownServe
 Now is time to make the bash interact with your code. You need to create a script in your
 `/etc/bash_completion.d/` folder, with permission 0644. It will be like the code below.
 
-{% gist 3398516 %}
+<script type="text/javascript" src="https://gist.github.com/3398516.js"> </script>
+<noscript><p>The code is available on <a href="https://gist.github.com/3398516">https://gist.github.com/3398516</a></p></noscript>
 
 To explain a bit, the last line will tell bash to complete the executable `job` using the function
 `_my_application` (defined few lines above). The function basically test the number of parameters and

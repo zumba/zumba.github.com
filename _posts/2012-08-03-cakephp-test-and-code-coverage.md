@@ -20,7 +20,8 @@ configuration file. Using the configuration file is easy to put folders/files on
 using CakePHP because it has their own runner system. Our solution was figure out a way using code. We changed our
 test suite to do it, see below.
 
-{% gist 3260166 %}
+<script type="text/javascript" src="https://gist.github.com/3260166.js"> </script>
+<noscript><p>The code is available on <a href="https://gist.github.com/3260166">https://gist.github.com/3260166</a></p></noscript>
 
 With the code above you can run in your console: `./Console/cake test app AllApp --coverage-html=./report`
 

@@ -16,7 +16,8 @@ Frisby.js and Jasmine are very conducive to the idea of <abbr title="Behavior Dr
 
 Suppose you have a user story about getting a user's profile by ID and returning some basic information.  The test you would write would be similar to this:
 
-{% gist 297ca7d642b380867188 %}
+<script src="https://gist.github.com/297ca7d642b380867188.js"> </script>
+<noscript><p>The code is available on <a href="https://gist.github.com/297ca7d642b380867188">https://gist.github.com/297ca7d642b380867188</a></p></noscript>
 
 To execute the above test, execute the following from the command line:
 

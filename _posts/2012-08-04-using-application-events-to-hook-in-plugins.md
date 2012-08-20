@@ -18,11 +18,13 @@ In many instances, having a plugin system (even for closed-source applications) 
 
 Application events come in many shapes and sizes.  We chose to utilize a static class for "registering" the event to a callback method.
 
-{% gist efc61cb87783055d3c9e %}
+<script src="https://gist.github.com/efc61cb87783055d3c9e.js"> </script>
+<noscript><p>The code is available on <a href="https://gist.github.com/efc61cb87783055d3c9e">https://gist.github.com/efc61cb87783055d3c9e</a></p></noscript>
 
 This adds a callable entry to the events array per event "tag".  Notice that `$events` can be an array, so assigning multiple events to the same callback is very easy to do.  Now all we need is a way to trigger the events we register to this class at runtime.
 
-{% gist 36bd768ec37fdd697e81 %}
+<script src="https://gist.github.com/36bd768ec37fdd697e81.js"> </script>
+<noscript><p>The code is available on <a href="https://gist.github.com/36bd768ec37fdd697e81">https://gist.github.com/36bd768ec37fdd697e81</a></p></noscript>
 
 When triggering an event, we simply pass an array of data to the callback that was registered.  So all our callbacks should have a signature similar to: `public function someCallback($data = array())`.
 
@@ -36,7 +38,8 @@ Now that we have our event system in place, it's time to use it for our plugins.
 
 We have several uses for plugins for our cart system. Chief among them is refreshing the status of the items in the cart on certain actions, such as when adding an item to the cart.  When structuring our plugin using an event system, we just need to expose a registration method that registers its own callbacks to all the events that it should listen for and react to when operations occur on the cart.  For example:
 
-{% gist 9acaa7d1504e57ece36e %}
+<script src="https://gist.github.com/9acaa7d1504e57ece36e.js"> </script>
+<noscript><p>The code is available on <a href="https://gist.github.com/9acaa7d1504e57ece36e">https://gist.github.com/9acaa7d1504e57ece36e</a></p></noscript>
 
 
 ### Conclusion
