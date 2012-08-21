@@ -1,6 +1,4 @@
 pygments: true
-safe: true
-auto: true
 exclude: README.md
 
 url: http://engineering.zumba.com
