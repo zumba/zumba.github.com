@@ -37,4 +37,8 @@ layout: nil
 		</url>
 	{% endunless %}
 {% endfor %}
+	<url>
+		<loc>{{ site.url }}/symbiosis/</loc>
+		<priority>0.9</priority>
+	</url>
 </urlset>
