@@ -14,7 +14,7 @@ author: cjsaylor
 <ul>
 	{% for post in site.posts %}
 	<li itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-		<a href="{{site.url}}{{ post.url }}" itemprop="url">{{ post.title }}</a> ({{ post.date | date: "%B %d, %Y"}})
+		<a href="{{site.url}}{{ post.url }}/" itemprop="url">{{ post.title }}</a> ({{ post.date | date: "%B %d, %Y"}})
 	</li>
 	{% endfor %}
 </ul>

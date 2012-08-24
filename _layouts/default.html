@@ -101,7 +101,7 @@
 								<li><a onclick="_gaq.push(['_trackEvent', 'Careers', 'site'])" href="https://zumbacareers.silkroad.com/">Careers</a></li>
 								<li class="nav-header">Recent Posts</li>
 								{% for post in site.posts limit:5 %}
-								<li><a onclick="_gaq.push(['_trackEvent', 'Recent Post', 'click', '{{ post.title }}'])" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+								<li><a onclick="_gaq.push(['_trackEvent', 'Recent Post', 'click', '{{ post.title }}'])" href="{{ site.url }}{{ post.url }}/">{{ post.title }}</a></li>
 								{% endfor %}
 								<li class="nav-header">Zumba</li>
 								<li><a onclick="_gaq.push(['_trackEvent', 'Zumba Site', 'site'])" href="http://www.zumba.com">Zumba.com</a></li>

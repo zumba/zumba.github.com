@@ -31,7 +31,7 @@ layout: nil
 {% for post in site.posts %}
 	{% unless post.hide %}
 		<url>
-			<loc>{{ site.url }}{{ post.url }}</loc>
+			<loc>{{ site.url }}{{ post.url }}/</loc>
 			<lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
 			<priority>1.0</priority>
 		</url>

@@ -18,7 +18,7 @@ layout: nil
  <entry>
    <title>{{ post.title | xml_escape }}</title>
    <summary>{{ post.description | xml_escape }}</summary>
-   <link href="{{ site.url }}{{ post.url }}"/>
+   <link href="{{ site.url }}{{ post.url }}/"/>
    <author>
 	<name>{{ site.authors[post.author].name | xml_escape }}</name>
 	<email>{{ site.authors[post.author].email | xml_escape }}</email>
