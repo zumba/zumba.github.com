@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kicking Off the Blog
-description: Explain the objective of this blog
+description: This article just explain the goals of this blog and to announce open source projects from the company
 tags: []
 author: cjsaylor
 ---
