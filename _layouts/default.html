@@ -13,7 +13,11 @@
 		<meta name="description" content="{{ page.description }}">
 		{% endif %}
 		<link href="http://feeds.feedburner.com/zumba_engineering" type="application/atom+xml" rel="alternate" title="Blog Posts Feed">
+		{% if page.is_blog %}
+		<link href="{{ site.url }}{{ page.url }}/" rel="canonical">
+		{% else %}
 		<link href="{{ site.url }}{{ page.url }}" rel="canonical">
+		{% endif %}
 		<link rel="license" href="{{ site.url }}/licenses/zumba_mit_license.html">
 
 		<!-- v2.0.4 -->
