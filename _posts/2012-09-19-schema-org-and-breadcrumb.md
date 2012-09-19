@@ -13,7 +13,7 @@ a better results for users. For example, Google shows rich snippets in their res
 page author, breadcrumbs, review information, product prices, etc. You can see few examples on
 [Google Rich Snippets Testing Tool](http://www.google.com/webmasters/tools/richsnippets).
 
-Looking the [Google Webmaster](http://support.google.com/webmasters/bin/answer.py?hl=en&answer=1211158)
+Looking at [Google Webmaster](http://support.google.com/webmasters/bin/answer.py?hl=en&answer=1211158)
 documentation, they recommend do use the microdata from [schema.org](http://schema.org), which is a
 schema made by search providers like Bind, Google, Yahoo! and Yandex. The schema contains a lot of types
 useful for you website. This works very well in many cases, but some times it requires layout changes to
@@ -38,7 +38,7 @@ with that:
 <script type="text/javascript" src="https://gist.github.com/4287cc6dbfefafac8bb2.js"> </script>
 
 This is not the best solution, but it was the balance between do not change the layout because the
-microdata and have a nice presentation in search provider results. I hope the schema.org cover it once
-breadcrumbs are not restrict to WebPage type or any of the sub-types.
+microdata and have a nice presentation in search provider results. I hope the schema.org covers it once
+breadcrumbs are not restricted to WebPage type or any of the sub-types.
 
 Do you have a better solution using microdata?
