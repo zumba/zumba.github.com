@@ -32,11 +32,13 @@ do not have any property for categories or breadcrumbs, it is part from the
 different scope with microdata.
 
 Unfortunately I didn't find any solution with schema.org only, then I had to use schema.org and the
-deprecated [data-vocabulary](http://www.data-vocabulary.org/). In the breadcrumbs, for each link I use
-the below code:
+deprecated [data-vocabulary](http://www.data-vocabulary.org/). The code in the end was something similar
+with that:
 
 <script type="text/javascript" src="https://gist.github.com/4287cc6dbfefafac8bb2.js"> </script>
 
 This is not the best solution, but it was the balance between do not change the layout because the
 microdata and have a nice presentation in search provider results. I hope the schema.org cover it once
 breadcrumbs are not restrict to WebPage type or any of the sub-types.
+
+Do you have a better solution using microdata?
