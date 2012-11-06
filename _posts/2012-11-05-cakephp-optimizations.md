@@ -22,7 +22,7 @@ sure.
 2) Move things out of the box. We moved all our assets to [S3](http://aws.amazon.com/s3/) and
 [CloudFront](http://aws.amazon.com/cloudfront/). It helps in two ways: 1) reduce the load in host boxes
 ([EC2](http://aws.amazon.com/ec2/)), giving more CPU and memory for the PHP applications 2) Allow the
-browser to make more concurrent requests, once the host is usually different (ok, you can do the same
+browser to make more concurrent requests, since the host is usually different (ok, you can do the same
 with the same box).
 
 3) Scale a little vertical before go horizontal. We had an experience of using many boxes of small size
@@ -57,14 +57,14 @@ you make some database change operation (INSERT/UPDATE/DELETE). We did that and 
 One reason is because our sessions are stored in database, causing a insert/update in every single request.
 
 5) View cache. You can use cake view cache or other system, like [Varnish](https://www.varnish-cache.org/).
-Depending of your system cake view cache is enough and give more flexibility, once you can still add some
+Depending of your system cake view cache is enough and give more flexibility, since you can still add some
 PHP in the caches. Just be careful with restrict pages. Sometimes the cache will make it public for people
 with the URL. See more details on [CakePHP Documentation](http://book.cakephp.org/2.0/en/core-libraries/helpers/cache.html).
 
 6) ``requestAction`` and elements. Most of the sites has some dynamic content which need to render several
 times, for example the site menu. Usually the content comes from database and you have to add the request
 to the model into the ``AppController``. It causes one or more query per request, which probably is
-unnecessary to do in all requests, once it will be the same for few minutes or even hours. The solution is
+unnecessary to do in all requests, since it will be the same for few minutes or even hours. The solution is
 use the [``requestAction``](http://book.cakephp.org/2.0/en/controllers.html#Controller::requestAction)
 inside the element and use the [cache element](http://book.cakephp.org/2.0/en/views.html#caching-elements).
 All built-in CakePHP and very simple to use. In the end, after the first request (which could be a little
