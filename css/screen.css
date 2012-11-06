@@ -34,6 +34,9 @@ article div.body { clear: both; }
 .post_share { margin-top: 15px; }
 .post_nav { margin-top: 20px; text-align: center; }
 
+ol li { margin: 7px 0; }
+ol li p { margin-bottom: 0; }
+
 footer {
 	margin-top: 15px;
 	padding-top: 30px;
