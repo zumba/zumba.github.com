@@ -40,3 +40,13 @@ authors:
     gplus: 105859985385247388276
     gravatar: 1333d11249a2ed342d612c49a7c1e913
     about: Besides Zumba<sup>&reg;</sup>, he is core developer of <a href="http://cakephp.org">CakePHP framework</a> and author of many CakePHP plugins. Likes code quality, standards, and crazy for performance.
+  young-steveo:
+    name: Stephen Young
+    email: stephen.young@zumba.com
+    position: Senior Software Engineer
+    start_date: 2012-12-03
+    github: young-steveo
+    twitter: young_steveo
+    gplus: 116989823921363664764
+    gravatar: 3bf295323fca7f0e92a65d11f07b032e
+    about: Besides Zumba<sup>&reg;</sup>, he is an avid gamer and likes to tinker with Javascript technologies.  He recently developed <a href="https://github.com/young-steveo/chainable.js">chainable.js</a> and <a href="https://github.com/young-steveo/bitmask.js">bitmask.js</a>.
