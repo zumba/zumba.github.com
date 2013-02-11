@@ -12,7 +12,7 @@ Mongounit is a PHPUnit extension modeled after dbunit that allows for fixture-ba
 
 One of our more recent projects has given the team exposure to MongoDB. As such, we needed an easy way to test the models that utilize mongo in a similar fashion to how we test models that talk to mysql. Using this framework, it's easy to implement mongo test cases to easily create fixture data in collections, or simply clear collections between test cases.
 
-See an example [Testcase](https://github.com/zumba/mongounit/blob/master/Samples/PizzaTest.php)
+See an example [Testcase](https://github.com/zumba/mongounit/blob/master/examples/PizzaTest.php)
 
 ### More info
 
