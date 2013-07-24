@@ -102,7 +102,7 @@
 								<li class="nav-header">Navigation</li>
 								<li><a href="{{ site.url }}/blog.html">Blog</a></li>
 								<li><a onclick="_gaq.push(['_trackEvent', 'GitHub', 'site'])" href="https://github.com/zumba">Open Source</a></li>
-								<li><a onclick="_gaq.push(['_trackEvent', 'Careers', 'site'])" href="{{ site.url }}/careers.html">Careers</a></li>
+								<li><a onclick="_gaq.push(['_trackEvent', 'Careers', 'site'])" href="{{ site.url }}/careers.html">Join The Team</a></li>
 								<li class="nav-header">Recent Posts</li>
 								{% for post in site.posts limit:5 %}
 								<li><a onclick="_gaq.push(['_trackEvent', 'Recent Post', 'click', '{{ post.title }}'])" href="{{ site.url }}{{ post.url }}/">{{ post.title }}</a></li>
@@ -171,7 +171,12 @@
 					$this.parent().addClass('active');
 					$('.job').hide();
 					$('#' + job).show();
+					window.location.hash = 'job-' + job + '/';
 				});
+				console.log(window.location.hash);
+				if (window.location.hash.indexOf('job-') > 0) {
+					$(window.location.hash.substr(0, window.location.hash.length - 1)).trigger('click');
+				}
 			});
 		</script>
 

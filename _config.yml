@@ -30,7 +30,7 @@ authors:
     gplus: 104913325876410476247
     gravatar: 53c40ddf10f397ab4494fc55078125dc
     about: Besides Zumba<sup>&reg;</sup>, he is the author of the
-      <span itemscope itemtype="http://schema.org/MobileApplication"><a href="http://boxmeupapp.com/" itemprop="url"><span itemprop="name">Boxmeup</span></a></span>.
+      <span itemscope itemtype="http://schema.org/MobileApplication"><a href="http://boxmeupapp.com/" itemprop="url"><span itemprop="name">Boxmeup</span></a></span>."
       Loves <a href="http://nodejs.org">Node.js</a> and has couple of open source application using this plataform.
   jrbasso:
     name: Juan Basso
@@ -52,3 +52,134 @@ authors:
     gplus: 116989823921363664764
     gravatar: 3bf295323fca7f0e92a65d11f07b032e
     about: Besides Zumba<sup>&reg;</sup>, he is an avid gamer and likes to tinker with Javascript technologies.  He recently developed <a href="https://github.com/young-steveo/chainable.js">chainable.js</a> and <a href="https://github.com/young-steveo/bitmask.js">bitmask.js</a>.
+
+#job listings
+jobs:
+  sr_soft_eng:
+    name: Senior Software Engineer
+    slug: sr_soft_eng
+    responsibilities:
+      - "Analyze application requirements and provide recommended technical design solutions that are efficient, scalable, maintainable, and accurately meet the needs of the business."
+      - "Design new features capable of handling thousands of requests/minute."
+      - "Design small to medium sized project solutions that are modular and scale."
+      - "Build web services to support a wide-range of products/services in a multi-server environment."
+      - "Develop and continuously enhance Zumba web and related applications and refactor existing business logic into reusable services."
+      - "Build and maintain membership, ecommerce, and web platforms."
+      - "Document existing processes."
+      - "Document new architecture and design and code."
+      - "Participate in resolving challenging and demanding problems within the production environment."
+      - "Ensure SLA metrics (performance, availability, usage, and security) are met."
+      - "Assist with customer inquiries and resolution of problems."
+      - "Research, prototype, and make recommendations on software tools, new approaches and new technologies and alternative ways to better accomplish functional requests."
+    requirements:
+      - "5+ years of years of software design and development experience."
+      - "At least 2 years as a php developer."
+      - "4 year Bachelors’ degree in Computer Science or related experience."
+      - "Experience using web frameworks."
+      - "Experience with Agile development methodologies, especially SCRUM."
+      - "Strong oral and written communication skills, and must be able to work effectively with management, customers and technical staff in analyzing situations and resolving issues."
+      - "Must be able to work independently as well as with a team."
+      - "Motivated, self directed, but with the ability to take direction from others."
+      - "Strong analysis skills with a thorough understanding of application and infrastructure bottlenecks."
+      - "Able to clearly document and communicate a design to team members."
+      - "Experienced supporting a production application, including deployments, troubleshooting, and tuning."
+      - "Strong PHP 5.3+ skills and knowledge of PHP’s OOP principles."
+      - "Excellent knowledge of object oriented analysis, design and programming (OOA/OOD/OOP), MVC and other design patterns."
+      - "Must be proficient with SSCS, preferably Git."
+      - "Experienced designing and building Web Services, and integrations with third parties through APIs, SOAP, OAuth, etc)."
+      - "Experienced building unit tests and unit test frameworks."
+      - "Able to multitask and resolve multi-faceted issues with creativity and minimum direction."
+      - "Able to understand business problems, and be creative with strong problem solving abilities."
+      - "Able to design and build secure, scalable, reliable, and well-tuned systems."
+    desireable:
+      - "Experience working for a major internet company and knowledge of ecommerce sites is a huge plus."
+      - "Jira, RallyDev"
+      - "Experience in contributing to and interest in Opensource technology."
+  soft_eng:
+    name: Software Engineer
+    slug: soft_eng
+    responsibilities:
+      - "Analyze application requirements and provide recommended technical design solutions that are efficient, scalable, maintainable, and accurately meet the needs of the business."
+      - "Design new features capable of handling thousands of requests/minute."
+      - "Design small to medium sized project solutions that are modular and scale."
+      - "Build web services to support a wide-range of products/services in a multi-server environment."
+      - "Develop and continuously enhance Zumba web and related applications and refactor existing business logic into reusable services."
+      - "Build and maintain membership, ecommerce, and web platforms."
+      - "Document existing processes."
+      - "Participate in resolving challenging and demanding problems within the production environment."
+      - "Assist with customer inquiries and resolution of problems."
+      - "Research, prototype, and make recommendations on software tools, new approaches and new technologies and alternative ways to better accomplish functional requests."
+    requirements:
+      - "3+ years of years of software design and development experience."
+      - "At least 1 years as a php developer."
+      - "4 year Bachelors’ degree in Computer Science or related experience."
+      - "Experience using web frameworks."
+      - "Experience with Agile development methodologies, especially SCRUM."
+      - "Strong oral and written communication skills, and must be able to work effectively with management, customers and technical staff in analyzing situations and resolving issues."
+      - "Must be able to work independently as well as with a team."
+      - "Motivated, self directed, but with the ability to take direction from others."
+      - "Strong analysis skills with a thorough understanding of application and infrastructure bottlenecks."
+      - "Able to clearly document and communicate a design to team members."
+      - "Experienced supporting a production application, including deployments, troubleshooting, and tuning."
+      - "Strong PHP 5.3+ skills and knowledge of PHP’s OOP principles."
+      - "Excellent knowledge of object oriented analysis, design and programming (OOA/OOD/OOP), MVC and other design patterns."
+      - "Must be proficient with SSCS, preferably Git."
+      - "Experienced designing and building Web Services, and integrations with third parties through APIs, SOAP, OAuth, etc)."
+      - "Experienced building unit tests and unit test frameworks."
+      - "Able to multitask and resolve multi-faceted issues with creativity and minimum direction."
+      - "Able to understand business problems, and be creative with strong problem solving abilities."
+      - "Able to design and build secure, scalable, reliable, and well-tuned systems."
+    desireable:
+      - "Experience working for a major internet company and knowledge of ecommerce sites is a huge plus."
+      - "Jira, RallyDev"
+      - "Experience in contributing to and interest in Opensource technology."
+  fe_dev:
+    name: Frontend Developer
+    slug: fe_dev
+    responsibilities:
+      - "Analyze design requirements and provide recommended technical design solutions that are efficient, scalable, maintainable, and accurately meet the needs of the business."
+      - "Participate in code, page weight, ADA compliance reviews."
+      - "Develop complete micro sites from PSDs in a timely manner."
+      - "Implement new features to an existing site."
+      - "Debug our sites and applications whether it be a browser, styling or Javascript issue."
+      - "Contribute to a development style guide."
+      - "Review and contribute to Digital Design’s Style Guide."
+      - "Participate in resolving challenging and demanding problems within the production environment."
+      - "Ensure SLA metrics (performance, availability, usage, and security) are met."
+      - "Assist with internal customer inquiries and resolution of problems."
+      - "Research and make recommendations on software tools, new approaches and new technologies and alternative ways to better accomplish functional requests."
+      - "Explore new technologies."
+    requirements:
+      - "4+ years in practical front-end development experience"
+      - "4 year Bachelors’ degree in Computer Science or related experience"
+      - "Must have an online portfolio"
+      - "Must be an expert in hand-code clean, semantic, standards-compliant HTML5, CSS3/SASS and Javascript while still maintaining a fallback for browsers that don't support it (graceful degradation)."
+      - "Must understand how to work in the console/Terminal"
+      - "Familiar with working in a LAMP development environment and understand the basics of object oriented PHP"
+      - "Must be an expert in developing responsive sites and applications."
+      - "You understand how jQuery should &amp; can be used to enhance a site and its interactivity."
+      - "Able to identify and tackle cross-browser quirks."
+      - "Familiar with code versioning on Github."
+      - "Experience with (or interest in) dynamic CSS preprocessors such as SASS."
+      - "Ability to navigate Photoshop to translate into code."
+      - "Ability to work closely with the UX/UI team to give feasibility and complexity feedback on wireframes and comps, as well as give suggestions for alternatives that might better fit the customer needs within the given timeframe."
+      - "Experience with Agile development methodologies, especially SCRUM"
+      - "You don't just \"cut things up\" -- you translate design into a brilliant user experience and you're not satisfied until it looks pixel-perfect."
+      - "Passionate about writing logical, well-structured code that's easy to navigate."
+      - "Experience in building mobile optimized web site"
+      - "Ability to work with a team in and report to a Lead UI Developer"
+      - "Ability to clearly document and communicate"
+      - "Able to multitask and resolve multi-faceted issues with creativity and minimal direction"
+      - "Able to understand business problems, and be creative with strong problem solving abilities."
+    desireable:
+      - "Experience producing FE code for ecommerce sites is a huge plus"
+      - "Flexible and be able to handle multiple projects simultaneously"
+      - "MS Visio or a similar tool, MS Word, MS Excel"
+      - "Jira, RallyDev"
+      - "Experience building front end code for ecommerce sites"
+      - "Experience with web site Front End design and implementation."
+      - "Tableless CSS, JavaScript, AJAX, XML, XSLT, XHTML"
+      - "Experience with displaying XML content from a CMS"
+      - "Experience with source code control systems (preferably Git)."
+      - "Knowledge of industry-standard design tools such as Fireworks and Axure."
+
