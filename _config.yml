@@ -1,5 +1,7 @@
 pygments: true
-exclude: README.md
+exclude: [
+  README.md
+]
 
 url: http://engineering.zumba.com
 career_email: careers@zumba.com
