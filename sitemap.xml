@@ -12,6 +12,7 @@ layout: nil
 		<loc>{{ site.url }}/careers.html</loc>
 		<lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
 		<priority>0.8</priority>
+	</url>
 	<url>
 		<loc>{{ site.url }}/about.html</loc>
 		<lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
