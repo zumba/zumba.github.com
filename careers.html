@@ -1,0 +1,48 @@
+---
+layout: default
+title: Join The Team @ Zumba &reg;
+description: Engineering careers available at Zumba &reg;
+type: JobPosting
+author: cjsaylor
+---
+
+<h1>Join The Team</h1>
+<br>
+<p>We empower our engineers to be creative, experiment, and try new technologies. Our stack is ever-changing, and as such there are many opportunities to both learn new technology and techniques. Whether through going to conferences, hosting meetups, or contributing to open source, our engineering staff is always looking to improve development skills and our product.</p>
+<hr>
+<div class="row">
+	<div class="span3">
+		<ul class="nav nav-pills nav-stacked job-list">
+			{% for job in site.jobs %}
+			<li {% if forloop.index0 == 0 %}class="active"{% endif %} data-job-desc="{{ job[1].slug }}"><a id="job-{{ job[1].slug }}" href="#{{ job[1].slug }}">{{ job[1].name }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+	{% for job in site.jobs %}
+	<div class="span6 job" {% if forloop.index0 != 0 %}style="display: none"{% endif %} id="{{ job[1].slug }}">
+		<h3>{{ job[1].name }}</h3>
+		<p><i class="icon-share-alt"></i>&nbsp;<a href="#job-{{ job[1].slug }}/">http://engineering.zumba.com/careers.html#job-{{ job[1].slug }}/</a></p>
+		<h4>Responsibilities</h4>
+		<br>
+		<ul>
+			{% for responsibility in job[1].responsibilities %}
+			<li>{{ responsibility }}</li>
+			{% endfor %}
+		</ul>
+		<h4>Requirements</h4>
+		<br>
+		<ul>
+			{% for requirement in job[1].requirements %}
+			<li>{{ requirement }}</li>
+			{% endfor %}
+		</ul>
+		<h4>Desirable</h4>
+		<br>
+		<ul>
+			{% for desire in job[1].desireable %}
+			<li>{{ desire }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+	{% endfor %}
+</div>
