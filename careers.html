@@ -2,7 +2,6 @@
 layout: default
 title: Join The Team @ Zumba &reg;
 description: Engineering careers available at Zumba &reg;
-type: JobPosting
 author: cjsaylor
 ---
 
@@ -19,26 +18,29 @@ author: cjsaylor
 		</ul>
 	</div>
 	{% for job in site.jobs %}
-	<div class="span6 job" {% if forloop.index0 != 0 %}style="display: none"{% endif %} id="{{ job[1].slug }}">
-		<h3>{{ job[1].name }}</h3>
-		<p><i class="icon-share-alt"></i>&nbsp;<a href="#job-{{ job[1].slug }}/">http://engineering.zumba.com/careers.html#job-{{ job[1].slug }}/</a></p>
+	<div class="span6 job" {% if forloop.index0 != 0 %}style="display: none"{% endif %} id="{{ job[1].slug }}" itemscope itemtype="http://schema.org/JobPosting">
+		<meta itemprop="employmentType" content="full-time">
+		<meta itemprop="hiringOrganization" content="Zumba Fitness, LLC">
+		<meta itemprop="workHours" content="40 hours per week">
+		<h3 itemprop="title">{{ job[1].name }}</h3>
+		<p><i class="icon-share-alt"></i>&nbsp;<a href="#job-{{ job[1].slug }}/" itemprop="url">http://engineering.zumba.com/careers.html#job-{{ job[1].slug }}/</a></p>
 		<h4>Responsibilities</h4>
 		<br>
-		<ul>
+		<ul itemprop="responsibilities">
 			{% for responsibility in job[1].responsibilities %}
 			<li>{{ responsibility }}</li>
 			{% endfor %}
 		</ul>
 		<h4>Requirements</h4>
 		<br>
-		<ul>
+		<ul itemprop="experienceRequirements">
 			{% for requirement in job[1].requirements %}
 			<li>{{ requirement }}</li>
 			{% endfor %}
 		</ul>
 		<h4>Desirable</h4>
 		<br>
-		<ul>
+		<ul itemprop="skills">
 			{% for desire in job[1].desireable %}
 			<li>{{ desire }}</li>
 			{% endfor %}
