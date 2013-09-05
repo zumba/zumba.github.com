@@ -14,11 +14,11 @@ sudo gem install jekyll
 To run the server (default port 4000), clone the repo and run from the root directory:
 
 ```shell
-jekyll --server
+jekyll serve
 ```
 
 If you want to just compile the code (into the `_site` directory):
 
 ```shell
-jekyll --no-server
+jekyll build
 ```
