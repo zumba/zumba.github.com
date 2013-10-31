@@ -18,7 +18,7 @@ The second workaround was to manually set and clear data in mongo in the test ca
 
 PHP does not support the concept of [multiple inheritance](http://en.wikipedia.org/wiki/Multiple_inheritance) which could have easily solved our problem. However, in PHP 5.4, a usable alternative is available. We are fortunate that our code base is workable on PHP 5.4, although not everyone is in the same position. For those not on PHP 5.3 and below, one of the above workarounds will have to suffice.
 
-One of the nice features of 5.4 was the introduction of [traits](php.net/traits). Traits provide a simple way to re-use common methods and was a great solution to our lack of multiple inheritance. The first step was to actually create a useful trait in Mongounit to serve as means of attaching mongo support to test cases that extends the dbunit extension.
+One of the nice features of 5.4 was the introduction of [traits](http://php.net/traits). Traits provide a simple way to re-use common methods and was a great solution to our lack of multiple inheritance. The first step was to actually create a useful trait in Mongounit to serve as means of attaching mongo support to test cases that extends the dbunit extension.
 
 You can see Mongounit's trait implementation in [Gitub](https://github.com/zumba/mongounit/blob/master/src/Zumba/PHPUnit/Extensions/Mongo/TestTrait.php) available as of version 1.1.3.
 
