@@ -24,7 +24,7 @@ You can see Mongounit's trait implementation in [Gitub](https://github.com/zumba
 
 The next step was to use the trait in our dbunit based test case. This means seting up the "setup" and "teardown" methods from the trait as well as implementing the abstract methods required for connecting to mongo and retrieving fixture data. These methods are the same as what is available in the [TestCase](https://github.com/zumba/mongounit/blob/master/src/Zumba/PHPUnit/Extensions/Mongo/TestCase.php), so in our case, it was a matter of moving the implementation into the trait method.
 
-<script src="https://gist.github.com/cjsaylor/7243308.js"></script>
+<script src="https://gist.github.com/cjsaylor/7243308.js"> </script>
 
 Now that our test case has implemented the trait, we now have access to setup fixtures for both MySQL and Mongo and utilize both within the same test case.
 
