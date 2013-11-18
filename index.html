@@ -22,8 +22,8 @@ notitle: true
 	<div class="col-md-8 col-md-offset-2">
 		<ul class="pager">
 			<li class="previous {% if paginator.previous_page %}{% else %}disabled{% endif %}">
-				<a href="{% if paginator.previous_page %}{% if paginator.previous_page == 1 %}{{ site.url }}{% else %}/page{{ paginator.previous_page }}{% endif %}{% else %}#{% endif %}">Previous</a></li>
-			<li class="next {% if paginator.next_page %}{% else %}disabled{% endif %}"><a href="{% if paginator.next_page %}/page{{ paginator.next_page }}{% else %}#{% endif %}">Next</a></li>
+				<a href="{% if paginator.previous_page %}{% if paginator.previous_page == 1 %}{{ site.url }}{% else %}/page{{ paginator.previous_page }}{% endif %}{% else %}#{% endif %}">&larr; Older</a></li>
+			<li class="next {% if paginator.next_page %}{% else %}disabled{% endif %}"><a href="{% if paginator.next_page %}/page{{ paginator.next_page }}{% else %}#{% endif %}">Newer &rarr;</a></li>
 		</ul>
 	</div>
 </div>
