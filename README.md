@@ -7,11 +7,13 @@ to deploy on Github's Pages.
 
 * Jekyll 1.0+
 * Nodejs 0.10+
+* Grunt 0.4+
 
-## install
+## Install
 
 1. Install Jekyll: `gem install jekyll`
-1. Install grunt dependencies: `npm install`
+1. Install Grunt CLI: `npm install -g grunt-cli`
+1. Install NodeJS dependencies: `npm install`
 
 ### Run
 

@@ -5,8 +5,10 @@ exclude: [
   gruntfile.js
 ]
 
+paginate: 5
+
 url: http://engineering.zumba.com
-career_email: careers@zumba.com
+career_email: engineering@zumba.com
 engineer_email: engineering@zumba.com
 
 permalink: /:year/:month/:day/:title

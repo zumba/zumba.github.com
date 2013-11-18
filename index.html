@@ -7,50 +7,23 @@ notitle: true
 ---
 
 <div class="row">
-	<div class="span5">
-		<p>
-			The technology stack at Zumba Fitness<sup>&reg;</sup>, like many companies' stacks, runs on open source technology.  We gain
-			many benefits by utilizing the community's efforts in making safe, reliable, and free open-source
-			software.
-		</p>
-		<p>
-			We've decided that we want to give back to the community.
-		</p>
-	</div>
-	<div class="span4">
-		<img src="http://maps.googleapis.com/maps/api/staticmap?center=Zumba+Fitness%2C+Silks+Run%2C+Hallandale+Beach%2C+FL&zoom=13&size=600x300&maptype=roadmap&markers=color:pink%7Clabel:Z%7C25.9765857,-80.141455&sensor=false" alt="Zumba Office">
+	<div class="col-md-8 col-md-offset-2">
+			{% for post in paginator.posts %}
+			<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+				<h2><a href="{{site.url}}{{ post.url }}/" itemprop="url">{{ post.title }}</a></h2>
+				<p>by <b><span itemprop="name">{{ site.authors[page.author].name }}</span></b> on <time itemprop="datePublished" datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %d, %Y"}}</time></p>
+				<p>{{ post.excerpt }}</p>
+			</article>
+			{% endfor %}
+		</ul>
 	</div>
 </div>
-
-<hr>
-
 <div class="row">
-	<div class="span3">
-		<h2>Open Source</h2>
-		<p>
-			Zumba Fitness<sup>&reg;</sup> is proud to start the process of open sourcing some of the tools that our technology
-			team uses on a day-to-day basis in the hopes that we can contribute something back to the
-			community.
-		</p>
-	</div>
-	<div class="span3">
-		<h2>Blog</h2>
-		<p>
-			Sometimes concepts are just as important as code.  As our team develops and maintains
-			our international and high-traffic website, we encounter problems that our team has to solve.
-			The goal of this blog is to share some of that experience with others, and hopefully have some of you
-			share some experience with us.
-		</p>
-	</div>
-	<div class="span3">
-		<h2>Opportunities</h2>
-		<p>
-			Do you want to give us a hand?
-		</p>
-		<p>
-			Join our team!  We're always on the lookout for talented developers and dev-ops engineers.
-			See what's available on our <a onclick="_gaq.push(['_trackEvent', 'Careers', 'site'])" href="{{ site.url }}/careers.html">careers page</a>
-			or send your resume to <a onclick="_gaq.push(['_trackEvent', 'Careers', 'email'])" href="mailto:careers@zumba.com">careers@zumba.com</a>.
-		</p>
+	<div class="col-md-8 col-md-offset-2">
+		<ul class="pager">
+			<li class="previous {% if paginator.previous_page %}{% else %}disabled{% endif %}">
+				<a href="{% if paginator.previous_page %}{% if paginator.previous_page == 1 %}{{ site.url }}{% else %}/page{{ paginator.previous_page }}{% endif %}{% else %}#{% endif %}">Previous</a></li>
+			<li class="next {% if paginator.next_page %}{% else %}disabled{% endif %}"><a href="{% if paginator.next_page %}/page{{ paginator.next_page }}{% else %}#{% endif %}">Next</a></li>
+		</ul>
 	</div>
 </div>

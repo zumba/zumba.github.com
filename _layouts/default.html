@@ -20,9 +20,7 @@
 		{% endif %}
 		<link rel="license" href="{{ site.url }}/licenses/zumba_mit_license.html">
 
-		<!-- v2.0.4 -->
-		<link href="http://daigon.s3.amazonaws.com/developer/public/css/bootstrap.min.css" rel="stylesheet">
-		<link href="http://daigon.s3.amazonaws.com/developer/public/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
 		<link href="{{ site.url }}/css/screen.css" rel="stylesheet">
 
 		<!--[if lt IE 9]>
@@ -48,90 +46,76 @@
 
 	<body itemscope itemtype="http://schema.org/WebPage">
 		<header>
-			<div class="navbar navbar-fixed-top">
-				<div class="navbar-inner">
-					<div class="container">
-						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
-						</a>
+						</button>
 						<a class="brand header-brand" href="{{ site.url }}/" rel="home">
 							<img src="{{ site.url }}/img/main-logo-light.jpg" alt="Zumba Fitness">
+							<span class="page-title">Tech</span>
 						</a>
-						<nav class="nav-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement">
-							<ul class="nav">
-								<li><a href="{{ site.url }}/blog.html">Blog</a></li>
-								<li><a onclick="_gaq.push(['_trackEvent', 'GitHub', 'site'])" href="https://github.com/zumba">Open Source</a></li>
-								<li><a onclick="_gaq.push(['_trackEvent', 'Careers', 'site'])" href="{{ site.url }}/careers.html">Join The Team</a></li>
-							</ul>
-						</nav>
+					</div>
+					<nav class="navbar-collapse collapse navbar-responsive-collapse pull-right" itemscope itemtype="http://schema.org/SiteNavigationElement">
+						<ul class="nav navbar-nav">
+							<li><a onclick="_gaq.push(['_trackEvent', 'GitHub', 'site'])" href="https://github.com/zumba">Open Source</a></li>
+							<li><a onclick="_gaq.push(['_trackEvent', 'Speakerdeck', 'site'])" href="https://speakerdeck.com/zumbatech">Talks</a></li>
+							<li><a onclick="_gaq.push(['_trackEvent', 'Careers', 'site'])" href="{{ site.url }}/careers.html">Jobs</a></li>
+						</ul>
+					</nav>
 					</div>
 				</div>
 			</div>
 
-			<div class="subheader">
-				<div class="container">
-					<div class="row">
-						<div class="span12">
-							{% if page.notitle %}
-							<h1 class="page-title">Engineering</h1>
-							{% else %}
-							<h2 class="page-title">Engineering</h2>
-							{% endif %}
-						</div>
-					</div>
-				</div>
-			</div>
 		</header>
 
 		<div class="container main">
 			<br>
 			<div class="row">
 				{% if page.type %}
-				<div class="span9" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/{{ page.type }}">
+				<div class="col-md-12" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/{{ page.type }}">
+				{% elsif page.is_blog %}
+				<div class="col-md-9" itemprop="mainContentOfPage">
 				{% else %}
-				<div class="span9" itemprop="mainContentOfPage">
+				<div class="col-md-12" itemprop="mainContentOfPage">
 				{% endif %}
 					{{ content }}
 				</div>
-				<div class="span3">
-					<aside class="well sidebar-nav">
+				{% if page.is_blog %}
+				<div class="col-md-3">
+					<aside class="well well-sm">
 						<nav>
-							<ul class="nav nav-list">
-								<li class="nav-header">Navigation</li>
-								<li><a href="{{ site.url }}/blog.html">Blog</a></li>
-								<li><a onclick="_gaq.push(['_trackEvent', 'GitHub', 'site'])" href="https://github.com/zumba">Open Source</a></li>
-								<li><a onclick="_gaq.push(['_trackEvent', 'Careers', 'site'])" href="{{ site.url }}/careers.html">Join The Team</a></li>
+							<ul class="nav nav-stacked">
 								<li class="nav-header">Recent Posts</li>
 								{% for post in site.posts limit:5 %}
 								<li><a onclick="_gaq.push(['_trackEvent', 'Recent Post', 'click', '{{ post.title }}'])" href="{{ site.url }}{{ post.url }}/">{{ post.title }}</a></li>
 								{% endfor %}
-								<li class="nav-header">Zumba</li>
-								<li><a onclick="_gaq.push(['_trackEvent', 'Zumba Site', 'site'])" href="http://www.zumba.com">Zumba.com</a></li>
 							</ul>
 						</nav>
 					</aside>
 				</div>
+				{% endif %}
 			</div>
 		</div> <!-- /container -->
 
 		<footer>
 			<div class="container">
 				<div class="row">
-					<div class="span3">
+					<div class="col-md-3">
 						<a href="{{ site.url }}/"><img src="{{ site.url }}/img/main-logo.png" alt="Zumba Fitness"></a>
 					</div>
-					<div class="span3">
+					<div class="col-md-3">
 						<h4>Engineering at Zumba Fitness<sup>&reg;</sup></h4>
 						<p>Zumba Fitness<sup>&reg;</sup> is dedicated to delivering the best technology to its customers.</p>
 					</div>
-					<div class="span3">
+					<div class="col-md-3">
 						<h4>Contact Us</h4>
 						<a onclick="_gaq.push(['_trackEvent', 'Careers', 'email'])" href="mailto:{{ site.career_email }}">{{ site.career_email }}</a>
 					</div>
-					<div class="span3">
-						<a href="https://twitter.com/zumba" class="twitter-follow-button" data-show-count="false">Follow @zumba</a><br>
+					<div class="col-md-3">
 						<a href="https://twitter.com/zumbatech" class="twitter-follow-button" data-show-count="false">Follow @zumbatech</a>
 					</div>
 				</div>
@@ -140,17 +124,17 @@
 			<div class="copyright">
 				<div class="container">
 					<div class="row">
-						<div class="span8">
+						<div class="col-md-8">
 							Copyright &copy;
 							<span itemprop="copyrightYear">2013</span>
 							<span itemprop="copyrightHolder publisher">Zumba Fitness, LLC</span>.
 							All rights reserved.
 						</div>
-						<nav class="span4" style="text-align: right">
+						<nav class="col-md-4" style="text-align: right">
 							<a onclick="_gaq.push(['_trackEvent', 'Feed', 'click'])" href="http://feeds.feedburner.com/zumba_engineering">Atom Feed</a>
-							| <a href="{{ site.url }}/blog.html">Blog</a>
 							| <a onclick="_gaq.push(['_trackEvent', 'GitHub', 'site'])" href="https://github.com/zumba">Open Source</a>
-							| <a onclick="_gaq.push(['_trackEvent', 'Careers', 'site'])" href="{{ site.url }}/careers.html">Join The Team</a>
+							| <a onclick="_gaq.push(['_trackEvent', 'Speakerdeck', 'site'])" href="https://speakerdeck.com/zumbatech">Talks</a>
+							| <a onclick="_gaq.push(['_trackEvent', 'Careers', 'site'])" href="{{ site.url }}/careers.html">Jobs</a>
 							| <a href="{{ site.url }}/privacy.html">Privacy</a>
 						</nav>
 					</div>
@@ -159,7 +143,7 @@
 		</footer>
 
 		<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
-		<script src="http://daigon.s3.amazonaws.com/developer/public/js/bootstrap.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="http://analytics-api-samples.googlecode.com/svn/trunk/src/tracking/javascript/v5/social/ga_social_tracking.js"></script>
 		<script type="text/javascript">
 			$(function() {
