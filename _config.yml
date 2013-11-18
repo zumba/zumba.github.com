@@ -1,6 +1,8 @@
 pygments: true
 exclude: [
-  README.md
+  README.md,
+  package.json,
+  gruntfile.js
 ]
 
 url: http://engineering.zumba.com
