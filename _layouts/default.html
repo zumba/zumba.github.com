@@ -56,7 +56,7 @@
 						</button>
 						<a class="brand header-brand" href="{{ site.url }}/" rel="home">
 							<img src="{{ site.url }}/img/main-logo-light.jpg" alt="Zumba Fitness">
-							<span class="page-title">Tech</span>
+							<span>Tech</span>
 						</a>
 					</div>
 					<nav class="navbar-collapse collapse navbar-responsive-collapse pull-right" itemscope itemtype="http://schema.org/SiteNavigationElement">
@@ -157,7 +157,6 @@
 					$('#' + job).show();
 					window.location.hash = 'job-' + job + '/';
 				});
-				console.log(window.location.hash);
 				if (window.location.hash.indexOf('job-') > 0) {
 					$(window.location.hash.substr(0, window.location.hash.length - 1)).trigger('click');
 				}
