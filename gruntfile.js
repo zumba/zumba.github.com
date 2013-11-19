@@ -11,10 +11,21 @@ module.exports = function(grunt) {
 				watch: true,
 				config: '_config.yml,_config.dev.yml'
 			}
+		},
+		compass: {
+			dist: {
+				options: {
+					sassDir: 'sass',
+					cssDir: 'css',
+					environment: 'production'
+				}
+			}
 		}
+
 	});
 
 	grunt.loadNpmTasks('grunt-jekyll');
+	grunt.loadNpmTasks('grunt-contrib-compass');
 
 	grunt.registerTask('default', 'jekyll');
 };

@@ -2,7 +2,8 @@ pygments: true
 exclude: [
   README.md,
   package.json,
-  gruntfile.js
+  gruntfile.js,
+  sass/
 ]
 
 paginate: 5
