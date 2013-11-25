@@ -21,6 +21,7 @@
 		<link rel="license" href="{{ site.url }}/licenses/zumba_mit_license.html">
 
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 		<link href="{{ site.url }}/css/screen.css" rel="stylesheet">
 
 		<!--[if lt IE 9]>
@@ -55,7 +56,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a class="brand header-brand" href="{{ site.url }}/" rel="home">
-							<img src="{{ site.url }}/img/main-logo-light.jpg" alt="Zumba Fitness">
+							<img src="{{ site.url }}/img/main-logo-light.jpg" alt="Zumba">
 							<span>Tech</span>
 						</a>
 					</div>
@@ -104,19 +105,8 @@
 		<footer>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3">
-						<a href="{{ site.url }}/"><img src="{{ site.url }}/img/main-logo.png" alt="Zumba Fitness"></a>
-					</div>
-					<div class="col-md-3">
-						<h4>Engineering at Zumba Fitness<sup>&reg;</sup></h4>
-						<p>Zumba Fitness<sup>&reg;</sup> is dedicated to delivering the best technology to its customers.</p>
-					</div>
-					<div class="col-md-3">
-						<h4>Contact Us</h4>
-						<a onclick="_gaq.push(['_trackEvent', 'Careers', 'email'])" href="mailto:{{ site.career_email }}">{{ site.career_email }}</a>
-					</div>
-					<div class="col-md-3">
-						<a href="https://twitter.com/zumbatech" class="twitter-follow-button" data-show-count="false">Follow @zumbatech</a>
+					<div class="col-xs-12">
+						<a href="https://twitter.com/zumbatech" class="twitter-follow-button pull-right" data-show-count="false">Follow @zumbatech</a>
 					</div>
 				</div>
 			</div>
@@ -127,8 +117,9 @@
 						<div class="col-md-8">
 							Copyright &copy;
 							<span itemprop="copyrightYear">2013</span>
-							<span itemprop="copyrightHolder publisher">Zumba Fitness, LLC</span>.
+							<span itemprop="copyrightHolder publisher">Zumba</span>.
 							All rights reserved.
+							<a onclick="_gaq.push(['_trackEvent', 'Careers', 'email'])" href="mailto:{{ site.career_email }}">{{ site.career_email }}</a>
 						</div>
 						<nav class="col-md-4" style="text-align: right">
 							<a onclick="_gaq.push(['_trackEvent', 'Feed', 'click'])" href="http://feeds.feedburner.com/zumba_engineering">Atom Feed</a>

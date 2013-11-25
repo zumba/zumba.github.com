@@ -4,13 +4,13 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Zumba Fitness Engineering</title>
+ <title>Zumba Tech</title>
  <link href="{{ site.url }}/atom.xml" rel="self"/>
  <link href="{{ site.url }}"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>{{ site.url }}</id>
  <author>
-   <name>Zumba Engineering</name>
+   <name>Zumba Tech</name>
    <email>{{ site.engineer_email }}</email>
  </author>
 
