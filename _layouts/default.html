@@ -188,7 +188,19 @@
 		<div id="fb-root"></div>
 		<script type="text/javascript">
 			window.fbAsyncInit = function() {
-				_ga.trackFacebook(); // Google Analytics tracking
+				try {
+					if (FB && FB.Event && FB.Event.subscribe) {
+						FB.Event.subscribe('edge.create', function(opt_target) {
+							ga('send', 'social', 'facebook', 'like', opt_target);
+						});
+						FB.Event.subscribe('edge.remove', function(opt_target) {
+							ga('send', 'social', 'facebook', 'unlike', opt_target);
+						});
+						FB.Event.subscribe('message.send', function(opt_target) {
+							ga('send', 'social', 'facebook', 'send', opt_target);
+						});
+					}
+				} catch (e) {}
 			}
 			(function(d, s, id) {
 			var js, fjs = d.getElementsByTagName(s)[0];
