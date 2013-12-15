@@ -167,9 +167,14 @@
 				return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
 			}(document,"script","twitter-wjs");
 			twttr.ready(function(twttr) {
-				_ga.trackTwitter(); // Google Analytics tracking
-				twttr.events.bind('follow', function (event) { // Google sample do not track follow actions
-					_gaq.push(_ga.getSocialActionTrackers_('twitter', 'follow-' + event.data.screen_name));
+				twttr.events.bind('follow', function (event) {
+					ga('send', 'social', 'twitter', 'follow-' + event.data.screen_name);
+				});
+				twttr.events.bind('click', function (event) {
+					ga('send', 'social', 'twitter', 'click-' + event.region);
+				});
+				twttr.events.bind('tweet', function (event) {
+					ga('send', 'social', 'twitter', 'tweet');
 				});
 			});
 		</script>
