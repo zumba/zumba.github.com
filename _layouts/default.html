@@ -32,17 +32,16 @@
 
 		{% if site.analytics_code %}{% if site.url == 'http://engineering.zumba.com' %}
 		<script type="text/javascript">
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', '{{ site.analytics_code }}']);
-			_gaq.push(['_trackPageview']);
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-			(function() {
-				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			})();
+			ga('create', '{{ site.analytics_code }}');
+			ga('send', 'pageview');
 		</script>
 		{% endif %}{% endif %}
+		<script>window.ga=window.ga||function(){};</script>
 	</head>
 
 	<body itemscope itemtype="http://schema.org/WebPage">
@@ -62,9 +61,9 @@
 					</div>
 					<nav class="navbar-collapse collapse navbar-responsive-collapse pull-right" itemscope itemtype="http://schema.org/SiteNavigationElement">
 						<ul class="nav navbar-nav">
-							<li><a onclick="_gaq.push(['_trackEvent', 'GitHub', 'site'])" href="https://github.com/zumba">Open Source</a></li>
-							<li><a onclick="_gaq.push(['_trackEvent', 'Speakerdeck', 'site'])" href="https://speakerdeck.com/zumbatech">Talks</a></li>
-							<li><a onclick="_gaq.push(['_trackEvent', 'Careers', 'site'])" href="{{ site.url }}/careers.html">Jobs</a></li>
+							<li><a onclick="ga('send', 'event', 'GitHub', 'site')" href="https://github.com/zumba">Open Source</a></li>
+							<li><a onclick="ga('send', 'event', 'Speakerdeck', 'site')" href="https://speakerdeck.com/zumbatech">Talks</a></li>
+							<li><a onclick="ga('send', 'event', 'Careers', 'site')" href="{{ site.url }}/careers.html">Jobs</a></li>
 						</ul>
 					</nav>
 					</div>
@@ -92,7 +91,7 @@
 							<ul class="nav nav-stacked">
 								<li class="nav-header">Recent Posts</li>
 								{% for post in site.posts limit:5 %}
-								<li><a onclick="_gaq.push(['_trackEvent', 'Recent Post', 'click', '{{ post.title }}'])" href="{{ site.url }}{{ post.url }}/">{{ post.title }}</a></li>
+								<li><a onclick="ga('send', 'event', 'Recent Post', 'click', '{{ post.title }}')" href="{{ site.url }}{{ post.url }}/">{{ post.title }}</a></li>
 								{% endfor %}
 							</ul>
 						</nav>
@@ -119,13 +118,13 @@
 							<span itemprop="copyrightYear">2013</span>
 							<span itemprop="copyrightHolder publisher">Zumba</span>.
 							All rights reserved.
-							<a onclick="_gaq.push(['_trackEvent', 'Careers', 'email'])" href="mailto:{{ site.career_email }}">{{ site.career_email }}</a>
+							<a onclick="ga('send', 'event', 'Careers', 'email')" href="mailto:{{ site.career_email }}">{{ site.career_email }}</a>
 						</div>
 						<nav class="col-md-4" style="text-align: right">
-							<a onclick="_gaq.push(['_trackEvent', 'Feed', 'click'])" href="http://feeds.feedburner.com/zumba_engineering">Atom Feed</a>
-							| <a onclick="_gaq.push(['_trackEvent', 'GitHub', 'site'])" href="https://github.com/zumba">Open Source</a>
-							| <a onclick="_gaq.push(['_trackEvent', 'Speakerdeck', 'site'])" href="https://speakerdeck.com/zumbatech">Talks</a>
-							| <a onclick="_gaq.push(['_trackEvent', 'Careers', 'site'])" href="{{ site.url }}/careers.html">Jobs</a>
+							<a onclick="ga('send', 'event', 'Feed', 'click')" href="http://feeds.feedburner.com/zumba_engineering">Atom Feed</a>
+							| <a onclick="ga('send', 'event', 'GitHub', 'site')" href="https://github.com/zumba">Open Source</a>
+							| <a onclick="ga('send', 'event', 'Speakerdeck', 'site')" href="https://speakerdeck.com/zumbatech">Talks</a>
+							| <a onclick="ga('send', 'event', 'Careers', 'site')" href="{{ site.url }}/careers.html">Jobs</a>
 							| <a href="{{ site.url }}/privacy.html">Privacy</a>
 						</nav>
 					</div>
