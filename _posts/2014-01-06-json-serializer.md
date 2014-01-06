@@ -70,7 +70,7 @@ define what will be stored in the JSON and what to execute when unserialize. It 
 
 It is also not a problem. We treat on the library code recursions. You can call the serialize method and enjoy it.
 
-### F*cking amazing, but I doubt it will work on my old environment.
+### F\*cking amazing, but I doubt it will work on my old environment.
 
 The library supports PHP 5.3.6 and above. We don't need any other dependency. If you are using any version before
 that, stop to read blogs and go to upgrade your system! PHP 5.3 only has a few months of support left.
