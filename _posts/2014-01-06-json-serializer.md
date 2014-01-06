@@ -44,7 +44,7 @@ responding the entity to your API, for example.
 
 ### What about to use `json_encode` with `Serializable` interface?
 
-Nops. If your entity implements `Serializable`, you can define how to serialize and unserialize, but PHP put their
+Nope. If your entity implements `Serializable`, you can define how to serialize and unserialize, but PHP put their
 serializable code around it, which means the output is not 100% JSON.
 
 ### Hmmm, so what about JMS Serializer?
@@ -77,7 +77,7 @@ that, stop to read blogs and go to upgrade your system! PHP 5.3 has more than 3 
 
 ### Is the library incompatible with `Serializable` or `JsonSerializable`?
 
-Nops. Each one has one different functionality, so everything is fine. You can still using the `Serializable` with
+Nope. Each one has one different functionality, so everything is fine. You can still using the `Serializable` with
 `serialize()` and `unserialize()` functions. You can use `JsonSerializable` with `json_encode()` to respond to your
 API and our library to serialize the object for internal storage.
 
