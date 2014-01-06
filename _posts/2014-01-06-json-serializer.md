@@ -73,7 +73,7 @@ It is also not a problem. We treat on the library code recursions. You can call 
 ### F*cking amazing, but I doubt it will work on my old environment.
 
 The library supports PHP 5.3.6 and above. We don't need any other dependency. If you are using any version before
-that, stop to read blogs and go to upgrade your system! PHP 5.3 has more than 3 years.
+that, stop to read blogs and go to upgrade your system! PHP 5.3 only has a few months of support left.
 
 ### Is the library incompatible with `Serializable` or `JsonSerializable`?
 
@@ -81,7 +81,7 @@ Nope. Each one has one different functionality, so everything is fine. You can s
 `serialize()` and `unserialize()` functions. You can use `JsonSerializable` with `json_encode()` to respond to your
 API and our library to serialize the object for internal storage.
 
-### You are talking too much, seems a car seller. Do you have some code to show?
+### You are talking too much, seems you are a car salesmen. Do you have some code to show?
 
 Indeed, let's go to some example:
 
