@@ -47,6 +47,12 @@ responding the entity to your API, for example.
 Nops. If your entity implements `Serializable`, you can define how to serialize and unserialize, but PHP put their
 serializable code around it, which means the output is not 100% JSON.
 
+### Hmmm, so what about JMS Serializer?
+
+[JMS Serializer](http://jmsyst.com/libs/serializer) is a great library and does serialize to JSON, but it doesn't have
+many of the features that this library does. For example, when you de-serialize, you have to pass the class where the
+data was generated. Also, they don't support nested encoding. 
+
 ### Why not to create a method to aggregate all the data and respond as JSON?
 
 Yes, you can. But are you sure you want to make a method to go over all situations and nested levels to aggregate
