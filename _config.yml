@@ -187,4 +187,42 @@ jobs:
       - "Experience with displaying XML content from a CMS"
       - "Experience with source code control systems (preferably Git)."
       - "Knowledge of industry-standard design tools such as Fireworks and Axure."
-
+  devop_eng:
+    name: DevOps Engineer
+    slug: devop_eng
+    responsibilities:
+      - Master the overall site architecture and look for ways to improve our LAMP, storage and cloud infrastructures.
+      - Grow and improve the infrastructure to handle scalability for rapid growth. Lead the adoption of the latest technologies for scaling a large web site
+      - Create new tools to be used by our Development team for troubleshooting and automation.
+      - Work with developers to remove scalability bottlenecks such as slow database queries, requests with high GC hit rates and memory leaks.
+      - Working in an Agile/Scrum process with developers, maintain and improve testing and staging environments. Support QA function by enabling automated testing, continuous deployments and optimizing the release process.
+      - Deploy, maintain and troubleshoot problems with internal services.
+      - Contribute to open source technology including our infrastructure management tool Chef. Research and implement industry standard tools as we scale our site.
+      - Maintain and improve our internal package and configuration management systems.
+      - In-depth understanding and appreciation of security, durability and availability concerns in distributed environments
+      - Create, setup, and run performance tests to help determine optimal hosting configurations
+      - Implement disaster recovery and failover systems
+      - Strive for the industry unicorn of 99.99% site uptime
+      - Monitor overall site performance, stability, and health, including being on call for site issues such as alert handling and disaster recovery. Provide support to deployment and production issues during and off regular office hours.
+    requirements:
+      - BS in Electrical Engineering, Computer Engineering or Computer Science, or related experience
+      - 5+ years experience in supporting systems in a fast-paced environment with a complex distribution system
+      - 3+ years of experience working on a high volume website.
+      - 3+ years experience in Internet facing applications, security concerns and vulnerability assessment, virtualization, network protocols (HTTP/S, SSL, SSH)
+      - Server-side development experience in highly concurrent systems
+      - Unrivaled proficiency in Linux server administration, including network tuning.
+      - A deep and abiding love for building scalable, high performance systems.
+      - Understanding what it means to run a global infrastructure in the Cloud. Knowledge of cloud hosting, specifically Amazon EC2.
+      - Experience with a scripting language (Bash, Ruby, and Python) required.
+      - Experience configuring a server using a configuration management tool like Chef or Puppet required.
+      - Strong systems software, automation techniques, Network Protocols, Web services, Operating System internals, clustering, failover, disaster recovery, database skills and knowledge.
+      - Expertise tuning Linux systems for a variety of network traffic, diagnosing network-level issues required.
+      - Experience with caching technologies like Memcached.
+      - Self-starter, able to work with little or no supervision.
+    desireable:
+      - Multi-homed websites, virtualization (EC2, xen), Redis experience is a major plus.
+      - Experience with ElasticSearch, php5+ and Git is a major plus.
+      - Experience with Agile/Scrum desirable.
+      - Other Software development experience.
+      - Strong communication skills.
+      - Strong problem solving and analytic skills.
