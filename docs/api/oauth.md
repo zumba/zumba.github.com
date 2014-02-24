@@ -1,15 +1,13 @@
 ---
 layout: default
-title: Zumba API - Documentation - OAuth
+title: Zumba API OAuth - Documentation
 description: OAuth documentation
 author: cjsaylor
 ---
 
-# Zumba OAuth Documentation
-
 <ul class="breadcrumb">
 	<li><a href="{{site_url}}/docs">Documentation</a></li>
-	<li>API</li>
+	<li><a href="{{site_url}}/docs/api">API</a></li>
 	<li class="active">OAuth2</li>
 </ul>
 
@@ -22,7 +20,7 @@ The following steps are required in order get access to the API on the user's be
 
 <br>
 
-* **Redirect users to request Zumba acess.**
+> Redirect users to request Zumba acess.
 
 ```
 GET https://www.zumba.com/oauth/authorize
@@ -40,14 +38,14 @@ state | `Required` A random string used to verify the redirect and auth code cam
 
 <br>
 
-* **Zumba redirects to your application with an authorization code and the state passed.**
+> Zumba redirects to your application with an authorization code and the state passed.
 
 The redirect occurs if the user authorizes your application's permissions.
 The redirect will include a `code` parameter and the `state` your application originally passed.
 
 <br>
 
-* **Exchange authorization code for an access token.**
+> Exchange authorization code for an access token.
 
 ```
 POST https://www.zumba.com/oauth/access_token
@@ -77,7 +75,7 @@ redirect_uri | `Required` The URL to redirect to after the user has given permis
 
 <br>
 
-* **Using the access token with the API.**
+> Using the access token with the API.
 
 ```bash
 curl -H "Authorization: Bearer e86285803dd51b76ca3656f3c8f7afe460c29bd3" https://apiv3.zumba.com/...
