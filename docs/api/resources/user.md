@@ -13,6 +13,7 @@ author: cjsaylor
 </ul>
 
 **TOC**
+
 <ul>
 	<li><a href="#getUser">GET /user</a></li>
 	<li><a href="#getUserClasses">GET /user/classes</a></li>
@@ -21,6 +22,7 @@ author: cjsaylor
 <hr>
 
 <span id="getUser"></span>
+
 ### `GET /user` <span class="label label-info">Proposed</span><span class="label label-danger">Incomplete</span>
 
 > Retrieve user info.
@@ -54,6 +56,7 @@ If the scope of the OAuth token includes nutrition, then the response will inclu
 <hr>
 
 <span id="getUserClasses"></span>
+
 ### `GET /user/classes` <span class="label label-info">Proposed</span><span class="label label-danger">Incomplete</span>
 
 > Retrieve a list of an instructor's weekly classes.
