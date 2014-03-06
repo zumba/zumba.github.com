@@ -16,7 +16,6 @@ author: cjsaylor
 
 * [GET /class/:id](#getClass)
 * [GET /class/:id/students](#getClassStudents)
-* [GET /class/checkins](#getClassCheckins)
 
 <hr>
 
@@ -74,43 +73,3 @@ author: cjsaylor
 --- | ---
 `0` | Not current in payment.
 `1` | Current in payment.
-
-<hr>
-
-<span id="getClassCheckins"></span>
-### `GET /class/checkins` <span class="label label-info">Proposed</span><span class="label label-danger">Incomplete</span>
-
-> Retrieve a user's checkin history.
-
-**Parameters**
-
-{:.table}
-*Name* | *Description*
---- | ---
-`start_date` | <span class="label label-warning">Required</span> Date to begin looking for records.
-`offset` | Number of records to offset on the request.
-`max` | Number of records to return in the response.
-
-**Response**
-
-```
-{
-  "id": String,
-  "class_id": String,
-  "source": String,
-  "type": String,
-  "datetime": "0000-00-00T00:00:00+00:00",
-  "location": {
-    "city": String,
-    "state": String,
-    "country": String
-  },
-  "_uris": {
-    "class": "https://apiv3.zumba.com/class/:id"
-  }
-}
-```
-
-**Response Headers**
-
-See [pagination documentation]({{site_url}}/docs/api/pagination.html) for the pagination handling mechanism.
