@@ -59,6 +59,9 @@ author: cjsaylor
 [
   {
     "user_id": String,
+    "first_name": String,
+    "last_name": String,
+    "email_address": String,
     "status": Integer
   }
 ]
@@ -86,7 +89,7 @@ author: cjsaylor
 --- | ---
 `start_date` | <span class="label label-warning">Required</span> Date to begin looking for records.
 `offset` | Number of records to offset on the request.
-`max` | Number of records to return in the response. 
+`max` | Number of records to return in the response.
 
 **Response**
 
