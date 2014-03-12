@@ -33,7 +33,7 @@ GET https://www.zumba.com/oauth/authorize
 --- | ---
 client_id | `Required` The client ID you recieve from Zumba.
 redirect_uri | `Required` The URL to redirect to after the user has given permission.
-scope | A comma separated list of scopes that your application needs for permission.
+scope | A list separated by __spaces__ of scopes that your application needs for permission.
 state | `Required` A random string used to verify the redirect and auth code came from Zumba.
 
 <br>

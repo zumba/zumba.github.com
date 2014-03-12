@@ -16,5 +16,5 @@ Some request permissions are reliant of the scope of the OAuth token provided.
 {:.table}
 *Scope Name* | *Description*
 --- | ---
-
-TBD
+`basic` | Basic access to user information.
+`nutrition` | Access to nutrition specific return parameters and endpoints.
