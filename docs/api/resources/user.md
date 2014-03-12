@@ -50,7 +50,7 @@ If the scope of the OAuth token includes nutrition, then the response will inclu
 
 ```
 {
-  plate_status: Integer
+  nutrition_status: Integer
 }
 ```
 
