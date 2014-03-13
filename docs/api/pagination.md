@@ -35,6 +35,8 @@ It is important to always rely on the `Link` header to provide you with navicabl
 `first` | URL of the first page of results.
 `last` | URL of the last page of results.
 
+Note: If there is not a next, previous, etc page available, the link for those will not be provided.
+
 ### `X-Total` Header
 
 An `X-Total` header will indicate to the client how many total results are available. A `X-Total` header may look something like:
