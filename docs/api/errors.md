@@ -11,7 +11,7 @@ author: juliancc
   <li class="active">Errors</li>
 </ul>
 
-Sending invalid fields will result in a 400 Unprocessable Entity response.
+Sending invalid fields will result in a 400 Bad Request.
 
 For all failure cases throughout the API, there is a common format:
 
