@@ -77,10 +77,10 @@ Note: `day_of_week` starts `0` = Sunday.
 [
   {
     "id": String,
-    "start_time": "00:00",
-    "end_time": "00:00",
-    "start_date": "0000-00-00",
-    "end_date": "0000-00-00",
+    "start_time": String (format "hh:mm"),
+    "end_time": String (format "hh:mm"),
+    "start_date": Null (When class does not have an end date) or String (format "yyyy-mm-dd"),
+    "end_date":  Null (When class does not have an end date) or String (format "yyyy-mm-dd"),
     "day_of_week": Integer,
     "type": String,
     "location": {
@@ -127,7 +127,7 @@ Note: `day_of_week` starts `0` = Sunday.
     "class_id": String,
     "source": String,
     "type": String,
-    "datetime": "0000-00-00T00:00:00+00:00",
+    "datetime": String (format: YYYY-MM-DDThh:mm:ssTZD),
     "location": {
       "city": String,
       "state": String,
