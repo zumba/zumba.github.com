@@ -124,14 +124,24 @@ Note: `day_of_week` starts `0` = Sunday.
 [
   {
     "id": String,
-    "class_id": String,
     "source": String,
-    "type": String,
     "datetime": String (format: YYYY-MM-DDThh:mm:ssTZD),
     "location": {
+      "street": String,
+      "street_2": String,
       "city": String,
       "state": String,
-      "country": String
+      "postal_code": String,
+      "country": String,
+      "name": String,
+      "lat": Float,
+      "lng": Float,
+      "class": {
+        id: String,
+        start_time: String (format "hh:mm"),
+        end_time: String (format "hh:mm"),
+        type: String
+      }
     },
     "_uris": {
       "class": "https://apiv3.zumba.com/class/:id"
@@ -139,6 +149,7 @@ Note: `day_of_week` starts `0` = Sunday.
   }
 ]
 ```
+
 
 **Response Headers**
 
