@@ -16,4 +16,5 @@ author: cjsaylor
 * General
 	* [Pagination]({{site_url}}/docs/api/pagination.html)
 	* [Hypermedia]({{site_url}}/docs/api/hypermedia.html)
+	* [Errors]({{site_url}}/docs/api/errors.html)
 * [Resources]({{site_url}}/docs/api/resources)
