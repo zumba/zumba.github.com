@@ -5,7 +5,11 @@ description: Errors documentation
 author: juliancc
 ---
 
-# Client Errors #
+<ul class="breadcrumb">
+  <li><a href="{{site_url}}/docs">Documentation</a></li>
+  <li><a href="{{site_url}}/docs/api">API</a></li>
+  <li class="active">Errors</li>
+</ul>
 
 Sending invalid fields will result in a 422 Unprocessable Entity response.
 
