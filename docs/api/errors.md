@@ -1,3 +1,10 @@
+---
+layout: default
+title: Zumba API Errors - Documentation
+description: Errors documentation
+author: juliancc
+---
+
 # Client Errors #
 
 Sending invalid fields will result in a 422 Unprocessable Entity response.
