@@ -17,14 +17,14 @@ author: cjsaylor
 <ul>
 	<li><a href="#getUser">GET /user</a></li>
 	<li><a href="#getUserClasses">GET /user/classes</a></li>
-	<li><a href="#getClassCheckins">GET /class/checkins]</a></li>
+	<li><a href="#getClassCheckins">GET /class/checkins</a></li>
 </ul>
 
 <hr>
 
 <span id="getUser"></span>
 
-### `GET /user` <span class="label label-info">Proposed</span><span class="label label-danger">Incomplete</span>
+### `GET /user`
 
 > Retrieve user info.
 
@@ -58,7 +58,7 @@ If the scope of the OAuth token includes nutrition, then the response will inclu
 
 <span id="getUserClasses"></span>
 
-### `GET /user/classes` <span class="label label-info">Proposed</span><span class="label label-danger">Incomplete</span>
+### `GET /user/classes`
 
 > Retrieve a list of an instructor's weekly classes.
 
@@ -77,18 +77,23 @@ Note: `day_of_week` starts `0` = Sunday.
 [
   {
     "id": String,
-    "start_time": "00:00:00+00:00",
-    "end_time": "00:00:00+00:00",
+    "start_time": String (format "hh:mm"),
+    "end_time": String (format "hh:mm"),
+    "start_date": Null (When class does not have an end date) or String (format "yyyy-mm-dd"),
+    "end_date":  Null (When class does not have an end date) or String (format "yyyy-mm-dd"),
     "day_of_week": Integer,
     "type": String,
     "location": {
       "name": String,
+      "type": String,
       "street": String,
       "street_2": String,
       "city": String,
       "state": String,
       "country": String,
-      "postal_code": String
+      "postal_code": String,
+      "lat": Float,
+      "lng": Float
     },
     "_uris": {
       "class": "https://apiv3.zumba.com/class/:id"
@@ -119,14 +124,24 @@ Note: `day_of_week` starts `0` = Sunday.
 [
   {
     "id": String,
-    "class_id": String,
     "source": String,
-    "type": String,
-    "datetime": "0000-00-00T00:00:00+00:00",
+    "datetime": String (format: YYYY-MM-DDThh:mm:ssTZD),
     "location": {
+      "street": String,
+      "street_2": String,
       "city": String,
       "state": String,
-      "country": String
+      "postal_code": String,
+      "country": String,
+      "name": String,
+      "lat": Float,
+      "lng": Float,
+      "class": {
+        id: String,
+        start_time: String (format "hh:mm"),
+        end_time: String (format "hh:mm"),
+        type: String
+      }
     },
     "_uris": {
       "class": "https://apiv3.zumba.com/class/:id"
@@ -134,6 +149,7 @@ Note: `day_of_week` starts `0` = Sunday.
   }
 ]
 ```
+
 
 **Response Headers**
 
