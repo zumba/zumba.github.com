@@ -105,7 +105,7 @@ Note: `day_of_week` starts `0` = Sunday.
 <hr>
 
 <span id="getClassCheckins"></span>
-### `GET /user/checkins` <span class="label label-info">Proposed</span><span class="label label-danger">Incomplete</span>
+### `GET /user/checkins`
 
 > Retrieve a user's checkin history.
 
