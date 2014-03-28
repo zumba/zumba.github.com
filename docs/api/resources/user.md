@@ -48,6 +48,12 @@ author: cjsaylor
 
 If the scope of the OAuth token includes nutrition, then the response will include additionally:
 
+{:.table}
+*Field* | *Code* | *Description*
+--- | --- | ---
+`nutrition_status` | 0 | Inactive or No nutrition membership
+`nutrition_status` | 1 | Active Nutrition Membership
+
 ```
 {
   nutrition_status: Integer
