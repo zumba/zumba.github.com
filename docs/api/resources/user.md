@@ -16,6 +16,7 @@ author: cjsaylor
 
 <ul>
 	<li><a href="#getUser">GET /user</a></li>
+  <li><a href="#postUser">POST /user</a></li>
 	<li><a href="#getUserClasses">GET /user/classes</a></li>
 	<li><a href="#getClassCheckins">GET /class/checkins</a></li>
 </ul>
@@ -59,6 +60,31 @@ If the scope of the OAuth token includes nutrition, then the response will inclu
   nutrition_status: Integer
 }
 ```
+
+<hr>
+
+<span id="postUser"></span>
+
+### `POST /user`
+
+> Create a new user account
+
+
+**Post Parameters**
+
+{:.table}
+*Field* | *Type* | *Requirement*
+--- | --- | ---
+username | String | Required
+password | String | Required
+email_address | String | Required
+first_name | String | Required
+last_name | String | Required
+
+**Response**
+
+If successful this endpoint will return the response from <a href="#getUser">GET /user</a>.
+
 
 <hr>
 
