@@ -12,7 +12,7 @@ only to find the maintainer rejecting your pull request on the grounds of some i
 standard? How many times as a maintainer of an open-source project (or internal) have you had a
 hard time reading code because there were careless tabs/spaces mixed, `if` statements with no brackets,
 and other such things. Luckily there are tools that can assist maintainers. In this post,
-I'll be going over how to use [composer](http://getcomposer.org), git hooks, and [phpcs](https://github.com/squizlabs/PHP_CodeSniffer) to
+I'll be going over how to use [composer](http://getcomposer.org), [git hooks](http://git-scm.com/book/en/Customizing-Git-Git-Hooks), and [phpcs](https://github.com/squizlabs/PHP_CodeSniffer) to
 enforce code quality rules.
 
 There are a couple of things to keep in mind. First, you want this process to be as simple as possible.
