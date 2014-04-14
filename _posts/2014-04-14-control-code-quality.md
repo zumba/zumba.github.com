@@ -92,8 +92,7 @@ With all of these things in place, the workflow is as follows:
 
 * Developer runs `composer install`.
 * PHP Code Sniffer is installed via a dev dependency.
-* The post-install command executes automatically copying the pre-commit hook into the developer's
-local git hooks.
+* The post-install command automatically copies the pre-commit hook into the developer's local git hooks.
 * When the developer commits code, the pre-commit hook fires and checks the staged files for coding standards violations and lint checks.
 
 This is a relatively simple setup that can save pull request code reviews a significant amount of time preventing
