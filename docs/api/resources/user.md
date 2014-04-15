@@ -16,6 +16,7 @@ author: cjsaylor
 
 <ul>
 	<li><a href="#getUser">GET /user</a></li>
+	<li><a href="#postUser">POST /user</a></li>
 	<li><a href="#getUserClasses">GET /user/classes</a></li>
 	<li><a href="#getClassCheckins">GET /class/checkins</a></li>
 </ul>
@@ -32,17 +33,17 @@ author: cjsaylor
 
 ```
 {
-  "id": String,
-  "username": String,
-  "email_address": String,
-  "first_name": String,
-  "last_name": String,
-  "pid": String,
-  "branch": String,
-  "isZIN": Boolean,
-  "isZES": Boolean,
-  "isZJ": Boolean,
-  "isGym": Boolean
+	"id": String,
+	"username": String,
+	"email_address": String,
+	"first_name": String,
+	"last_name": String,
+	"pid": String,
+	"branch": String,
+	"isZIN": Boolean,
+	"isZES": Boolean,
+	"isZJ": Boolean,
+	"isGym": Boolean
 }
 ```
 
@@ -56,9 +57,34 @@ If the scope of the OAuth token includes nutrition, then the response will inclu
 
 ```
 {
-  nutrition_status: Integer
+	nutrition_status: Integer
 }
 ```
+
+<hr>
+
+<span id="postUser"></span>
+
+### `POST /user`
+
+> Create a new user account
+
+
+**Post Parameters**
+
+{:.table}
+*Field* | *Type* | *Requirement*
+--- | --- | ---
+username | String | Required
+password | String | Required
+email_address | String | Required
+first_name | String | Required
+last_name | String | Required
+
+**Response**
+
+If successful this endpoint will return the response from <a href="#getUser">GET /user</a>.
+
 
 <hr>
 
@@ -81,30 +107,30 @@ Note: `day_of_week` starts `0` = Sunday.
 
 ```
 [
-  {
-    "id": String,
-    "start_time": String (format "hh:mm"),
-    "end_time": String (format "hh:mm"),
-    "start_date": Null (When class does not have an end date) or String (format "yyyy-mm-dd"),
-    "end_date":  Null (When class does not have an end date) or String (format "yyyy-mm-dd"),
-    "day_of_week": Integer,
-    "type": String,
-    "location": {
-      "name": String,
-      "type": String,
-      "street": String,
-      "street_2": String,
-      "city": String,
-      "state": String,
-      "country": String,
-      "postal_code": String,
-      "lat": Float,
-      "lng": Float
-    },
-    "_uris": {
-      "class": "https://apiv3.zumba.com/class/:id"
-    }
-  }
+	{
+		"id": String,
+		"start_time": String (format "hh:mm"),
+		"end_time": String (format "hh:mm"),
+		"start_date": Null (When class does not have an end date) or String (format "yyyy-mm-dd"),
+		"end_date":  Null (When class does not have an end date) or String (format "yyyy-mm-dd"),
+		"day_of_week": Integer,
+		"type": String,
+		"location": {
+			"name": String,
+			"type": String,
+			"street": String,
+			"street_2": String,
+			"city": String,
+			"state": String,
+			"country": String,
+			"postal_code": String,
+			"lat": Float,
+			"lng": Float
+		},
+		"_uris": {
+			"class": "https://apiv3.zumba.com/class/:id"
+		}
+	}
 ]
 ```
 
@@ -128,31 +154,31 @@ Note: `day_of_week` starts `0` = Sunday.
 
 ```
 [
-  {
-    "id": String,
-    "source": String,
-    "datetime": String (format: YYYY-MM-DDThh:mm:ssTZD),
-    "location": {
-      "street": String,
-      "street_2": String,
-      "city": String,
-      "state": String,
-      "postal_code": String,
-      "country": String,
-      "name": String,
-      "lat": Float,
-      "lng": Float,
-      "class": {
-        id: String,
-        start_time: String (format "hh:mm"),
-        end_time: String (format "hh:mm"),
-        type: String
-      }
-    },
-    "_uris": {
-      "class": "https://apiv3.zumba.com/class/:id"
-    }
-  }
+	{
+		"id": String,
+		"source": String,
+		"datetime": String (format: YYYY-MM-DDThh:mm:ssTZD),
+		"location": {
+			"street": String,
+			"street_2": String,
+			"city": String,
+			"state": String,
+			"postal_code": String,
+			"country": String,
+			"name": String,
+			"lat": Float,
+			"lng": Float,
+			"class": {
+				id: String,
+				start_time: String (format "hh:mm"),
+				end_time: String (format "hh:mm"),
+				type: String
+			}
+		},
+		"_uris": {
+			"class": "https://apiv3.zumba.com/class/:id"
+		}
+	}
 ]
 ```
 
