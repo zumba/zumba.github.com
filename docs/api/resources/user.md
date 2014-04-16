@@ -18,7 +18,7 @@ author: cjsaylor
 	<li><a href="#getUser">GET /user</a></li>
 	<li><a href="#postUser">POST /user</a></li>
 	<li><a href="#getUserClasses">GET /user/classes</a></li>
-	<li><a href="#getClassCheckins">GET /class/checkins</a></li>
+	<li><a href="#getUserCheckins">GET /user/checkins</a></li>
 </ul>
 
 <hr>
@@ -75,11 +75,11 @@ If the scope of the OAuth token includes nutrition, then the response will inclu
 {:.table}
 *Field* | *Type* | *Requirement*
 --- | --- | ---
-username | String | Required
-password | String | Required
-email_address | String | Required
-first_name | String | Required
-last_name | String | Required
+username | String | <span class="label label-warning">Required</span>
+password | String | <span class="label label-warning">Required</span>
+email_address | String | <span class="label label-warning">Required</span>
+first_name | String | <span class="label label-warning">Required</span>
+last_name | String | <span class="label label-warning">Required</span>
 
 **Response**
 
