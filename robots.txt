@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://engineering.zumba.com/sitemap.xml
+Sitemap: http://tech.zumba.com/sitemap.xml
