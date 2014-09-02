@@ -104,8 +104,8 @@ type | Class type (`?type=nutrition`, or multiple: `?type[]=nutrition&type[]=zum
 
 Note: `day_of_week` starts `0` = Sunday.
 
-Note 2: `nutrition` type will only returns classes teached by the user. It will not include
-classes where the user in student of. See endpoint `/user/student/classes`.
+Note 2: `nutrition` type will only returns classes taught by the user. It will not include
+classes where the user is attending. See endpoint `/user/student/classes`.
 
 **Response**
 
