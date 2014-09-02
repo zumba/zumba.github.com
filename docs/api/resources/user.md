@@ -19,6 +19,7 @@ author: cjsaylor
 	<li><a href="#postUser">POST /user</a></li>
 	<li><a href="#getUserClasses">GET /user/classes</a></li>
 	<li><a href="#getUserCheckins">GET /user/checkins</a></li>
+	<li><a href="#getUserStudentClasses">GET /user/student/classes</a></li>
 </ul>
 
 <hr>
@@ -103,6 +104,9 @@ type | Class type (`?type=nutrition`, or multiple: `?type[]=nutrition&type[]=zum
 
 Note: `day_of_week` starts `0` = Sunday.
 
+Note 2: `nutrition` type will only returns classes taught by the user. It will not include
+classes where the user is attending. See endpoint `/user/student/classes`.
+
 **Response**
 
 ```
@@ -186,3 +190,57 @@ Note: `day_of_week` starts `0` = Sunday.
 **Response Headers**
 
 See [pagination documentation]({{site_url}}/docs/api/pagination.html) for the pagination handling mechanism.
+
+<hr>
+
+<span id="getUserStudentClasses"></span>
+
+### `GET /user/student/classes`
+
+> Retrieve a list of student classes.
+
+**Parameters**
+
+{:.table}
+*Name* | *Description*
+--- | ---
+type | Class type (`?type=nutrition`, or multiple: `?type[]=nutrition&type[]=zumbini`)
+
+Note: `day_of_week` starts `0` = Sunday.
+
+**Response**
+
+```
+[
+	{
+		"id": String,
+		"start_time": String (format "hh:mm"),
+		"end_time": String (format "hh:mm"),
+		"start_date": Null (When class does not have an end date) or String (format "yyyy-mm-dd"),
+		"end_date":  Null (When class does not have an end date) or String (format "yyyy-mm-dd"),
+		"day_of_week": Integer,
+		"type": String,
+		"instructor": {
+			"user_id": String,
+			"first_name": String,
+			"last_name": String,
+			"email_address": String
+		},
+		"location": {
+			"name": String,
+			"type": String,
+			"street": String,
+			"street_2": String,
+			"city": String,
+			"state": String,
+			"country": String,
+			"postal_code": String,
+			"lat": Float,
+			"lng": Float
+		},
+		"_uris": {
+			"class": "https://apiv3.zumba.com/class/:id"
+		}
+	}
+]
+```

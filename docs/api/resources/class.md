@@ -34,6 +34,12 @@ author: cjsaylor
   "end_time": "00:00:00+00:00",
   "day_of_week": Integer,
   "type": String,
+  "instructor": {
+    "user_id": String,
+    "first_name": String,
+    "last_name": String,
+    "email_address": String
+  },
   "location": {
     "name": String,
     "street": String,
