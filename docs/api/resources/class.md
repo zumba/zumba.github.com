@@ -21,13 +21,15 @@ author: cjsaylor
 <hr>
 
 <span id="getClass"></span>
+
+
 ### `GET /class/:id`
 
 > Retrieve information about a class
 
 **Response**
 
-```
+~~~
 {
   "id": String,
   "start_time": "00:00:00+00:00",
@@ -50,18 +52,20 @@ author: cjsaylor
     "postal_code": String
   }
 }
-```
+~~~
 
 <hr>
 
 <span id="getClassStudents"></span>
+
+
 ### `GET /class/:id/students`
 
 > Retrieve student list with statuses for all students associated to an instructor's class.
 
 **Response**
 
-```json
+~~~
 [
   {
     "user_id": String,
@@ -71,7 +75,7 @@ author: cjsaylor
     "status": Integer
   }
 ]
-```
+~~~
 
 `status` can be:
 
@@ -84,6 +88,8 @@ author: cjsaylor
 <hr>
 
 <span id="postClassInvite"></span>
+
+
 ### `POST /class/:id/invite` <span class="label label-info">Proposed</span><span class="label label-danger">Incomplete</span>
 
 > Generates an invitation to a class

@@ -20,6 +20,7 @@ author: cjsaylor
 <hr>
 
 <span id="getCommission"></span>
+
 ### `GET /commission` <span class="label label-info">Proposed</span><span class="label label-danger">Incomplete</span>
 
 > Retrieve a history of commission payments.
@@ -37,7 +38,7 @@ author: cjsaylor
 
 **Response**
 
-```
+~~~
 [
 	{
 		"date": "YYYY-MM-DD",
@@ -47,7 +48,7 @@ author: cjsaylor
 		"status": Integer
 	}
 ]
-```
+~~~
 
 **Response Headers**
 
@@ -56,6 +57,7 @@ See [pagination documentation]({{site_url}}/docs/api/pagination.html) for the pa
 <hr>
 
 <span id="getNextCommission"></span>
+
 ### `GET /commission/next` <span class="label label-info">Proposed</span><span class="label label-danger">Incomplete</span>
 
 > Retrieve info about the next commission payment.
@@ -69,7 +71,7 @@ See [pagination documentation]({{site_url}}/docs/api/pagination.html) for the pa
 
 **Response**
 
-```
+~~~
 {
     "date": "YYYY-MM-DD",
     "amount": Float,
@@ -77,6 +79,6 @@ See [pagination documentation]({{site_url}}/docs/api/pagination.html) for the pa
     "commission_events": Integer,
     "status": Integer
 }
-```
+~~~
 
 <hr>

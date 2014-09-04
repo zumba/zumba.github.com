@@ -18,10 +18,10 @@ If a resource supports hypermedia, the response will include a `_uris` entry wit
 
 Example:
 
-```json
+~~~
 {
   "_uris": {
     "class": "https://apiv3.zumba.com/class/1209012750124124"
   }
 }
-```
+~~~

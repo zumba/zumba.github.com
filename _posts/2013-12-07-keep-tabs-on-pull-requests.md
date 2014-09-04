@@ -25,13 +25,17 @@ An example report from running Drill Sergeant against the CakePHP project config
 
 The command for the above:
 
-`GITHUB_TOKEN=atokenhere drillsergeant -e "myemail@address" -r "cakephp/cakephp" -s 168 # 24 * 7`
+~~~
+GITHUB_TOKEN=atokenhere drillsergeant -e "myemail@address" -r "cakephp/cakephp" -s 168 # 24 * 7
+~~~
 
 ### Schedule It with Crontab
 
 This tool is meant to be run on a schedule and it's easy to setup to get daily reports:
 
-`0 0 * * *	GITHUB_TOKEN=atokenhere drillsergeant -e "myemail@address" -r "cakephp/cakephp" -s 168`
+~~~
+0 0 * * *	GITHUB_TOKEN=atokenhere drillsergeant -e "myemail@address" -r "cakephp/cakephp" -s 168
+~~~
 
 ### Install It
 

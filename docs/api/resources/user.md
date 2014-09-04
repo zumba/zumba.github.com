@@ -26,13 +26,14 @@ author: cjsaylor
 
 <span id="getUser"></span>
 
+
 ### `GET /user`
 
 > Retrieve user info.
 
 **Response**
 
-```
+~~~
 {
 	"id": String,
 	"username": String,
@@ -46,7 +47,7 @@ author: cjsaylor
 	"isZJ": Boolean,
 	"isGym": Boolean
 }
-```
+~~~
 
 If the scope of the OAuth token includes nutrition, then the response will include additionally:
 
@@ -56,15 +57,16 @@ If the scope of the OAuth token includes nutrition, then the response will inclu
 `nutrition_status` | 0 | Inactive or No nutrition membership
 `nutrition_status` | 1 | Active Nutrition Membership
 
-```
+~~~
 {
 	nutrition_status: Integer
 }
-```
+~~~
 
 <hr>
 
 <span id="postUser"></span>
+
 
 ### `POST /user`
 
@@ -91,6 +93,7 @@ If successful this endpoint will return the response from <a href="#getUser">GET
 
 <span id="getUserClasses"></span>
 
+
 ### `GET /user/classes`
 
 > Retrieve a list of an instructor's weekly classes.
@@ -109,7 +112,7 @@ classes where the user is attending. See endpoint `/user/student/classes`.
 
 **Response**
 
-```
+~~~
 [
 	{
 		"id": String,
@@ -136,11 +139,12 @@ classes where the user is attending. See endpoint `/user/student/classes`.
 		}
 	}
 ]
-```
+~~~
 
 <hr>
 
 <span id="getClassCheckins"></span>
+
 ### `GET /user/checkins`
 
 > Retrieve a user's checkin history.
@@ -156,7 +160,7 @@ classes where the user is attending. See endpoint `/user/student/classes`.
 
 **Response**
 
-```
+~~~
 [
 	{
 		"id": String,
@@ -184,7 +188,7 @@ classes where the user is attending. See endpoint `/user/student/classes`.
 		}
 	}
 ]
-```
+~~~
 
 
 **Response Headers**
@@ -194,6 +198,7 @@ See [pagination documentation]({{site_url}}/docs/api/pagination.html) for the pa
 <hr>
 
 <span id="getUserStudentClasses"></span>
+
 
 ### `GET /user/student/classes`
 
@@ -210,7 +215,7 @@ Note: `day_of_week` starts `0` = Sunday.
 
 **Response**
 
-```
+~~~
 [
 	{
 		"id": String,
@@ -243,4 +248,4 @@ Note: `day_of_week` starts `0` = Sunday.
 		}
 	}
 ]
-```
+~~~

@@ -29,7 +29,9 @@ DOM traversal is also problematic.  For example, using jQuery you can query for 
 ## Manually Querying the DOM Is Like Writing SQL
 Here's some pseudo code for you.  Use your imagination.
 
-`SELECT DOMElement FROM document WHERE document.id = "#navBar"`
+~~~
+SELECT DOMElement FROM document WHERE document.id = "#navBar"
+~~~
 
 This is conceptually equivalent to writing `$('#navBar')`.
 
