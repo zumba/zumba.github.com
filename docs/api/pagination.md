@@ -19,9 +19,9 @@ the total number of results for the request.
 
 A `Link` header will indicate to the client how to traverse the paginated results. A `Link` header may look something like:
 
-```
+~~~
 Link: <https://apiv3.zumba.com/parties/search?location=Miami&offset=200&max=100>; rel="next", <https://apiv3.zumba.com/parties/location=Miami&offset=0&max=100>; rel="prev"
-```
+~~~
 
 It is important to always rely on the `Link` header to provide you with navicable pagination requests.
 
@@ -41,6 +41,6 @@ Note: If there is not a next, previous, etc page available, the link for those w
 
 An `X-Total` header will indicate to the client how many total results are available. A `X-Total` header may look something like:
 
-```
+~~~
 X-Total: 1021
-```
+~~~

@@ -23,14 +23,14 @@ For all failure cases throughout the API, there is a common format:
   - `message` (string) Localized display message that will be shown to user  (eg. "Email address is required")
 
 HTTP/1.1 400 Bad Request
-```
+~~~
 {
   message: 'The API endpoint does not exist',
 }
-```
+~~~
 
 HTTP/1.1 400 Bad Request
-```
+~~~
 {
   "message": "Validation Failed",
   "errors": [
@@ -41,7 +41,7 @@ HTTP/1.1 400 Bad Request
     }
   ]
 }
-```
+~~~
 
 All error objects have field properties so that your client can tell what the problem is.
 There’s also an error code to let you know what is wrong with the field. These are the possible validation error codes:

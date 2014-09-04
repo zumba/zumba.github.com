@@ -30,13 +30,13 @@ This is where the magic happens.
 
 First, we need a development dependency specified to install phpcs. It looks something like this:
 
-```
+~~~
 {
     "require-dev": [
         "squizlabs/php_codesniffer": "2.0.*@dev"
     ]
 }
-```
+~~~
 
 ### Install Scripts
 
@@ -44,7 +44,7 @@ Composer has a handy schema entry called `scripts`. It supports a script hook
 `post-install-cmd`. We will use this to install a git pre-commit hook. Adding to
 our example above:
 
-```
+~~~
 {
     "require-dev": [
         "squizlabs/php_codesniffer": "2.0.*@dev"
@@ -55,7 +55,7 @@ our example above:
         ]
     }
 }
-```
+~~~
 
 This will run a bash script called `setup.sh` when the command `composer install` is run.
 
@@ -63,12 +63,12 @@ This will run a bash script called `setup.sh` when the command `composer install
 
 In our `setup.sh`, we will need to copy a `pre-commit` script into the `.git/hooks` directory:
 
-```bash
+~~~
 #!/bin/sh
 
 cp contrib/pre-commit .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
-```
+~~~
 
 This will copy our pre-commit script from the `contrib` directory to the hooks section
 of the special git directory and make it executable.

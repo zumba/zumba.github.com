@@ -22,9 +22,9 @@ The following steps are required in order get access to the API on the user's be
 
 > Redirect users to request Zumba acess.
 
-```
+~~~
 GET https://www.zumba.com/oauth/authorize
-```
+~~~
 
 **Parameters**
 
@@ -47,9 +47,9 @@ The redirect will include a `code` parameter and the `state` your application or
 
 > Exchange authorization code for an access token.
 
-```
+~~~
 POST https://www.zumba.com/oauth/access_token
-```
+~~~
 
 **Parameters**
 
@@ -63,7 +63,7 @@ redirect_uri | `Required` The URL to redirect to after the user has given permis
 
 **Response**
 
-```json
+~~~
 {
     "access_token": "e86285803dd51b76ca3656f3c8f7afe460c29bd3",
     "expires_in": 31536000,
@@ -71,12 +71,12 @@ redirect_uri | `Required` The URL to redirect to after the user has given permis
     "scope": "basic",
     "refresh_token": "c706b0a739c75b1eab1c68a736b9ca8cf68d51e9"
 }
-```
+~~~
 
 <br>
 
 > Using the access token with the API.
 
-```bash
+~~~
 curl -H "Authorization: Bearer e86285803dd51b76ca3656f3c8f7afe460c29bd3" https://apiv3.zumba.com/...
-```
+~~~
