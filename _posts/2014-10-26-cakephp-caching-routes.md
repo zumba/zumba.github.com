@@ -42,10 +42,10 @@ the use of `serialize` is simpler and faster than `var_export`. Give both approa
 the performance between them.
 
 Using `var_export` brings some consequences, which is the requirement of implementing the magic method
-`__set_state`. It is not done in CakePHP core until the version 2.5. I opened the PR
+`__set_state`. This method is not implemented in CakePHP core until the version 2.6. I opened the PR
 [cakephp/cakephp#4953](https://github.com/cakephp/cakephp/pull/4953) to support it on CakePHP 2.6+.
-So, to solve this problem in CakePHP we created a class that extends Cake's `CakeRoute` to implement
-the magic method and this looks like it:
+So, to solve this problem in CakePHP prior to 2.6 we created a class that extends Cake's `CakeRoute`
+to implement the magic method and this looks like it:
 
 <script src="https://gist.github.com/jrbasso/37a6938b752b726b0a32.js?file=ZumbaRoute.php"> </script>
 
