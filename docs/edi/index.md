@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Zumba EDI - Documentation
-description: OAuth documentation
+description: Trading/Shipping partner documentation for integrating with Zumba EDI
 author: aramonc
 ---
 
