@@ -85,7 +85,11 @@ into their own documents.
 
 ### Examples
 
+* [888 Document](resources/samples/out/888_3e248f04ddea65bf28906bcfd5a01836.xml)
 * [850 Document](resources/samples/in/850_1010101010101.xml)
 * [940 Document](resources/samples/out/940_A100UAC-150120221355_20150121.xml)
 * [855 Document](resources/samples/in/855_A100UAC-150120221355_20150121.xml)
 * [945 Document](resources/samples/in/945_A100UAC-150120221355.xml)
+* [943 Document](resources/samples/out/943_57147778.xml)
+* [944 Document](resources/samples/in/944_57147778.xml)
+* [Error Document](resources/samples/error/945_A100UAC-150120221355_1421942792.txt)
