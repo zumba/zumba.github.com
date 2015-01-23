@@ -10,3 +10,4 @@ author: cjsaylor
 </ul>
 
 * [API]({{site_url}}/docs/api)
+* [EDI]({{site_url}}/docs/edi)
