@@ -1,39 +1,21 @@
 @import "compass/css3";
+@import "variables";
 
 body {
 	margin-top: 90px;
 }
 
 .brand {
-	padding-right: 0;
-	padding-left: 0;
-	margin-left: 20px;
-	margin-right: 100px;
-	font-weight: bold;
-	color: #eee;
-
-	img {
-		vertical-align: top;
-	}
-
-	span {
-		font-family: monospace; 
-		text-transform: uppercase; 
-		font-weight: bold; 
-		font-size: 30px; line-height: 36px; 
-		color: #333; padding-left: 20px;
-		line-height: 50px;
-	}
-
-	&:hover {
-		text-decoration: none;
-	};
+	width: 230px;
+	height: 40px;
+	text-indent: -9999px;
+	display: inline-block;
+	margin-top: 0.68em;
+	background: url('/img/zumba-tech-logo.svg') 0 0 no-repeat;
 }
 
 .navbar { 
-	background-color: #fff; 
-	background-image: none; 
-	border-top: 5px solid #efefef; 
+	background-color: $title_bar_color; 
 	padding: 10px 0;
 	border-bottom: none; margin-bottom: 0;
 	@include box-shadow(rgba(0,0,0,0.2) 0px 1px 2px);
@@ -41,14 +23,13 @@ body {
 
 	li {
 		a {
-			margin-top: 5px; 
-			color: #333; 
-			font-weight: bold; 
+			margin-top: 0.4em; 
+			color: $title_bar_link_color !important;
+			font-size: 1.2em;
+			font-weight: 300; 
 			text-shadow: none;
-			border-top: 3px solid white;
 			&:hover {
-				color: #666;
-				border-top: 3px solid #dae251;
+				color: scale-lightness($title_bar_link_color, 50%) !important;
 			};
 		}
 	}
