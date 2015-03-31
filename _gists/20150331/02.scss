@@ -1,0 +1,28 @@
+.video-list {
+	margin: 0 -1em;
+	width: auto;
+
+	@media #{$medium-up} {
+		margin: 0;
+		width: 100%;
+	}
+
+	li {
+		display: block;
+		float: none;
+		clear: both;
+		margin: 0;
+		position: relative;
+		background: $white;
+		border-bottom: 1px solid $mid-gray;
+
+		&:before, &:after {
+			content: " ";
+			display: table;
+		}
+
+		&:after {
+			clear: both;
+		}
+	}
+}

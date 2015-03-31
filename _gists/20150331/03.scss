@@ -1,0 +1,11 @@
+@mixin b-med {
+	font-family: "BrandonText-Medium", Helvetica, Arial, sans-serif;
+	font-weight: normal;
+}
+
+$doc-font-size: 16;
+
+@mixin font-size($size) {
+	font-size: 0px + $size;
+	font-size: 0rem + $size / $doc-font-size;
+}
