@@ -113,11 +113,11 @@ This is an example of how we expect our stylesheets to be laid out. This is not 
 <script src="https://gist.github.com/neptunz/6b55d2e0db2d0190c540.js"></script>
 
 
-#### + Each file is named after the page or the page module it supports
-#### + We never style ID’s only Classes
-#### + Keep nesting down to a minimum and no deeper than 4 levels including pseudo selectors
-#### + Group related properties wherever possible
-#### + Media queries go after properties and the order should reflect mobile first
++ Each file is named after the page or the page module it supports
++ We never style ID’s only Classes
++ Keep nesting down to a minimum and no deeper than 4 levels including pseudo selectors
++ Group related properties wherever possible
++ Media queries go after properties and the order should reflect mobile first
 
 
 ### Naming
