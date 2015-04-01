@@ -2,17 +2,17 @@
 layout: post
 title: How We Do CSS at Zumba
 description: This is how we do CSS at Zumba.
-tags: [technology, css, sass, front end, engineering]
+tags: [technology, CSS, sass, front end, engineering]
 author: neptunz
 ---
 
-As you may or may not know Zumba's website consists of a robust app that includes a fully custom ecommerce shop that supports international transactions, class and training search and registration, Zumba Instructor Network (ZIN) admin portal and many other apps. Our in-house tech department is responsible for managing the interactive products, developing, testing and deploying the projects.
+As you may or may not know Zumba's website consists of a robust app that includes a fully custom ecommerce shop that supports international transactions, class and training search and registration, the Zumba Instructor Network (ZIN) admin portal and many other apps. Our in-house tech department is responsible for managing the interactive products, as well as developing, testing and deploying the projects.
 
 I was inspired by the teams at <a href="http://dev.ghost.org/css-at-ghost/" target="_blank">Ghost</a> and <a href="https://github.com/styleguide/css" target="_blank">Github</a> to write this article to give you an idea of how we do CSS at Zumba.
 
 
 ### Intro - Browser and Device Support
-We try to keep our code as light, modular and DRY as possible. We use Modernizr, Autoprefixer and some Foundation components. We try to keep our nesting no more than 4 levels deep and we try to make sure that  our naming convention lends itself to reusable components.
+We try to keep our code as light, modular and DRY as possible. We use Modernizr, Autoprefixer and some Foundation components. We follow guidelines to keep our nesting no more than 4 levels deep and we make sure that our naming convention lends itself to reusable components.
 
 We support the last few versions of popular browsers (Chrome, Safari and Firefox). At the time of writing this we currently support IE 8+. About 2% of our users still use IE 8; we are not out of the woods yet.
 
@@ -20,11 +20,11 @@ We made the leap to a responsive application with our recent redesign of the sit
 
 
 ### Preprocessor
-We use Sass with Compass as our preprocessor. Our team is proficient and has much training on this popular pre-processor and it’s large following helps.
+We use Sass with Compass as our preprocessor. Our team is proficient and has much training on this popular pre-processor and its large following helps.
 
 
 ### Folder/Sandwich Structure
-Here’s the fun stuff - we structured our css based on a few important factors:
+Here’s the fun stuff - we structured our CSS based on a few important factors:
 
 
 #### + Modularity and Reusability
@@ -32,14 +32,14 @@ Develop components that can be reused throughout the application.
 
 
 #### + CSS Rules
-Consider the size of the compiled stylesheets per section of the site to not exceed IE9’s rules limit of 4,095. Our previous site was compiled into two massive stylesheets and we learned the hard way. We currently break it down per section of the site. See examples below.
+Consider the size of the compiled stylesheets per section of the site in order to not exceed IE9’s rules limit of 4,095. Our previous site was compiled into two massive stylesheets and we learned that the hard way. See examples below.
 
 
 #### + Light stylesheets
-Keeping the stylesheet declaration low kills two birds with one stone. We break the stylesheets down into individual sheets that contain only the rules for each section of the site—this has the added benefit of avoiding unnecessary or redundant styles per section. Doing this helps us keep our stylesheets light.
+Keeping the stylesheet declaration low kills two birds with one stone. We keep our stylesheets light and avoid unnecessary or redundant styles by breaking them down into individual sheets that contain only the rules for each particular section.
 
-Can I have my sandwich with a side of css?
-Zumba is a happy and energetic fitness lifestyle company. That doesn’t mean we can’t have our sandwich and eat it too. We decided to structure our css like a sandwich order.
+Can I have my sandwich with a side of CSS?
+Zumba is a happy and energetic fitness lifestyle company. That doesn’t mean we can’t have our sandwich and eat it too. We decided to structure our CSS like a sandwich order.
 
 <div><img src="/img/blog/sandwich-breakdown.jpg" alt="sandwich" class="img-responsive"/></div>
 
@@ -59,7 +59,7 @@ Example:
 
 
 #### Toppings
-These can be added to your sandwich to make it as delicious as you want it. These consist of mini components that can be reused throughout the site, but is not necessary for every page.
+These can be added to your sandwich to make it as delicious as you want it. These consist of mini-components that can be reused throughout the site, but are not necessary for every page.
 Example:
 
 	toppings
@@ -70,7 +70,7 @@ Example:
 
 
 #### Sandwich
-These nom noms can contain a combination of toppings to make a complete sandwich or component. These are usually a bit more complex and a little more specific. Sandwiches can be used throughout the entire site and can be customized per section of the site to meet that section's needs or requirements.
+These nom noms can contain a combination of toppings to make a complete sandwich or component. These are usually a bit more complex and a little more specific. Sandwiches can be used throughout the entire site and can be customized per section to meet that section's needs or requirements.
 Example:
 
 	sandwich
@@ -102,7 +102,7 @@ Example:
 	|— shop.scss
 
 
-#### main.scss - Consists of the basics of our pages’ layout.
+#### main.scss - Consists of our pages’ basic layout.
 
 <script src="https://gist.github.com/neptunz/0d6bfe832eb85b6e73a7.js"></script>
 
@@ -114,17 +114,17 @@ This is an example of how we expect our stylesheets to be laid out. This is not 
 
 
 + Each file is named after the page or the page module it supports
-+ We never style ID’s only Classes
-+ Keep nesting down to a minimum and no deeper than 4 levels including pseudo selectors
++ We never style ID’s only classes
++ Keep nesting down to a minimum and no deeper than 4 levels, including pseudo selectors
 + Group related properties wherever possible
-+ Media queries go after properties and the order should reflect mobile first
++ Media queries follow properties and the order should reflect mobile first
 
 
 ### Naming
 
 
 #### Variables and Mixins
-Our variables and mixing naming is pretty specific in order to avoid any confusion. We have been here long enough to understand that the company likes to make simple to drastic changes to support the business in general. We have to develop keeping scalability in mind and this variable/mixin strategy just makes more sense for us.
+Our variables and mixin naming is pretty specific in order to avoid any confusion. We have been here long enough to understand that both simple and drastic changes arise to support the business goals of the company. We have to develop keeping scalability in mind and this variable/mixin strategy just makes more sense for us.
 
 
 #### Mixin
@@ -144,7 +144,7 @@ Our preferred technique is a more descriptive naming convention over deep nestin
 
 
 #### Media Queries
-For the most part we target based on viewport width. We have a feature or two that depends on the detection of touch. We stick to three basic breakpoints and rarely make exceptions for custom breakpoints. We don’t want to compromise code quality to consider every viewport width consideration.
+For the most part, we target based on viewport width. We have a feature or two that depends on the detection of touch. We stick to three basic breakpoints and rarely make exceptions for custom breakpoints. We don’t want to compromise code quality to consider every viewport width consideration.
 
 <script src="https://gist.github.com/neptunz/b1467ce5f11c61b22297.js"></script>
 
@@ -163,11 +163,11 @@ Currently our linting consists of pull request code reviews. This is what we loo
 + Spacing after selectors and properties
 + Formatting of properties
 + Code that's commented out
-+ Formatting of selectors - lowercase and hyphened preferred
++ Formatting of selectors - lowercase and hyphenated preferred
 + Null values should be 0 or none instead of 0px
 + Use of color names should use variables
 + Duplicate selectors or properties
 
 
 #### The fun never ends
-This post and our style guide that is soon to come will never be a done deal written in stone. What we build today is cutting edge and future proof until the future is now and we realize how crazy we were when we developed using archaic methods and tools. The tech world moves at an insane pace and that's what makes our job fun. New technologies will emerge and we will use them to make our applications and our lives as developers better. Therefore, this is relevant for the time being and I hope that it covers us for a very long time, but we all can't be surprised if we have to come back and revise this to support new new. Until then, we will enjoy this sandwich.
+This post and our forthcoming style guide will never be a done deal written in stone. What we build today is both cutting edge and future proof until the future is here. We now realize how crazy we were when we developed using archaic methods and tools. The tech world moves at an insane pace and that's what makes our job fun. New technologies will emerge and we will use them to make our applications and our lives as developers better. Until then, we will enjoy this sandwich.
