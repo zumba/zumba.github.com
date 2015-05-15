@@ -18,3 +18,4 @@ Some request permissions are reliant of the scope of the OAuth token provided.
 --- | ---
 `basic` | Basic access to user information.
 `nutrition` | Access to nutrition specific return parameters and endpoints.
+`nutrition-cms` | Permission to edit content in Nutrition CMS.
