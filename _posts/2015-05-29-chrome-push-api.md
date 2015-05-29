@@ -1,7 +1,7 @@
 ---
 layout: post
 title: W3C Push API Crash Course
-description: This is how we do CSS at Zumba.
+description: Getting started with push notifications in Google Chrome
 tags: [technology, push, web, w3c, javascript]
 author: nkcmr
 ---
