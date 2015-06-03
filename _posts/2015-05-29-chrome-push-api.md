@@ -5,7 +5,7 @@ description: Getting started with push notifications in Google Chrome
 tags: [technology, push, web, w3c, javascript]
 author: nkcmr
 ---
-W3C’s [Push API](http://www.w3.org/TR/push-api/) is exciting. Almost as exciting as all the possibilities that arise from having a persistent presence in your users browser. At Zumba, we already have ideas for it, and I was in charge of doing the gritty work of getting notifications to show up in the browser, but also developing a way to manage who gets what notifications. I had a lot of questions along the way, and I will lay them out and give you straight answers. Let's get pushing already!
+W3C’s [Push API](http://www.w3.org/TR/push-api/) is exciting. Almost as exciting as all the possibilities that arise from having a persistent presence in your users' browser. At Zumba, we already have ideas for it, and I was in charge of doing the gritty work of getting notifications to show up in the browser, but also developing a way to manage who gets those notifications. I had a lot of questions along the way that I will lay out and give you straight answers. Let's get pushing already!
 
 ## The ServiceWorker
 The [**ServiceWorker**](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker) is where the Push API lives. A **ServiceWorker** is a JavaScript file that defines activities that are allowed to run continuously, well after the life-cycle of a web-page. If you have heard of [**WebWorkers**](https://developer.mozilla.org/en-US/docs/Web/API/Worker/Worker), ServiceWorkers are quite similar but like I said, they will continue to work in the background even after a user has closed the web-page, which is obviously key to being available to show notifications.
