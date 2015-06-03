@@ -24,7 +24,9 @@ Before we get started with registering, you need to set up a Google Application 
 
 #### manifest.json
 Google Chrome relies on a simple JSON file to detect your websites Google Cloud app. It is placed in the root of your website and it goes a little something like this:
+
 {% gist 81e37636d6b0a55788f1 manifest.json %}
+
 Replace `application_project_number` with the project number of your Google App from the steps above. Moving on!
 
 ---
@@ -44,9 +46,11 @@ ServiceWorkers also have a *scope* which is set to the directory under which it 
 #### Registering
 Now that you know what to expect with setting up a suitable environment for your service worker let’s get it installed.
 
-Now, a good installation script should also consider that their might be a service worker already in place and running. A lot of other examples want to go straight to registering a service worker, but that will give you a bunch of redundant service workers. To check for that let’s do the following:
+A good installation script should also consider that their might be a service worker already in place and running. To check for that let’s do the following:
+
 {% gist 81e37636d6b0a55788f1 check-sw-reg.js %}
-Now that we have the installation status we know if we need to register a service worker or not. So let's say we do. Then we do this:
+
+Now that we have the installation status: we know if registration of the service worker is necessary. Assuming registration is necessary:
 
 {% gist 81e37636d6b0a55788f1 reg-sw.js %}
 
@@ -54,7 +58,9 @@ Now that we have the installation status we know if we need to register a servic
 
 ### The PushManager
 The **PushManager** is a creatively named API that manages our push subscriptions. The entry point for it can be found on that `ServiceWorkerRegistration` I mentioned above. You should take the same approach with this as with service worker registrations. The functions you should know about are: `getSubscription` and `subscribe`.
+
 {% gist 81e37636d6b0a55788f1 pm-get-sub.js %}
+
 As you can see here, we check for an existing push subscription, then if one is not found we attempt to get permission for one. This attempt is when the user is prompted to approve notifications.
 
 ### Putting It Together
@@ -67,7 +73,7 @@ This will auto-register a service-worker and will subscribe your website to push
 #### PushSubscription
 Providing that everything went well, and the user agreed to be notified, you will be given a **PushSubscription** object that will contain details about how to execute a push notification. ([PushSubscription](http://www.w3.org/TR/push-api/#idl-def-PushSubscription)) This object contains an `endpoint` attribute which is the entry point for push notifications. (The Push API is still in flux, but I would recommend keeping the `endpoint`; Google is the only one running a W3C compliant push server but I am sure there will be more to come and this will be what distinguishes them.)
 
-What will distinguish this user is the `subscriptionId`, this is like a device ID of sorts and will be how you reach this user in particular with your push notifications.
+What distinguishes this user is the subscriptionId, which is like a device ID and will be how you reach this particular user with your push notifications.
 
 #### Using the PushSubscription
 Once you have the `subscriptionId`, you can send it to Google Cloud Messaging endpoint like so:
@@ -77,7 +83,7 @@ Once you have the `subscriptionId`, you can send it to Google Cloud Messaging en
 Put your Google Cloud project API key next to `key=` and put the users `subscriptionId` in `registration_ids` and this will send notifications but we need to tell the service worker how to receive them, and what to do with them.
 
 #### Receiving Notifications with ServiceWorker
-Obviously, ServiceWorkers run in a completely different global context than a DOMWindow. The global object in a ServiceWorker is `self`, and the event to look out for is `onpush`. A very simple notifier service worker will look something like this:
+ServiceWorkers run in a completely different global context than a DOMWindow. The global object in a ServiceWorker is `self`, and the event to look out for is `onpush`. A very simple notifier service worker will look something like this:
 
 {% gist 81e37636d6b0a55788f1 simple-service-worker.js %}
 
