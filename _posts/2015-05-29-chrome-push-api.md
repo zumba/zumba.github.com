@@ -11,7 +11,7 @@ W3C’s [Push API](http://www.w3.org/TR/push-api/) is exciting. Almost as exciti
 The [**ServiceWorker**](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker) is where the Push API lives. A **ServiceWorker** is a JavaScript file that defines activities that are allowed to run continuously, well after the life-cycle of a web-page. If you have heard of [**WebWorkers**](https://developer.mozilla.org/en-US/docs/Web/API/Worker/Worker), ServiceWorkers are quite similar, but they will continue to work in the background even after a user has closed the web-page, which is key to being available to show notifications.
 
 ### ServiceWorker Registration
-Now before we get started with registering you need to set up a Google Application that can be used with Google Cloud Messaging to actually send the notifications, it is free for development and takes about 2-3 minutes.
+Before we get started with registering, you need to set up a Google Application that can be used with Google Cloud Messaging to actually send the notifications; it is free for development and takes about 2-3 minutes.
 
 #### Google Application Setup
 1. Go to [Google Developer Console](https://console.developers.google.com) and **create** a new application.
