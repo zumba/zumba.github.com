@@ -18,19 +18,19 @@ on that would give the most impact to our community. We chose to work on making 
 of Florida vendor transactions. The first thing we noticed is that a couple of projects had
 already been underway to create restful APIs and alternate data formats for this data. We decided
 that an API that is specific to this data set wouldn't be very reusable for other data sets, *and*
-would still take an engineer's effort to visualize the data from those APIs.
+it would still take an engineer's effort to visualize the data from those APIs.
 
-After looking at other's efforts, we wanted to make something that is generic enough to
-work with any sort of data set, be flexible enough for other engineers to create tools and
-visualizations via an API, and be easy enough for non-engineers to construct visualizations
-that fit their needs. A daunting task, especially for it to be _mostly_ completed in a single
-hackathon. After some planning and discussion, we came up with [a solution ready for hacking](https://github.com/cjsaylor/datamnom)!
+We wanted to make something that is generic enough to work with any sort of data set,
+be flexible enough for other engineers to create tools and visualizations via an API,
+and be easy enough for non-engineers to construct visualizations that fit their needs.
+A daunting task, especially for it to be _mostly_ completed in a single hackathon.
+After some planning and discussion, we came up with [a solution ready for hacking](https://github.com/cjsaylor/datamnom)!
 
 ## Hackathon
 
 Bright and early on that Saturday morning, we arrived in the LAB Miami offices to
 work on a project we called [Datamnom](https://github.com/cjsaylor/datamnom). The idea
-of the project is to make a generic injestion program that can take in multiple data sources and
+of the project is to make a generic ingestion program that can take in multiple data sources and
 populate an [Elasticsearch](https://www.elastic.co/products/elasticsearch) index. Once the data
 is in Elasticsearch, a tool called [Kibana](https://www.elastic.co/products/kibana) can be hooked
 up to the Elasticsearch index we populated to create visualizations.
@@ -71,3 +71,9 @@ to the group. Other groups that were working with this data set decided to use o
         <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 </div>
+
+# Conclusion
+
+We had a fun time at LAB Miami hacking together a project we think can really help
+lawmakers, researchers, and reporters visualize public data in a way that allows them
+to ask the right questions and help our communities.
