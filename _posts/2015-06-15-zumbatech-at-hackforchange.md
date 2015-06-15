@@ -14,7 +14,7 @@ together to make a positive impact in our communities.
 ## Let's not re-invent the wheel
 
 The day before the event, our team got together to figure out what we were going to work
-on that would give the most impact to our community. We chose to work on making visualizations
+on that would give the most impact to our community. We chose to work on generating visualizations
 of Florida vendor transactions. The first thing we noticed is that a couple of projects had
 already been underway to create restful APIs and alternate data formats for this data. We decided
 that an API that is specific to this data set wouldn't be very reusable for other data sets, *and*
@@ -24,11 +24,11 @@ We wanted to make something that is generic enough to work with any sort of data
 be flexible enough for other engineers to create tools and visualizations via an API,
 and be easy enough for non-engineers to construct visualizations that fit their needs.
 A daunting task, especially for it to be _mostly_ completed in a single hackathon.
-After some planning and discussion, we came up with [a solution ready for hacking](https://github.com/cjsaylor/datamnom)!
+After some planning and discussion, we came up with a solution ready for hacking!
 
 ## Hackathon
 
-Bright and early on that Saturday morning, we arrived in the LAB Miami offices to
+Bright and early on that Saturday morning, we arrived in the [LAB Miami](http://thelabmiami.com/) offices to
 work on a project we called [Datamnom](https://github.com/cjsaylor/datamnom). The idea
 of the project is to make a generic ingestion program that can take in multiple data sources and
 populate an [Elasticsearch](https://www.elastic.co/products/elasticsearch) index. Once the data
