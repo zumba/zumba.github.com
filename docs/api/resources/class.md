@@ -16,7 +16,6 @@ author: cjsaylor
 
 * [GET /class/:id](#getClass)
 * [GET /class/:id/students](#getClassStudents)
-* [POST /class/:id/invite](#postClassInvite)
 
 <hr>
 
@@ -84,27 +83,3 @@ author: cjsaylor
 --- | ---
 `0` | Not current in payment.
 `1` | Current in payment.
-
-<hr>
-
-<span id="postClassInvite"></span>
-
-
-### `POST /class/:id/invite` <span class="label label-info">Proposed</span><span class="label label-danger">Incomplete</span>
-
-> Generates an invitation to a class
-
-
-**Post Parameters**
-
-{:.table}
-*Field* | *Type* | *Requirement*
---- | --- | ---
-email_address | String | <span class="label label-warning">Required</span>
-first_name | String | <span class="label label-warning">Required</span>
-last_name | String | <span class="label label-warning">Required</span>
-
-**Response**
-* HTTP 201 (Created) - An event will be created that will trigger the email invitation if user does not exist or it's not associated to a class
-* HTTP 409 (Conflict) - If the user is already registered in a class of the same type.
-

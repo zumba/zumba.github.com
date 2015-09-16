@@ -12,5 +12,4 @@ author: cjsaylor
 </ul>
 
 * [Class]({{site_url}}/docs/api/resources/class.html)
-* [Commission]({{site_url}}/docs/api/resources/commission.html)
 * [User]({{site_url}}/docs/api/resources/user.html)
