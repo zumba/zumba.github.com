@@ -23,6 +23,7 @@ For all failure cases throughout the API, there is a common format:
   - `message` (string) Localized display message that will be shown to user  (eg. "Email address is required")
 
 HTTP/1.1 400 Bad Request
+
 ~~~
 {
   message: 'The API endpoint does not exist',
@@ -30,6 +31,7 @@ HTTP/1.1 400 Bad Request
 ~~~
 
 HTTP/1.1 400 Bad Request
+
 ~~~
 {
   "message": "Validation Failed",
