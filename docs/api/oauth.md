@@ -26,7 +26,7 @@ The following steps are required in order get access to the API on the user's be
 GET https://www.zumba.com/oauth/authorize
 ~~~
 
-**Parameters**
+**URL Parameters**
 
 {:.table}
 *Name* | *Description*
@@ -51,13 +51,15 @@ The redirect will include a `code` parameter and the `state` your application or
 POST https://www.zumba.com/oauth/access_token
 ~~~
 
+**Content-Type**: `application/x-www-form-urlencoded`
+
 **Parameters**
 
 {:.table}
 *Name* | *Description*
 --- | ---
-client_id | `Required` The client ID you recieve from Zumba.
-client_secret | `Required` The client secret you recieve from Zumba.
+client_id | `Required` The client ID you receive from Zumba.
+client_secret | `Required` The client secret you receive from Zumba.
 code | `Required` The authorization code passed from the redirect.
 redirect_uri | `Required` The URL to redirect to after the user has given permission.
 
@@ -84,6 +86,8 @@ post to the access token endpoint with the refresh token on hand and specifying 
 ~~~
 POST https://www.zumba.com/oauth/access_token
 ~~~
+
+**Content-Type**: `application/x-www-form-urlencoded`
 
 **Parameters**
 
