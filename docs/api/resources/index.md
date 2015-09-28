@@ -13,3 +13,4 @@ author: cjsaylor
 
 * [Class]({{site_url}}/docs/api/resources/class.html)
 * [User]({{site_url}}/docs/api/resources/user.html)
+* [Membership]({{site_url}}/docs/api/resources/membership.html)

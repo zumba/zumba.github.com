@@ -12,6 +12,14 @@ author: cjsaylor
 	<li class="active">User</li>
 </ul>
 
+## User Resource
+
+This resource is used to get information about the user. All endpoints within
+this resource require at least **basic** scope. Additional information can be retrieved
+with more scopes (specified on the individual endpoints).
+
+---
+
 **TOC**
 
 <ul>
