@@ -1,5 +1,0 @@
-Date: 2015-01-22
-Subject: There was an error processing ohl/in/945_A100UAC-150120221355.xml
-Details:
-	ERROR  (1871): Element '{http://www.spscommerce.com/RSX}TradingPartnerId': This element is not expected. Expected is one of ( {http://www.spscommerce.com/RSX}DepositorOrderNumber, {http://www.spscommerce.com/RSX}InternalOrderNumber, {http://www.spscommerce.com/RSX}InternalOrderDate, {http://www.spscommerce.com/RSX}InvoiceNumber, {http://www.spscommerce.com/RSX}InvoiceDate, {http://www.spscommerce.com/RSX}PurchaseOrderNumber, {http://www.spscommerce.com/RSX}ReleaseNumber, {http://www.spscommerce.com/RSX}PurchaseOrderDate, {http://www.spscommerce.com/RSX}Department, {http://www.spscommerce.com/RSX}DepartmentDescription ). Occurs on line 47.
-	
