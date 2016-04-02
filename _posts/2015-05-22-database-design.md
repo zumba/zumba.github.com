@@ -119,7 +119,7 @@ For columns that store date and time data, there are two ways to approach this. 
   - Timestamps should be set using UTC timezone with the proper offset for the timezone desired.  An additional column to store the timezone may be required as well.  
 
 ### Joining records
-Join tables are the most common way to store 1-to-many relationships.  These tables typically just contain the IDs of both tables and the standard columns.  Sometimes, there may be some additional meta data.  But that is up to how they are being used.
+Join tables are the most common way to store many-to-many relationships.  These tables typically just contain the IDs of both tables and the standard columns.  Sometimes, there may be some additional meta data.  But that is up to how they are being used.
 
 Another option that works for attribute tables that have a relatively small number of records is to use **bit masks**.  To use a bit mask:
  
