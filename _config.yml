@@ -12,7 +12,7 @@ url: http://tech.zumba.com
 career_email: engineering@zumba.com
 engineer_email: engineering@zumba.com
 
-permalink: /:year/:month/:day/:title
+permalink: /:year/:month/:day/:title/
 
 disqus_short_name: zumbaengineering
 
