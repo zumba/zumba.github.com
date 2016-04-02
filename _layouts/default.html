@@ -13,11 +13,7 @@
 		<meta name="description" content="{{ page.description }}">
 		{% endif %}
 		<link href="http://feeds.feedburner.com/zumba_engineering" type="application/atom+xml" rel="alternate" title="Blog Posts Feed">
-		{% if page.is_blog %}
-		<link href="{{ site.url }}{{ page.url }}/" rel="canonical">
-		{% else %}
 		<link href="{{ site.url }}{{ page.url }}" rel="canonical">
-		{% endif %}
 		<link rel="license" href="{{ site.url }}/licenses/zumba_mit_license.html">
 
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
@@ -89,7 +85,7 @@
 							<ul class="nav nav-stacked">
 								<li class="nav-header">Recent Posts</li>
 								{% for post in site.posts limit:5 %}
-								<li><a onclick="ga('send', 'event', 'Recent Post', 'click', '{{ post.title }}')" href="{{ site.url }}{{ post.url }}/">{{ post.title }}</a></li>
+								<li><a onclick="ga('send', 'event', 'Recent Post', 'click', '{{ post.title }}')" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
 								{% endfor %}
 							</ul>
 						</nav>
