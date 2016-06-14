@@ -11,6 +11,6 @@ author: cjsaylor
 	<li class="active">Resources</li>
 </ul>
 
-* [Class]({{site_url}}/docs/api/resources/class.html)
-* [User]({{site_url}}/docs/api/resources/user.html)
-* [Membership]({{site_url}}/docs/api/resources/membership.html)
+* [Class]({{site_url}}/docs/api/resources/class/index.html)
+* [User]({{site_url}}/docs/api/resources/user/index.html)
+* [Membership]({{site_url}}/docs/api/resources/membership/index.html)
