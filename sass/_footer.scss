@@ -1,0 +1,53 @@
+@import "variables";
+
+.footer {
+	background-color: white;
+	border-top: 1px solid rgb(245, 245, 241);
+	margin-top: 1rem;
+	padding: 1.5rem 1rem 1rem 1.5rem;
+
+	&-content {
+		display: flex;
+		align-items: top;
+		justify-content: space-between;
+
+		@media screen and (min-width: $breakpoint_desktop) {
+			max-width: 75rem;
+			margin: 0 auto;
+		}
+	}
+
+	&-brand {
+		mask-image: url(/img/zumba-tech-logo.svg);
+		mask-size: contain;
+		mask-repeat: no-repeat;
+		-webkit-mask-image: url(/img/zumba-tech-logo.svg);
+		-webkit-mask-size: contain;
+		-webkit-mask-repeat: no-repeat;
+		background-color: black;
+		width: 10rem;
+		height: 2rem;
+	}
+
+	&-link-list {
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				margin-bottom: 1rem;
+			}
+		}
+
+		a {
+			color: #303840;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+	}
+}

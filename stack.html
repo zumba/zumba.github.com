@@ -1,0 +1,59 @@
+---
+layout: modern
+title: Stack - ZumbaTech&trade;
+description: How we build our applications
+author: cjsaylor
+notitle: true
+---
+<section class="page-heading">
+</section>
+<section class="card page-card">
+	<div class="card-content">
+		<h1>Our Tech Stack</h1>
+		<h2>Server-oriented Architecture</h2>
+		<p>
+			We operate using a service-oriented architecture (SOA). This enables us to have
+			multiple ways for users to consume data and issue commands without fracturing
+			data logic throughout all the apps.
+		</p>
+		<p>
+			We use a <b>presentation layer</b> for shaping data in the form of APIs for mobile applications/partners
+			or rendering HTML for a customer's browser. This layer is mostly concerned with display logic.
+		</p>
+		<p>
+			The <b>service layer</b> is responsible for business logic and data persistence.
+		</p>
+		<p>
+			The <b>data layer</b> is the various database technologies we use to store and query information.
+			The presentation layer never talks directly to our data layer to prevent all the applications from
+			forming their own business rules.
+		</p>
+		<figure>
+			<img src="/img/server-diagram.png">
+			<figcaption>A typical application setup.</figcaption>
+		</figure>
+		<h2>Development Languages</h2>
+		<p>
+			We primarily use <b>PHP 8</b> as our main server language and <b>Javascript (Typescript)</b> as our front-end language.
+			Our presentation layer makes use of <a href="https://cakephp.org/">CakePHP</a>, while our service layer makes use of a custom micro-framework.
+		</p>
+		<p>
+			For our component-driven designed applications, we use <a href="https://vuejs.org/">Vue 3</a> with scoped css for styling.
+		</p>
+		<p>
+			For non-component-driven applications, we use the css pre-processor <a href="https://sass-lang.com/documentation">Sass</a> with a <a href="https://en.bem.info/methodology/css/">BEM</a> style approach.
+		</p>
+		<h2>Deploying Code</h2>
+		<p>
+			We use Github as our primary code repository storage. Engineers create feature branches and open pull requests to our main branch.
+			An Azure Pipeline CI process lints, runs tests, and ensures the build works.
+		</p>
+		<p>
+			Once the pull request is reviewed by another engineer and all the tests pass, the engineer merges the pull request and then tests
+			in their changes behind a feature flag in production.
+		</p>
+		<p>
+			Finally, when the engineer is satisfied, the feature flag is opened to allow customers.
+		</p>
+	</div>
+</section>

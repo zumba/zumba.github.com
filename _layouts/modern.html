@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>{{ page.title }}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% if page.description %}
+	<meta name="description" content="{{ page.description }}">
+	{% endif %}
+	<link href="{{ site.url }}{{ page.url }}" rel="canonical">
+	<link href="{{ site.url }}/css/modern.css" rel="stylesheet">
+
+	<link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	{% if site.analytics_code %}{% if site.url == 'http://tech.zumba.com' %}
+	<script type="text/javascript">
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', '{{ site.analytics_code }}');
+		ga('require', 'displayfeatures');
+		ga('send', 'pageview');
+	</script>
+	{% endif %}{% endif %}
+	<script>window.ga = window.ga || function () { };</script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+	<header class="header">
+		<div class="header-nav-container" role="navigation">
+			<div class="navbar-header">
+				<div class="navbar-header--blank"></div>
+				<a class="header-brand" href="{{ site.url }}/" rel="home"></a>
+				<button type="button" class="navbar-toggle">
+					<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+				</button>
+			</div>
+			<nav class="navbar-header-menu" itemscope
+				itemtype="http://schema.org/SiteNavigationElement">
+				<ul class="navbar-header-menu-list">
+					<li><a onclick="ga('send', 'event', 'GitHub', 'site')" href="https://github.com/zumba">Open
+							Source</a></li>
+					<li><a onclick="gs('send', 'event', 'Blog', 'site')" href="https://medium.com/zumba-tech">Blog</a></li>
+					<li><a onclick="ga('send', 'event', 'Speakerdeck', 'site')"
+							href="https://speakerdeck.com/zumbatech">Talks</a></li>
+					<li><a onclick="ga('send', 'event', 'Teams', 'site')" href="{{ site.url }}/teams/">Teams</a></li>
+					<li><a onclick="ga('send', 'event', 'Careers', 'site')" href="{{ site.url }}/jobs/">Jobs</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	{{ content }}
+	<footer class="footer">
+		<div class="footer-content">
+			<div class="footer-link-list">
+				<ul>
+					<li><a href="https://www.zumba.com/"><b>Zumba.com</b></a></li>
+					<li><a href="https://www.strongnation.com/"><b>StrongNation.com</b></a></li>
+					<li><a href="https://www.zumba.com/about">About Us</a></li>
+					<li><a href="https://www.zumba.com/careers">Careers</a></li>
+				</ul>
+			</div>
+			<div class="footer-brand"></div>
+		</div>
+	</footer>
+	<script type="text/javascript">
+		// Source: https://css-tricks.com/styling-based-on-scroll-position/
+		const debounce = (fn) => {
+			let frame;
+			return (...params) => {
+				if (frame) {
+					cancelAnimationFrame(frame);
+				}
+				frame = requestAnimationFrame(() => {
+					fn(...params);
+				});
+
+			}
+		};
+		const storeScroll = () => {
+			const header = document.getElementsByClassName('header')[0];
+			if (window.scrollY) {
+				header.classList.add('scrolled')
+			} else {
+				header.classList.remove('scrolled')
+			}
+		}
+		document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+		storeScroll();
+		document.getElementsByClassName('navbar-toggle')[0].addEventListener('click', () => {
+			const header = document.getElementsByClassName('header')[0]
+			storeScroll()
+			header.classList.toggle('expanded')
+			if (header.classList.contains('expanded')) {
+				header.classList.add('scrolled')
+			}
+		})
+	</script>
+</body>
+</html>

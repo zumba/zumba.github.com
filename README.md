@@ -12,7 +12,8 @@ to deploy on Github's Pages.
 
 ## Install
 
-1. Install Jekyll: `gem install jekyll`
+1. Install Jekyll: `gem install jekyll bundler`
+1. Install required ruby gems: `bundle install`
 1. Install Grunt CLI: `npm install -g grunt-cli`
 1. Install NodeJS dependencies: `npm install`
 
@@ -27,3 +28,5 @@ This will build the files, attach a watch to the files for changes, and serve to
 ### Styling
 
 To update the CSS, edit the `.scss` files in the `sass` directory, then run `grunt compass` to compile.
+
+In order for these styles to display on Github pages, you'll need to commit your final build css files in the css directory.

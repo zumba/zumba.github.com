@@ -1,0 +1,122 @@
+@import "variables";
+
+.header {
+	z-index: 500;
+	transition: background 350ms cubic-bezier(0.23, 1, 0.32, 1);
+	-webkit-transition: background 350ms cubic-bezier(0.23, 1, 0.32, 1);
+	padding: 1rem 1rem;
+	position: fixed;
+	width: calc(100% - 2rem);
+	top: 0;
+	left: 0;
+
+	&.scrolled {
+		background: white;
+		box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+		.navbar-toggle {
+			color: black;
+		}
+
+		.header-brand {
+			background-color: black;
+		}
+
+		.navbar-header-menu a {
+			color: black;
+		}
+	}
+
+	&.expanded {
+		.navbar-header-menu {
+			display: block;
+		}
+	}
+}
+
+.header-nav-container {
+	background: transparent;
+
+	@media screen and (min-width: $breakpoint_desktop) {
+		max-width: 90rem;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+.navbar-header--blank {
+	width: 2rem;
+
+	@media screen and (min-width: $breakpoint_desktop) {
+		display: none;
+	}
+}
+
+.header-brand {
+	mask-image: url(/img/zumba-tech-logo.svg);
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	-webkit-mask-image: url(/img/zumba-tech-logo.svg);
+	-webkit-mask-size: contain;
+	-webkit-mask-repeat: no-repeat;
+	background-color: white;
+	width: 10rem;
+	height: 2rem;
+}
+
+.navbar-toggle {
+	background: transparent;
+	border: none;
+	width: 2rem;
+	color: white;
+
+	@media screen and (min-width: $breakpoint_desktop) {
+		display: none;
+	}
+}
+
+.navbar-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar-header-menu {
+	display: none;
+	margin-top: 1.5rem;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		text-align: right;
+
+		li {
+			margin-bottom: 1rem;
+
+			a {
+				color: #303840;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: $breakpoint_desktop) {
+		display: block;
+		margin-top: 0;
+
+		ul li {
+			display: inline;
+			margin-left: 1rem;
+
+			a {
+				color: white;
+			}
+		}
+	}
+}
