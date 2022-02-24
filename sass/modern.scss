@@ -1,0 +1,171 @@
+@import "reset";
+@import "variables";
+@import "header";
+@import "footer";
+
+body {
+	font-family: Gotham,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	background: rgb(245, 245, 241);
+}
+
+.hero {
+	box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	background: url(https://zumba-cms.imgix.net/uploads/2021/12/Zumba_Desktop_3.jpg?auto=compress,format&w=1440);
+	background-size: cover;
+	background-position: top;
+	box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.8);
+	padding: 8rem 1rem;
+
+	&::before {
+		pointer-events: none;
+		content: " ";
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		left: 0px;
+		background-color: rgba(0, 0, 0, 0.65);
+	}
+
+	&-content {
+		position: relative;
+	}
+	h1 {
+		color: white;
+		font-size: 1.5rem;
+	}
+
+	&-button {
+		display: inline-block;
+		margin-top: 1rem;
+		border: 0.125rem solid white;
+		border-radius: 0.5rem;
+		padding: 0.5rem 1rem;
+		color: white;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	@media screen and (min-width: $breakpoint_desktop) {
+		min-height: 45vh;
+
+		h1 {
+			font-size: 3rem;
+			font-weight: bold;
+			max-width: 50%;
+		}
+
+		&-content {
+			max-width: 75rem;
+			margin: 0 auto;
+		}
+	}
+}
+
+.card {
+	background-color: white;
+	margin: 2rem 0.5rem;
+
+	&-content {
+		padding: 2rem 1rem;
+	}
+
+	h2 {
+		margin: 0;
+	}
+
+	p {
+		line-height: 1.5rem;
+	}
+
+	&-button {
+		display: inline-block;
+		margin-top: 1rem;
+		background-color: #303840;
+		color: white;
+		border-radius: 0.25rem;
+		padding: 0.75rem 1rem;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 0.85rem;
+		z-index: 9999999;
+	}
+
+	&-rich-media {
+		display: none;
+	}
+
+	@media screen and (min-width: $breakpoint_desktop) {
+		max-width: 75rem;
+		margin: 3rem auto;
+		display: flex;
+
+		&-content {
+			padding: 4rem;
+			width: 40rem;
+		}
+
+		&-rich-media {
+			display: block;
+			flex-grow: 1;
+
+			&.team {
+				background-image: url(/img/annie-spratt-QckxruozjRg-unsplash.jpg);
+				background-size: cover;
+			}
+
+			&.stack {
+				background-image: url(/img/hal-gatewood-o2305170alM-unsplash.jpg);
+				background-size: cover;
+			}
+		}
+	}
+}
+
+.page-heading {
+	z-index: -1;
+	background: black;
+	padding: 5rem 1rem 1rem 1rem;
+	position: absolute;
+	top: 0;
+	width: calc(100% - 2rem);
+}
+
+.page-card {
+	margin-top: 4rem;
+
+	h2 {
+		font-size: 1.5rem;
+		text-decoration: underline;
+	}
+
+	.card-content {
+		width: calc(100% - 2rem);
+	}
+
+	&-cta {
+		display: inline-block;
+		margin-top: 2rem;
+		padding: 1rem 2rem;
+		text-transform: uppercase;
+		border-radius: 0.25rem;
+		background-color: black;
+		color: white;
+		text-decoration: none;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	dt {
+		margin: 0.5rem 0;
+	}
+
+	figcaption {
+		font-style: italic;
+		text-decoration: overline;
+	}
+}

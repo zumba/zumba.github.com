@@ -1,29 +1,38 @@
 ---
-layout: default
-title: Zumba &reg; Tech
+layout: modern
+title: ZumbaTech&trade;
 description: Zumba Tech team post about experience, tools and open source projects from the Zumba company
 author: cjsaylor
 notitle: true
 ---
 
-<div class="row">
-	<div class="col-md-8 col-md-offset-2">
-			{% for post in paginator.posts %}
-			<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-				<h2><a href="{{site.url}}{{ post.url }}/" itemprop="url">{{ post.title }}</a></h2>
-				<p>by <b><span itemprop="name">{{ site.authors[post.author].name }}</span></b> on <time itemprop="datePublished" datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %d, %Y"}}</time></p>
-				<p>{{ post.excerpt }}</p>
-			</article>
-			{% endfor %}
-		</ul>
+<section class="hero">
+	<div class="hero-content">
+		<h1>A modern technology team where you can help people achieve their fitness goals.</h1>
+		<a href="/jobs/" class="hero-button">
+			<b>View Open Positions &rarr;</b>
+		</a>
 	</div>
-</div>
-<div class="row">
-	<div class="col-md-8 col-md-offset-2">
-		<ul class="pager">
-			<li class="previous {% if paginator.previous_page %}{% else %}disabled{% endif %}">
-				<a href="{% if paginator.previous_page %}{% if paginator.previous_page == 1 %}{{ site.url }}{% else %}/page{{ paginator.previous_page }}{% endif %}{% else %}#{% endif %}">&larr; Newer</a></li>
-			<li class="next {% if paginator.next_page %}{% else %}disabled{% endif %}"><a href="{% if paginator.next_page %}/page{{ paginator.next_page }}{% else %}#{% endif %}">Older &rarr;</a></li>
-		</ul>
+</section>
+<section class="card">
+	<div class="card-content">
+		<h2>Autonomy and Collaboration</h2>
+		<p>
+			Our engineering teams work best when they're able to make their own technical decisions and execute.
+		</p>
+		<a href="/teams/" class="card-button">
+			Read about our teams &rarr;
+		</a>
 	</div>
-</div>
+	<div class="card-rich-media team"></div>
+</section>
+<section class="card">
+	<div class="card-content">
+		<h2>Interesting Stack</h2>
+		<p>With modern tools, CI & CD, and up-to-date versions of languages and frameworks, our team can deploy features quickly to our customers.</p>
+		<a href="/stack/" class="card-button">
+			Read about our stack &rarr;
+		</a>
+	</div>
+	<div class="card-rich-media stack"></div>
+</section>
