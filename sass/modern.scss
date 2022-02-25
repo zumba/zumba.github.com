@@ -136,6 +136,7 @@ body {
 
 .page-card {
 	margin-top: 4rem;
+	padding: 0;
 
 	h2 {
 		font-size: 1.5rem;
@@ -143,10 +144,12 @@ body {
 	}
 
 	.card-content {
-		width: calc(100% - 2rem);
+		width: 100%;
+		box-sizing: border-box;
 	}
 
 	&-cta {
+		box-sizing: border-box;
 		display: inline-block;
 		margin-top: 2rem;
 		padding: 1rem 2rem;
@@ -155,6 +158,12 @@ body {
 		background-color: black;
 		color: white;
 		text-decoration: none;
+		width: 100%;
+		text-align: center;
+
+		@media screen and (min-width: $breakpoint_desktop) {
+			width: auto;
+		}
 	}
 
 	img {
