@@ -16,7 +16,7 @@ body {
 	background-size: cover;
 	background-position: top;
 	box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.8);
-	padding: 8rem 1rem;
+	padding: 4rem 1rem;
 
 	&::before {
 		pointer-events: none;
@@ -50,6 +50,7 @@ body {
 
 	@media screen and (min-width: $breakpoint_desktop) {
 		min-height: 45vh;
+		padding: 8rem 1rem;
 
 		h1 {
 			font-size: 3rem;
@@ -135,6 +136,7 @@ body {
 
 .page-card {
 	margin-top: 4rem;
+	padding: 0;
 
 	h2 {
 		font-size: 1.5rem;
@@ -142,10 +144,12 @@ body {
 	}
 
 	.card-content {
-		width: calc(100% - 2rem);
+		width: 100%;
+		box-sizing: border-box;
 	}
 
 	&-cta {
+		box-sizing: border-box;
 		display: inline-block;
 		margin-top: 2rem;
 		padding: 1rem 2rem;
@@ -154,6 +158,12 @@ body {
 		background-color: black;
 		color: white;
 		text-decoration: none;
+		width: 100%;
+		text-align: center;
+
+		@media screen and (min-width: $breakpoint_desktop) {
+			width: auto;
+		}
 	}
 
 	img {
