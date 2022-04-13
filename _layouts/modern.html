@@ -6,8 +6,15 @@
 	<title>{{ page.title }}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="twitter:title" content="{{ page.title }}">
 	{% if page.description %}
+	<meta name="twitter:description" content="{{ page.description }}">
 	<meta name="description" content="{{ page.description }}">
+	{% endif %}
+	{% if page.image %}
+	<meta property="og:image" content="{{ page.image }}">
+	<meta name="twitter:image" content="{{ page.image }}">
+	<meta name="twitter:card" content="summary_large_image">
 	{% endif %}
 	<link href="{{ site.url }}{{ page.url }}" rel="canonical">
 	<link href="{{ site.url }}/css/modern.css" rel="stylesheet">
