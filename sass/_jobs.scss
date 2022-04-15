@@ -1,0 +1,34 @@
+@import "variables";
+
+ul.job-navigation {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	padding-inline-start: 0;
+	margin: 3rem 0;
+
+	@media screen and (min-width: $breakpoint_desktop) {
+		justify-content: flex-start;
+	}
+
+	li a {
+		background-color: #303840;
+		color: white;
+		border-radius: 0.25rem;
+		padding: 0.75rem 1rem;
+		text-decoration: none;
+	}
+}
+.job-heading {
+	scroll-margin-top: 5rem;
+}
+
+.job-position {
+	padding: 4rem 0;
+}
+
+.job-position + .job-position {
+	border-top:1px solid #303840;
+}
