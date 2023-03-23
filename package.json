@@ -13,6 +13,9 @@
 		"grunt-contrib-compass": "0.6.x",
 		"grunt-jekyll": "0.4.x"
 	},
+	"scripts": {
+		"start": "bundle exec jekyll serve"
+	},
 	"engines": {
 		"node": ">=0.10.4 <0.12"
 	},
