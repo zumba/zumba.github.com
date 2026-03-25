@@ -377,7 +377,9 @@ return(
 {ap&&<button onClick={()=>setSC(true)} style={{width:"100%",padding:"16px",background:B.coral,color:"#fff",border:"none",borderRadius:10,fontSize:16,fontWeight:700,cursor:"pointer",marginTop:14,fontFamily:"inherit"}}>🏆 Get Your Certificate!</button>}
 </>)}</>)}</div></div>);}
 
-ReactDOM.render(<App/>,document.getElementById("root"));
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(<App/>);
 </script>
 </body>
 </html>
