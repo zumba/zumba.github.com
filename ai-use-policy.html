@@ -258,14 +258,6 @@ function PBar({current,total}){
   </div>
 }
 
-// Bullet list
-function BList({items,color}){
-  return items.map((item,i)=><div key={i} style={{display:"flex",gap:10,alignItems:"flex-start",marginBottom:8}}>
-    <span style={{color,marginTop:5,flexShrink:0,fontSize:10}}>●</span>
-    <span style={{fontSize:15,color:B.text,lineHeight:1.6}}>{item}</span>
-  </div>)
-}
-
 // Content renderer
 function CR({item}){
   if(item.type==="text") return <div style={{marginBottom:28}}>
