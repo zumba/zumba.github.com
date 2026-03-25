@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Acceptable Use Policy — Interactive Training</title>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f5f6f9;min-height:100vh}
+#root{min-height:100vh;display:flex;flex-direction:column}
+button{font-family:inherit}
+input{font-family:inherit}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#f5f6f9}
+::-webkit-scrollbar-thumb{background:#d5d8e2;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#b0b4c4}
+</style>
+<script type="text/babel">
+const {useState, useRef, useMemo} = React;
+
+const B = {
+  primary:"#1b2a4a", primaryDark:"#111d35", primaryLight:"#e8ecf4",
+  coral:"#e8546b", coralDark:"#c43a52", coralLight:"#fdeef0",
+  teal:"#2a9d8f", tealDark:"#1f7a6e", tealLight:"#e6f5f3",
+  navy:"#243b6a", amber:"#d4972e", amberLight:"#fdf4e4",
+  danger:"#c0392b", dangerLight:"#fce8e6",
+  success:"#1e8c5e", successLight:"#e4f5ed",
+  bg:"#f5f6f9", card:"#ffffff",
+  text:"#1a1a2e", textSecondary:"#3d3d56", textMuted:"#5c5c78",
+  border:"#d5d8e2"
+};
+
+const PT = 0.9;
+
+function sRng(seed){let s=seed;return function(){s=(s*16807+0)%2147483647;return(s-1)/2147483646}}
+function shuf(arr,seed){const r=sRng(seed);const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function shufQ(quiz,ss){return quiz.map((q,qi)=>{const seed=ss*100+qi*7+13;const idx=shuf([0,1,2,3],seed);return{...q,opts:idx.map(i=>q.opts[i]),answer:idx.indexOf(q.answer)}})}
+
+const secRaw = [
+  {
+    id:"intro",
+    title:"Introduction & Overview",
+    icon:"📘",
+    seed:42,
+    content:[
+      {type:"text", title:"Welcome to AI Use Policy Training",
+       body:"Zumba Fitness, LLC permits and encourages the use of artificial intelligence tools (\"AI Tools\") in connection with Company business where such use enhances productivity, supports business objectives, and is conducted responsibly.\n\nThis training covers our Artificial Intelligence Use Policy — the rules that govern how you use AI tools at work. Whether you're using large language models, image generators, code co-pilots, or AI-powered analytics platforms, this policy applies to you.\n\nBy the end of this training, you'll understand what's expected, what's off-limits, and how to use AI tools safely and responsibly. The goal is simple: help you be productive with AI while protecting the company, our customers, and yourself."},
+      {type:"text", title:"Who Does This Apply To?",
+       body:"This policy applies to all employees, contractors, and third parties acting on the Company's behalf. If you use AI tools for any Company business — even casually — these rules apply to you.\n\nIt doesn't matter whether you're in Marketing, Technology, Legal, Finance, or any other department. If you're touching AI tools in connection with your work, you need to know and follow this policy."},
+      {type:"cards", title:"What Counts as an \"AI Tool\"?",
+       items:[
+         {icon:"💬", name:"Large Language Models", desc:"Chatbots and text generators like Claude, ChatGPT, and similar tools that produce text, answer questions, or assist with writing."},
+         {icon:"🎨", name:"Image & Media Generators", desc:"Tools that create images, video, audio, or synthetic media from text prompts or other inputs (e.g., DALL-E, Midjourney, Sora)."},
+         {icon:"💻", name:"Code Co-Pilots", desc:"AI assistants that help write, review, or debug code — including tools embedded in your IDE or development environment."},
+         {icon:"📊", name:"AI-Powered Analytics", desc:"Platforms that use machine learning for predictions, data analysis, automation, or AI features embedded in third-party applications you already use."}
+       ]},
+      {type:"callout", variant:"warning",
+       body:"Key rule: You may only use Company-approved AI Tools for Company business. Personal or consumer-tier AI accounts may not be used for work without prior authorization — request access by posting a message in the #ai-tool-access channel in Slack. If you're unsure whether a tool is approved, ask before using it."},
+      {type:"text", title:"What is \"AI-Generated Content\"?",
+       body:"AI-Generated Content means any output produced in whole or material part by an AI Tool — including text, images, video, audio, code, or data analysis. This applies whether you use the output in final form or as a starting point for your own work.\n\nThis distinction matters because AI-Generated Content carries unique risks around accuracy, intellectual property, and legal compliance. Throughout this training, we'll cover exactly what those risks are and how to handle them."},
+      {type:"text", title:"How This Training Works",
+       body:"This training has four sections. The first section is an overview, and the remaining three each have a short quiz. You need to score 90% or higher on each quiz to move forward. If you don't pass, you can review the material and try again — there's no limit.\n\nWhen you've completed all four sections, you'll receive a personalized certificate of completion. Take your time and read carefully."}
+    ],
+    quiz:[]
+  },
+  {
+    id:"principles",
+    title:"Guiding Principles",
+    icon:"⚖️",
+    seed:97,
+    content:[
+      {type:"text", title:"The Six Principles of Responsible AI Use",
+       body:"The policy establishes six guiding principles that govern all AI use at Zumba Fitness. These aren't just suggestions — they are requirements. Each one exists to protect you, the Company, and our customers.\n\nLet's walk through each principle in detail so you know exactly what's expected."},
+      {type:"principle-card", icon:"✅", name:"Use Only Approved Tools",
+       principle:"Use only Company-approved AI Tools. Personal or consumer-tier AI accounts may not be used for Company business without prior authorization — request access by posting a message in the #ai-tool-access channel in Slack.",
+       why:"Unapproved tools may not have the security, privacy, or compliance safeguards required for business use. Using them could expose Company data to uncontrolled third-party systems.",
+       example:"Before signing up for a new AI service you found online, post a message in the #ai-tool-access Slack channel to request approval. Even if it's free and looks useful, it needs to be approved before you use it for work."},
+      {type:"principle-card", icon:"🔒", name:"Protect Confidential Information",
+       principle:"Sensitive, confidential, or proprietary Company information — including financial data, legal matters, personnel records, customer data, and trade secrets — may not be submitted to any AI Tool unless specifically authorized by Technology and Legal (and the CFO for financial data).",
+       why:"Once confidential data enters an AI tool, you lose control over how it's processed, stored, or surfaced. A single disclosure could trigger regulatory penalties, lawsuits, or competitive harm.",
+       example:"Claude.ai, Claude Cowork, and Claude Code have been approved for use with confidential information. However, if you want to use AI to analyze financial data specifically, you still need authorization from Legal AND the CFO before inputting that data. Don't assume all confidential data can go into any approved tool — check the specific authorization level for the type of data you're working with."},
+      {type:"principle-card", icon:"👁️", name:"Review All AI Output Before Use",
+       principle:"You remain accountable for the accuracy, legality, and appropriateness of all work product produced with AI assistance. AI output is not authoritative and must be reviewed and validated by a human before use in any deliverable.",
+       why:"AI tools can produce confident-sounding but incorrect, biased, or legally problematic output. If you use it without review, you own the consequences — not the AI.",
+       example:"If Claude writes a customer email for you, read it carefully before sending. If it drafts contract language, have Legal review it. Never send AI output directly without human verification."},
+      {type:"principle-card", icon:"📣", name:"Disclose AI Involvement Where Required",
+       principle:"You must disclose the use of AI-Generated Content where required by law, platform policy, contractual obligation, or Company standards.",
+       why:"Many jurisdictions and platforms now require disclosure of AI-generated content. Failing to disclose can violate laws, breach contracts, or damage trust with partners and customers.",
+       example:"If you use AI to help create content for a licensing partner's campaign, check whether the contract or platform requires disclosure of AI involvement."},
+      {type:"principle-card", icon:"⚖️", name:"Consult Legal for High-Stakes Applications",
+       principle:"AI Tools may not be used to generate legal advice, compliance determinations, advertising claims, or external-facing content without appropriate Legal review. AI-Generated music, synthetic media, or deepfakes require prior Legal approval.",
+       why:"High-stakes outputs carry significant legal and reputational risk. AI-generated legal advice could be wrong. AI advertising claims could be misleading. Synthetic media could violate rights.",
+       example:"Want to use AI to draft ad copy for a new campaign? That needs Legal review before publication. Planning to use AI-generated music in a class format? Legal must approve it first."},
+      {type:"principle-card", icon:"🌍", name:"Comply With Privacy Laws",
+       principle:"Use of AI Tools must comply with applicable data protection laws including GDPR, CCPA/CPRA, LGPD, PIPEDA, and similar regimes. Personal information may only be submitted to AI Tools operated by vendors with an approved data processing agreement.",
+       why:"Zumba operates globally. Different regions have strict rules about how personal data can be processed. Submitting personal data to an AI tool without proper legal agreements in place could violate these laws.",
+       example:"If you're working with customer data from European licensees, you can't just paste it into an AI tool — even an approved one — without confirming that a proper data processing agreement is in place for that specific use."}
+    ],
+    quiz:[
+      {q:"You find a new AI tool that could save your team hours of work. What should you do first?",
+       opts:["Start using it immediately since it improves productivity","Post a message in the #ai-tool-access Slack channel to request authorization before using it for Company business","Use it only for non-confidential tasks without telling anyone","Wait until your next performance review to bring it up"],
+       answer:1,
+       explanation:"All AI tools must be Company-approved. Post in the #ai-tool-access Slack channel to request approval before using any new AI tool for work, regardless of how useful it seems."},
+      {q:"Who needs to authorize submitting financial data to an AI Tool?",
+       opts:["Only your direct manager","Technology and Legal","Technology, Legal, AND the CFO","The CFO alone"],
+       answer:2,
+       explanation:"Financial data requires a triple authorization: Technology, Legal, and the CFO must all approve before financial data can be submitted to any AI Tool."},
+      {q:"Claude generates a summary of a project update for you. Before sharing it with your team, you should:",
+       opts:["Send it immediately — AI tools are very accurate","Add a disclaimer that it was AI-generated and send it","Review it for accuracy and appropriateness, then share it after validating the content","Ask Claude to double-check its own work"],
+       answer:2,
+       explanation:"You are accountable for all AI-assisted work product. Review and validate AI output before using it in any deliverable."},
+      {q:"Your team wants to use AI to generate music for a new Zumba class format. What's required?",
+       opts:["Nothing special — just use an approved AI tool","Prior Legal approval is required before using AI-generated music in any Company materials","Only Technology needs to approve","You just need your manager's sign-off"],
+       answer:1,
+       explanation:"AI-Generated music, synthetic media, or deepfakes require prior Legal approval before use in any Company materials or channels."},
+      {q:"A European licensee sends you customer data to analyze. Can you paste it into an approved AI tool?",
+       opts:["Yes — if the tool is approved, any data can go in","No — you must confirm a proper data processing agreement is in place for that specific use","Yes, as long as you delete the conversation after","Only if you anonymize the names"],
+       answer:1,
+       explanation:"Personal information may only be submitted to AI Tools operated by vendors with an approved data processing agreement and appropriate transfer mechanisms, especially for data subject to GDPR and similar laws."}
+    ]
+  },
+  {
+    id:"prohibited",
+    title:"Prohibited Uses",
+    icon:"🚫",
+    seed:173,
+    content:[
+      {type:"text", title:"What You Must Never Do",
+       body:"Regardless of which AI tool you use or what authorization level you have, certain activities are always prohibited. These aren't gray areas — they are bright-line rules.\n\nViolating any of these prohibitions can result in disciplinary action up to and including termination, and may also result in personal liability if the violation causes legal, regulatory, or contractual exposure for the Company."},
+      {type:"prohibited-item", icon:"🔑", name:"Never Submit Credentials or Access Tokens",
+       rule:"Submitting passwords, API keys, authentication credentials, access tokens, or other sensitive system access information to any AI Tool is prohibited.",
+       why:"Credentials give direct access to Company systems. If they enter an AI tool, they could be logged, cached, or exposed — creating a direct path for unauthorized access.",
+       scenario:"You're debugging an API integration and want Claude to help. Instead of pasting your actual API key, use a placeholder like YOUR_API_KEY_HERE. Never share the real thing."},
+      {type:"prohibited-item", icon:"👤", name:"Never Submit Unprotected Personal Information",
+       rule:"Submitting personal information of licensees, consumers, employees, contractors, or business partners to any AI Tool not covered by an approved and compliant data processing agreement is prohibited.",
+       why:"Personal data is protected by laws worldwide. Submitting it to tools without proper legal safeguards violates those laws and exposes the Company to regulatory penalties and lawsuits.",
+       scenario:"You want to use AI to analyze customer feedback that includes names and email addresses. Before doing so, confirm the tool has an approved data processing agreement that covers this use."},
+      {type:"prohibited-item", icon:"⚖️", name:"Never Submit Privileged Legal or Financial Data Without Authorization",
+       rule:"Submitting active litigation materials, privileged communications, trade secrets, or financial data to any AI Tool without prior written authorization from the CLO and CTO (and the CFO for financial data) is prohibited.",
+       why:"Legal privilege can be permanently waived if privileged communications are shared improperly. Trade secrets lose their legal protection once disclosed. Financial data exposure can trigger securities and compliance issues.",
+       scenario:"A lawyer emails you a privileged legal memo. Do NOT paste it into an AI tool for a summary — even an approved tool. Get written authorization from the CLO and CTO first."},
+      {type:"prohibited-item", icon:"🎭", name:"Never Generate Deceptive or Harmful Content",
+       rule:"Generating content that fabricates statements by real individuals, misrepresents identity, or constitutes defamation, harassment, discrimination, or other unlawful/unethical conduct is prohibited.",
+       why:"Fabricated statements can constitute defamation. Misrepresenting identity is fraud. These uses expose the Company to lawsuits and destroy trust.",
+       scenario:"Never use AI to create a fake quote attributed to a real person, write a message impersonating someone else, or generate content that harasses or discriminates."},
+      {type:"prohibited-item", icon:"🛡️", name:"Never Circumvent Security or Compliance Controls",
+       rule:"Using AI Tools to circumvent or attempt to circumvent security controls, access controls, or compliance processes is prohibited.",
+       why:"Security controls exist to protect the Company. Using AI to bypass them undermines the entire security framework and can create serious vulnerabilities.",
+       scenario:"Don't use AI to find workarounds for access restrictions, bypass content filters, or automate actions that compliance processes are designed to control."},
+      {type:"prohibited-item", icon:"🎬", name:"Never Create Unauthorized Deepfakes or Synthetic Media",
+       rule:"Using AI to generate deepfakes, synthetic voice or likeness representations of real individuals, or other manipulated media without prior Legal approval is prohibited.",
+       why:"Deepfakes and synthetic media raise serious legal issues around right of publicity, consent, and fraud. Unauthorized use can result in lawsuits and criminal liability.",
+       scenario:"Want to create a fun AI-generated video of a Zumba instructor for social media? Stop — you need Legal approval before creating any synthetic representation of a real person."},
+      {type:"prohibited-item", icon:"©️", name:"Never Infringe Third-Party IP",
+       rule:"Using AI to generate or use content in a manner that may infringe third-party intellectual property rights or violate licensing restrictions is prohibited.",
+       why:"AI-generated content can inadvertently reproduce copyrighted material. Using it without diligence exposes the Company to infringement claims and damages.",
+       scenario:"If you use AI to generate images for a campaign, don't ask it to create something 'in the style of' a specific artist or replicate a copyrighted character. Consult Legal if you're unsure."},
+      {type:"callout", variant:"warning",
+       body:"Remember: Any use that violates the Company's Code of Conduct or applicable law is also prohibited, even if not specifically listed above. When in doubt, ask Legal or Technology."}
+    ],
+    quiz:[
+      {q:"You're troubleshooting a login issue and want AI to help. Can you paste your password into the chat?",
+       opts:["Yes, if it's a Company-approved AI tool","Yes, as long as you delete the conversation after","Never — passwords and credentials must never be submitted to any AI Tool","Only if your IT team is watching"],
+       answer:2,
+       explanation:"Submitting passwords, API keys, or any authentication credentials to any AI Tool is always prohibited, regardless of the tool's approval status."},
+      {q:"A colleague asks you to use AI to create a funny video featuring a celebrity's AI-generated likeness for an internal presentation. What should you do?",
+       opts:["Go ahead — it's just internal","Create it but add a disclaimer","Do not create it without prior Legal approval — synthetic likenesses of real individuals require authorization","Only do it if the celebrity is a public figure"],
+       answer:2,
+       explanation:"Deepfakes and synthetic representations of real individuals always require prior Legal approval, even for internal use."},
+      {q:"You receive a privileged legal memo and want to use AI to summarize it. What's required?",
+       opts:["Nothing — summarizing is fine","Prior written authorization from the CLO and CTO","Just mark the conversation as confidential","Only approval from your manager"],
+       answer:1,
+       explanation:"Active litigation materials and privileged communications require prior written authorization from the CLO and CTO before submission to any AI Tool."},
+      {q:"Which of the following is a prohibited use of AI under this policy?",
+       opts:["Using AI to draft a first version of a marketing email","Using AI to brainstorm ideas for a team meeting","Using AI to circumvent security controls or access restrictions","Using AI to summarize a non-confidential report"],
+       answer:2,
+       explanation:"Using AI to circumvent or attempt to circumvent security controls, access controls, or compliance processes is explicitly prohibited."},
+      {q:"You want AI to generate an image for a campaign. Can you ask it to create something 'in the style of' a specific famous artist?",
+       opts:["Yes — AI-generated content is always original","Yes, as long as you credit the artist","No — this may infringe third-party IP rights. Consult Legal if unsure","Only if the artist is no longer living"],
+       answer:2,
+       explanation:"Using AI to reproduce, emulate, or closely mimic the style or distinctive elements of a specific artist in commercial applications requires prior Legal approval."}
+    ]
+  },
+  {
+    id:"ip-reporting",
+    title:"IP, Reporting & Accountability",
+    icon:"📋",
+    seed:251,
+    content:[
+      {type:"text", title:"Intellectual Property Considerations",
+       body:"AI-Generated Content raises important intellectual property questions that you need to understand. The rules here are designed to protect the Company's creative assets and avoid legal exposure from using content that may incorporate third-party rights."},
+      {type:"ip-card", icon:"©️", name:"Copyright Protection May Not Apply",
+       detail:"AI-Generated Content that lacks sufficient human authorship may not qualify for copyright protection under U.S. and international law. Where IP protection is commercially important — including content for the Music Department, brand campaigns, or licensing arrangements — human creative contribution must be substantive and documented at the time of creation.",
+       action:"If you're creating commercially significant content with AI assistance, make sure your human contribution is substantial and document it. Consult Legal before relying on AI-Generated Content in any commercially significant deliverable."},
+      {type:"ip-card", icon:"⚠️", name:"Third-Party IP Risks in AI Output",
+       detail:"AI-Generated Content may incorporate or reflect patterns derived from third-party copyrighted works. You must not assume AI output is free of IP risks. Do not use AI to reproduce, emulate, or closely mimic the style, likeness, or distinctive elements of a specific location (e.g., the Eiffel Tower at night), artist, author, person, brand, or other identifiable source in commercial applications without Legal approval.",
+       action:"AI Tools used in content production must be from approved vendors with contractual protections, including representations regarding lawful training data and appropriate indemnification for IP infringement claims."},
+      {type:"text", title:"Incident Reporting — What to Do When Things Go Wrong",
+       body:"Mistakes happen. What matters is how quickly and transparently you report them. The policy requires prompt reporting to the CLO and CTO for specific types of incidents.\n\nPrompt self-reporting will be considered as a mitigating factor in any disciplinary review. However, delayed reporting that results in material harm to the Company may be treated as an independent policy violation — meaning the delay itself becomes a second offense."},
+      {type:"cards", title:"You Must Report These Incidents Immediately",
+       items:[
+         {icon:"🚨", name:"Accidental Data Submission", desc:"Any accidental submission of Confidential Information or restricted data to an unauthorized AI Tool. Even if you delete the conversation immediately, report it."},
+         {icon:"⛔", name:"Prohibited Tool Use", desc:"Any use of a prohibited AI Tool in connection with Company business. If you realize after the fact that a tool wasn't approved, report it right away."},
+         {icon:"📤", name:"Policy-Violating Publication", desc:"Any AI-Generated Content published externally that potentially violates this Policy. If content went out the door and shouldn't have, flag it immediately."}
+       ]},
+      {type:"callout", variant:"warning",
+       body:"Report to: The Chief Legal Officer (CLO) and Chief Technology Officer (CTO). Don't wait, don't try to fix it yourself first, don't hope no one notices. The sooner you report, the better the outcome for everyone."},
+      {type:"text", title:"Training & Access Requirements",
+       body:"Access to Company-licensed AI Tools requires completion of mandatory training (like this one). You must submit completion certificates prior to license activation. Licenses will be suspended for non-compliance.\n\nTraining requirements will be updated as tools and regulations evolve, so this won't be a one-time thing. Stay current with training to maintain your access."},
+      {type:"text", title:"Accountability & Enforcement",
+       body:"You are individually accountable for your AI Tool use. This is not a team responsibility — it's personal.\n\nManagers are responsible for ensuring their team's compliance and for escalating concerns. Violations may result in disciplinary action up to and including termination. Violations that result in legal, regulatory, or contractual exposure may also result in personal liability to the extent permitted by law.\n\nQuestions about the policy go to the CLO. Requests for AI tool approval go to the CTO."},
+      {type:"cards", title:"Key Contacts",
+       items:[
+         {icon:"⚖️", name:"Policy Questions", desc:"Direct all questions about this policy or applicable legal requirements to the Chief Legal Officer (CLO)."},
+         {icon:"💻", name:"Tool Approval Requests", desc:"Request approval for new AI Tools by posting a message in the #ai-tool-access channel in Slack."},
+         {icon:"🚨", name:"Incident Reports", desc:"Report all AI-related incidents to both the CLO and CTO immediately."}
+       ]}
+    ],
+    quiz:[
+      {q:"AI-Generated Content that lacks sufficient human authorship:",
+       opts:["Is automatically copyrighted to the Company","May not qualify for copyright protection under U.S. and international law","Is protected as long as you add your name to it","Only needs a disclaimer to be protected"],
+       answer:1,
+       explanation:"Under current law, AI-Generated Content without sufficient human creative contribution may not qualify for copyright protection."},
+      {q:"You accidentally paste customer data into an unapproved AI tool and immediately delete the conversation. What should you do?",
+       opts:["Nothing — you deleted it, so it's fine","Report it to your manager only","Report it promptly to the CLO and CTO — even if you deleted the conversation","Wait to see if anyone notices"],
+       answer:2,
+       explanation:"Accidental submission of confidential data to unauthorized tools must be reported to the CLO and CTO promptly, regardless of whether you deleted the conversation."},
+      {q:"What happens if you delay reporting an AI policy incident and it causes material harm?",
+       opts:["Nothing — only the original violation matters","The delay itself may be treated as an independent policy violation","You'll receive a warning but no additional consequences","Delayed reporting is fine as long as it's within 30 days"],
+       answer:1,
+       explanation:"Delayed reporting that results in material harm may be treated as an independent policy violation, separate from the original incident."},
+      {q:"Who should you contact if you want to use a new AI tool that isn't currently approved?",
+       opts:["The Chief Legal Officer","Your direct manager","Post a message in the #ai-tool-access Slack channel","Human Resources"],
+       answer:2,
+       explanation:"Requests for approval of new AI Tools should be made by posting a message in the #ai-tool-access Slack channel."},
+      {q:"You use AI to generate key visual content for a major licensing deal. What must you ensure?",
+       opts:["That the AI tool is free to use","That human creative contribution is substantive and documented, and Legal has been consulted","That you save the AI conversation as proof","That the content looks original"],
+       answer:1,
+       explanation:"Where IP protection is commercially important, human creative contribution must be substantive and documented at creation. Legal should be consulted before relying on AI-Generated Content in commercially significant deliverables."}
+    ]
+  }
+];
+
+// SVG Icons
+const CkIc = () => <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3.5 3.5L15 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>;
+const XIc = () => <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 6l8 8M14 6l-8 8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg>;
+const LkIc = () => <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="4" y="9" width="12" height="8" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M7 9V6a3 3 0 016 0v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>;
+
+// Progress bar
+function PBar({current,total}){
+  const p=current/total*100;
+  return <div style={{display:"flex",alignItems:"center",gap:14,marginBottom:28}}>
+    <div style={{flex:1,height:10,background:B.border,borderRadius:5,overflow:"hidden"}}>
+      <div style={{width:`${p}%`,height:"100%",background:`linear-gradient(90deg,${B.teal},${B.coral})`,borderRadius:5,transition:"width 0.5s ease"}}/>
+    </div>
+    <span style={{fontSize:15,color:B.textSecondary,fontWeight:700,whiteSpace:"nowrap"}}>{current}/{total} Passed</span>
+  </div>
+}
+
+// Bullet list
+function BList({items,color}){
+  return items.map((item,i)=><div key={i} style={{display:"flex",gap:10,alignItems:"flex-start",marginBottom:8}}>
+    <span style={{color,marginTop:5,flexShrink:0,fontSize:10}}>●</span>
+    <span style={{fontSize:15,color:B.text,lineHeight:1.6}}>{item}</span>
+  </div>)
+}
+
+// Content renderer
+function CR({item}){
+  if(item.type==="text") return <div style={{marginBottom:28}}>
+    <h3 style={{fontSize:22,fontWeight:700,color:B.primary,margin:"0 0 12px"}}>{item.title}</h3>
+    {item.body.split("\n\n").map((p,i)=><p key={i} style={{color:B.textSecondary,lineHeight:1.8,margin:"0 0 14px",fontSize:16}}>{p}</p>)}
+  </div>;
+
+  if(item.type==="cards") return <div style={{marginBottom:28}}>
+    <h3 style={{fontSize:20,fontWeight:700,color:B.primary,margin:"0 0 14px"}}>{item.title}</h3>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(240px,1fr))",gap:14}}>
+      {item.items.map((c,i)=><div key={i} style={{background:B.primaryLight,borderRadius:12,padding:18,border:`1px solid ${B.border}`}}>
+        <div style={{fontSize:30,marginBottom:10}}>{c.icon}</div>
+        <div style={{fontWeight:700,fontSize:16,color:B.primary,marginBottom:6}}>{c.name}</div>
+        <div style={{fontSize:14.5,color:B.textSecondary,lineHeight:1.6}}>{c.desc}</div>
+      </div>)}
+    </div>
+  </div>;
+
+  if(item.type==="callout") return <div style={{background:B.amberLight,borderLeft:`4px solid ${B.amber}`,borderRadius:8,padding:18,marginBottom:28}}>
+    <p style={{margin:0,fontSize:15.5,color:B.text,lineHeight:1.7,fontWeight:500}}>{item.body}</p>
+  </div>;
+
+  if(item.type==="principle-card") return <div style={{background:B.card,border:`1px solid ${B.border}`,borderRadius:14,marginBottom:24,overflow:"hidden",boxShadow:"0 2px 8px rgba(27,42,74,0.06)"}}>
+    <div style={{background:B.teal,padding:"18px 22px",display:"flex",alignItems:"center",gap:14}}>
+      <span style={{fontSize:32}}>{item.icon}</span>
+      <div style={{fontWeight:800,fontSize:20,color:"#fff"}}>{item.name}</div>
+    </div>
+    <div style={{padding:22}}>
+      <div style={{background:B.primaryLight,borderRadius:10,padding:18,marginBottom:16,borderLeft:`4px solid ${B.navy}`}}>
+        <h4 style={{fontSize:13,fontWeight:700,color:B.navy,textTransform:"uppercase",letterSpacing:0.6,margin:"0 0 8px"}}>The Rule</h4>
+        <p style={{margin:0,fontSize:15,color:B.text,lineHeight:1.7}}>{item.principle}</p>
+      </div>
+      <div style={{background:B.amberLight,borderRadius:10,padding:18,marginBottom:16,borderLeft:`4px solid ${B.amber}`}}>
+        <h4 style={{fontSize:13,fontWeight:700,color:"#7a5b10",textTransform:"uppercase",letterSpacing:0.6,margin:"0 0 8px"}}>Why This Matters</h4>
+        <p style={{margin:0,fontSize:15,color:B.text,lineHeight:1.7}}>{item.why}</p>
+      </div>
+      <div style={{background:B.tealLight,borderRadius:10,padding:18,borderLeft:`4px solid ${B.teal}`}}>
+        <h4 style={{fontSize:13,fontWeight:700,color:B.tealDark,textTransform:"uppercase",letterSpacing:0.6,margin:"0 0 8px"}}>In Practice</h4>
+        <p style={{margin:0,fontSize:15,color:B.text,lineHeight:1.7}}>{item.example}</p>
+      </div>
+    </div>
+  </div>;
+
+  if(item.type==="prohibited-item") return <div style={{background:B.card,border:`1px solid ${B.border}`,borderRadius:14,marginBottom:24,overflow:"hidden",boxShadow:"0 2px 8px rgba(27,42,74,0.06)"}}>
+    <div style={{background:B.primary,padding:"18px 22px",display:"flex",alignItems:"center",gap:14,flexWrap:"wrap"}}>
+      <span style={{fontSize:32}}>{item.icon}</span>
+      <div style={{flex:1}}>
+        <div style={{fontWeight:800,fontSize:20,color:"#fff"}}>{item.name}</div>
+        <span style={{fontSize:12,fontWeight:700,color:"#fff",background:B.coral,padding:"3px 12px",borderRadius:99,textTransform:"uppercase",letterSpacing:0.5}}>Prohibited</span>
+      </div>
+    </div>
+    <div style={{padding:22}}>
+      <div style={{background:B.coralLight,borderRadius:10,padding:18,marginBottom:16,borderLeft:`4px solid ${B.coral}`}}>
+        <h4 style={{fontSize:13,fontWeight:700,color:B.coralDark,textTransform:"uppercase",letterSpacing:0.6,margin:"0 0 8px"}}>The Rule</h4>
+        <p style={{margin:0,fontSize:15,color:B.text,lineHeight:1.7}}>{item.rule}</p>
+      </div>
+      <div style={{background:B.amberLight,borderRadius:10,padding:18,marginBottom:16,borderLeft:`4px solid ${B.amber}`}}>
+        <h4 style={{fontSize:13,fontWeight:700,color:"#7a5b10",textTransform:"uppercase",letterSpacing:0.6,margin:"0 0 8px"}}>Why This Is Prohibited</h4>
+        <p style={{margin:0,fontSize:15,color:B.text,lineHeight:1.7}}>{item.why}</p>
+      </div>
+      <div style={{background:B.primaryLight,borderRadius:10,padding:18,borderLeft:`4px solid ${B.navy}`}}>
+        <h4 style={{fontSize:13,fontWeight:700,color:B.navy,textTransform:"uppercase",letterSpacing:0.6,margin:"0 0 8px"}}>Scenario</h4>
+        <p style={{margin:0,fontSize:15,color:B.text,lineHeight:1.7,fontStyle:"italic"}}>{item.scenario}</p>
+      </div>
+    </div>
+  </div>;
+
+  if(item.type==="ip-card") return <div style={{background:B.card,border:`1px solid ${B.border}`,borderRadius:14,marginBottom:24,overflow:"hidden",boxShadow:"0 2px 8px rgba(27,42,74,0.06)"}}>
+    <div style={{padding:"18px 22px",borderBottom:`1px solid ${B.border}`,display:"flex",alignItems:"center",gap:14,background:B.primaryLight}}>
+      <span style={{fontSize:32}}>{item.icon}</span>
+      <div style={{fontWeight:800,fontSize:20,color:B.primary}}>{item.name}</div>
+    </div>
+    <div style={{padding:22}}>
+      <p style={{fontSize:15.5,color:B.textSecondary,lineHeight:1.75,margin:"0 0 16px"}}>{item.detail}</p>
+      <div style={{background:B.tealLight,borderRadius:10,padding:16,borderLeft:`4px solid ${B.teal}`}}>
+        <h4 style={{fontSize:13,fontWeight:700,color:B.tealDark,textTransform:"uppercase",letterSpacing:0.6,margin:"0 0 6px"}}>What You Should Do</h4>
+        <p style={{margin:0,fontSize:15,color:B.text,lineHeight:1.65}}>{item.action}</p>
+      </div>
+    </div>
+  </div>;
+
+  return null;
+}
+
+// Quiz component
+function Quiz({quiz,onPass,title,passed,seed:ss}){
+  const sh=useMemo(()=>shufQ(quiz,ss),[quiz,ss]);
+  const [ans,setAns]=useState({});
+  const [sub,setSub]=useState(false);
+  const [sc,setSc]=useState(0);
+  const sel=(qi,oi)=>{if(!sub) setAns(p=>({...p,[qi]:oi}))};
+  const submit=()=>{let c=0;sh.forEach((q,i)=>{if(ans[i]===q.answer)c++});setSc(c);setSub(true);if(c/sh.length>=PT)onPass()};
+  const retry=()=>{setAns({});setSub(false);setSc(0)};
+  const dp=sc/sh.length>=PT;
+  const aa=Object.keys(ans).length===sh.length;
+  const lt=["A","B","C","D"];
+
+  if(passed&&!sub) return <div style={{background:B.successLight,borderRadius:12,padding:24,textAlign:"center",border:"1px solid #b8dfc9"}}>
+    <div style={{fontSize:32,marginBottom:8}}>✅</div>
+    <div style={{fontWeight:700,color:B.success,fontSize:18}}>Section Passed!</div>
+    <div style={{fontSize:15,color:"#166534",marginTop:6}}>You've already completed this quiz successfully.</div>
+  </div>;
+
+  return <div>
+    <h3 style={{fontSize:20,fontWeight:700,color:B.primary,margin:"0 0 6px"}}>Quiz: {title}</h3>
+    <p style={{fontSize:15,color:B.textMuted,margin:"0 0 20px"}}>You need {Math.ceil(sh.length*PT)}/{sh.length} correct to pass (90%).</p>
+    {sh.map((q,qi)=>{
+      const ua=ans[qi]; const ic=ua===q.answer;
+      return <div key={qi} style={{background:B.card,border:`2px solid ${sub?(ic?B.success:B.danger)+"50":B.border}`,borderRadius:12,padding:18,marginBottom:14}}>
+        <div style={{fontWeight:600,fontSize:16,color:B.text,marginBottom:12,lineHeight:1.5}}>
+          <span style={{color:B.teal,marginRight:8,fontWeight:800}}>Q{qi+1}.</span>{q.q}
+        </div>
+        <div style={{display:"flex",flexDirection:"column",gap:8}}>
+          {q.opts.map((o,oi)=>{
+            const sel2=ua===oi; const ir=oi===q.answer;
+            let bg=B.bg,bd=B.border,cl=B.text;
+            if(sub){if(ir){bg=B.successLight;bd=B.success;cl="#14532d"}else if(sel2&&!ir){bg=B.dangerLight;bd=B.danger;cl="#7f1d1d"}}
+            else if(sel2){bg=B.tealLight;bd=B.teal;cl=B.tealDark}
+            return <button key={oi} onClick={()=>sel(qi,oi)} style={{display:"flex",alignItems:"center",gap:10,padding:"12px 14px",background:bg,border:`2px solid ${bd}`,borderRadius:10,cursor:sub?"default":"pointer",fontSize:15,color:cl,textAlign:"left",width:"100%",fontWeight:sel2?600:400,transition:"all 0.15s",fontFamily:"inherit",lineHeight:1.5}}>
+              {sub&&ir&&<span style={{color:B.success,flexShrink:0}}><CkIc/></span>}
+              {sub&&sel2&&!ir&&<span style={{color:B.danger,flexShrink:0}}><XIc/></span>}
+              {!sub&&<span style={{width:22,height:22,borderRadius:99,border:`2px solid ${sel2?B.teal:B.border}`,background:sel2?B.teal:"transparent",flexShrink:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,fontWeight:700,color:sel2?"#fff":B.textMuted}}>{lt[oi]}</span>}
+              <span>{o}</span>
+            </button>
+          })}
+        </div>
+        {sub&&<div style={{marginTop:10,fontSize:14.5,color:ic?"#14532d":"#7f1d1d",background:ic?B.successLight:B.dangerLight,borderRadius:8,padding:"10px 12px",lineHeight:1.6,fontWeight:500}}>{q.explanation}</div>}
+      </div>
+    })}
+    {!sub?<button onClick={submit} disabled={!aa} style={{width:"100%",padding:"16px",background:aa?B.teal:B.border,color:aa?"#fff":B.textMuted,border:"none",borderRadius:10,fontSize:16,fontWeight:700,cursor:aa?"pointer":"not-allowed",marginTop:10,fontFamily:"inherit"}}>Submit Answers</button>
+    :<div style={{background:dp?B.successLight:B.dangerLight,borderRadius:12,padding:24,textAlign:"center",marginTop:10,border:`1px solid ${dp?"#b8dfc9":"#f0c4be"}`}}>
+      <div style={{fontSize:32,marginBottom:6}}>{dp?"🎉":"📝"}</div>
+      <div style={{fontWeight:800,fontSize:20,color:dp?B.success:B.danger}}>{dp?"You Passed!":"Not Quite — Review and Try Again"}</div>
+      <div style={{fontSize:16,color:dp?"#14532d":"#7f1d1d",marginTop:6,fontWeight:600}}>Score: {sc}/{sh.length} ({Math.round(sc/sh.length*100)}%)</div>
+      {!dp&&<button onClick={retry} style={{marginTop:14,padding:"12px 30px",background:B.coral,color:"#fff",border:"none",borderRadius:8,fontSize:15,fontWeight:700,cursor:"pointer",fontFamily:"inherit"}}>Retry Quiz</button>}
+    </div>}
+  </div>
+}
+
+function fmtDur(ms){const ts=Math.floor(ms/1000);const h=Math.floor(ts/3600);const m=Math.floor(ts%3600/60);const s=ts%60;if(h>0)return`${h}h ${m}m ${s}s`;if(m>0)return`${m}m ${s}s`;return`${s}s`}
+
+function Cert({name,duration}){
+  const cr=useRef(null);
+  const td=new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+  const ds=fmtDur(duration);
+  const dl=()=>{
+    const c=cr.current;if(!c)return;const x=c.getContext("2d");
+    const w=1100,h=820;c.width=w;c.height=h;
+    x.fillStyle="#fff";x.fillRect(0,0,w,h);
+    x.strokeStyle=B.primary;x.lineWidth=4;x.strokeRect(30,30,w-60,h-60);
+    x.strokeStyle=B.coral;x.lineWidth=2;x.strokeRect(38,38,w-76,h-76);
+    x.fillStyle=B.teal;x.font="60px serif";x.textAlign="center";x.fillText("📋",w/2,115);
+    x.fillStyle=B.primary;x.font="bold 36px Georgia,serif";x.fillText("CERTIFICATE OF COMPLETION",w/2,175);
+    x.strokeStyle=B.coral;x.lineWidth=3;x.beginPath();x.moveTo(300,198);x.lineTo(800,198);x.stroke();
+    x.fillStyle=B.textMuted;x.font="18px Georgia,serif";x.fillText("This is to certify that",w/2,250);
+    x.fillStyle=B.primary;x.font="bold 44px Georgia,serif";x.fillText(name,w/2,318);
+    const nm=x.measureText(name).width;
+    x.strokeStyle=B.teal;x.lineWidth=2;x.beginPath();x.moveTo((w-nm)/2-20,336);x.lineTo((w+nm)/2+20,336);x.stroke();
+    x.fillStyle=B.textMuted;x.font="18px Georgia,serif";x.fillText("has successfully completed the",w/2,388);
+    x.fillStyle=B.navy;x.font="bold 26px Georgia,serif";x.fillText("Zumba Fitness AI Use Policy",w/2,430);
+    x.fillStyle=B.textMuted;x.font="18px Georgia,serif";x.fillText("Interactive Training Course",w/2,462);
+    x.fillText("covering Acceptable Use, Prohibited Activities & Intellectual Property",w/2,494);
+    x.fillStyle=B.teal;x.font="bold 18px Georgia,serif";x.fillText("Passing Score: 90% on all sections",w/2,540);
+    x.fillStyle=B.navy;x.font="bold 16px Georgia,serif";x.fillText("Completion Time: "+ds,w/2,572);
+    x.fillStyle=B.text;x.font="16px Georgia,serif";x.fillText(td,w/2,640);
+    x.fillStyle=B.textMuted;x.font="italic 14px Georgia,serif";x.fillText("Date of Completion",w/2,665);
+    x.strokeStyle=B.coral;x.lineWidth=2;x.beginPath();x.moveTo(300,720);x.lineTo(800,720);x.stroke();
+    x.fillStyle=B.textMuted;x.font="12px Georgia,serif";x.fillText("Zumba Fitness, LLC — AI Use Policy Training Program",w/2,755);
+    const safeName=String(name||"").normalize("NFKD").replace(/[^\w-]+/g,"_").replace(/_+/g,"_").replace(/^_+|_+$/g,"").slice(0,100)||"certificate";
+    const a=document.createElement("a");a.download=`AI_Policy_Certificate_${safeName}.png`;a.href=c.toDataURL("image/png");a.click();
+  };
+  return <div style={{textAlign:"center"}}>
+    <canvas ref={cr} style={{display:"none"}}/>
+    <div style={{background:"#fff",border:`3px solid ${B.primary}`,borderRadius:16,padding:48,maxWidth:620,margin:"0 auto",boxShadow:"0 8px 32px rgba(27,42,74,0.12)"}}>
+      <div style={{fontSize:56,marginBottom:8}}>📋</div>
+      <h2 style={{fontSize:26,fontWeight:800,color:B.primary,margin:"0 0 4px",fontFamily:"Georgia,serif"}}>CERTIFICATE OF COMPLETION</h2>
+      <div style={{width:100,height:3,background:B.coral,margin:"14px auto 22px"}}/>
+      <p style={{color:B.textMuted,fontSize:16,margin:"0 0 8px"}}>This is to certify that</p>
+      <h1 style={{fontSize:34,fontWeight:800,color:B.primary,margin:"0 0 8px",fontFamily:"Georgia,serif"}}>{name}</h1>
+      <div style={{width:200,height:2,background:B.teal,margin:"0 auto 18px"}}/>
+      <p style={{color:B.textMuted,fontSize:16,margin:"0 0 4px"}}>has successfully completed the</p>
+      <p style={{color:B.navy,fontSize:22,fontWeight:800,margin:"0 0 4px"}}>Zumba Fitness AI Use Policy</p>
+      <p style={{color:B.textMuted,fontSize:15,margin:"0 0 18px"}}>Interactive Training Course</p>
+      <p style={{color:B.teal,fontWeight:700,fontSize:15,margin:"0 0 6px"}}>All sections passed with 90%+ score</p>
+      <p style={{color:B.navy,fontWeight:700,fontSize:15,margin:"0 0 22px"}}>Completion Time: {ds}</p>
+      <p style={{color:B.text,fontSize:15,margin:"0 0 4px"}}>{td}</p>
+      <p style={{color:B.textMuted,fontSize:13,fontStyle:"italic",margin:"0 0 26px"}}>Date of Completion</p>
+      <button onClick={dl} style={{padding:"14px 34px",background:B.teal,color:"#fff",border:"none",borderRadius:10,fontSize:16,fontWeight:700,cursor:"pointer",fontFamily:"inherit"}}>Download Certificate (PNG)</button>
+    </div>
+  </div>
+}
+
+function Intro({onStart}){
+  const [n,setN]=useState("");
+  return <div style={{fontFamily:'-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif',background:B.bg,minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",padding:24}}>
+    <div style={{background:B.card,borderRadius:20,padding:"56px 48px",maxWidth:520,width:"100%",textAlign:"center",boxShadow:"0 8px 40px rgba(27,42,74,0.1)",border:`1px solid ${B.border}`}}>
+      <div style={{fontSize:64,marginBottom:16}}>📋</div>
+      <h1 style={{fontSize:28,fontWeight:800,color:B.primary,margin:"0 0 8px"}}>AI Acceptable Use Policy</h1>
+      <p style={{color:B.textSecondary,fontSize:16,margin:"0 0 6px",fontWeight:500}}>Interactive Training Course</p>
+      <p style={{color:B.tealDark,fontSize:14,margin:"0 0 6px",fontWeight:600}}>Zumba Fitness, LLC</p>
+      <div style={{width:60,height:3,background:B.coral,margin:"16px auto 28px"}}/>
+      <p style={{color:B.textMuted,fontSize:15,lineHeight:1.7,margin:"0 0 8px"}}>This course covers the Company's AI Use Policy — including approved tools, guiding principles, prohibited uses, intellectual property considerations, and incident reporting requirements.</p>
+      <p style={{color:B.textMuted,fontSize:15,lineHeight:1.7,margin:"0 0 32px"}}>You'll need to pass each section's quiz with 90% or higher. Upon completion, you'll receive a personalized certificate.</p>
+      <div style={{display:"flex",gap:16,justifyContent:"center",marginBottom:28,flexWrap:"wrap"}}>
+        {[["📖","4 Sections"],["❓","15 Questions"],["🏆","Certificate"]].map(([ic,lb],i)=>
+          <div key={i} style={{background:B.primaryLight,borderRadius:10,padding:"12px 20px",display:"flex",alignItems:"center",gap:8}}>
+            <span style={{fontSize:20}}>{ic}</span>
+            <span style={{fontSize:14,fontWeight:600,color:B.primary}}>{lb}</span>
+          </div>
+        )}
+      </div>
+      <label style={{display:"block",fontSize:14,fontWeight:600,color:B.textSecondary,marginBottom:8,textAlign:"left"}}>Enter your full name to begin:</label>
+      <input type="text" placeholder="Your full name" value={n} onChange={e=>setN(e.target.value)} onKeyDown={e=>{if(e.key==="Enter"&&n.trim())onStart(n.trim())}}
+        style={{width:"100%",padding:"16px 18px",border:`2px solid ${B.border}`,borderRadius:10,fontSize:17,fontFamily:"inherit",marginBottom:16,boxSizing:"border-box",color:B.text}}/>
+      <button onClick={()=>{if(n.trim())onStart(n.trim())}} disabled={!n.trim()}
+        style={{width:"100%",padding:"16px",background:n.trim()?B.coral:B.border,color:n.trim()?"#fff":B.textMuted,border:"none",borderRadius:10,fontSize:17,fontWeight:700,cursor:n.trim()?"pointer":"not-allowed",fontFamily:"inherit"}}>Start Training →</button>
+    </div>
+  </div>
+}
+
+function App(){
+  const [uName,setUN]=useState(null);
+  const [sTime,setST]=useState(null);
+  const [eTime,setET]=useState(null);
+  const [curSec,setCS]=useState(0);
+  const [tab,setTab]=useState("content");
+  const [passed,setPassed]=useState({});
+  const [sCert,setSC]=useState(false);
+  const mainRef=useRef(null);
+  const secs=secRaw;
+  const allP=secs.every((_,i)=>passed[i]);
+  const scrollTop=()=>{if(mainRef.current)mainRef.current.scrollTop=0;window.scrollTo(0,0)};
+
+  const start=(name)=>{setUN(name);setST(Date.now())};
+  const passQ=(i)=>{const np={...passed,[i]:true};setPassed(np);if(secs.every((_,j)=>np[j])&&!eTime){setET(Date.now());setSC(true);scrollTop()}};
+  const goSec=(i)=>{const cn=i===0||passed[i-1]||passed[i];if(cn){setSC(false);setCS(i);setTab("content");scrollTop()}};
+
+  if(!uName) return <Intro onStart={start}/>;
+
+  const sec=secs[curSec];
+  const dur=eTime&&sTime?eTime-sTime:0;
+
+  return <div style={{fontFamily:'-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif',background:B.bg,minHeight:"100vh",display:"flex",flexDirection:"column"}}>
+    {/* Top header bar */}
+    <div style={{background:B.primary,color:"#fff",padding:"18px 26px",display:"flex",alignItems:"center",justifyContent:"space-between"}}>
+      <div style={{display:"flex",alignItems:"center",gap:14}}>
+        <span style={{fontSize:28}}>📋</span>
+        <div>
+          <h1 style={{margin:0,fontSize:20,fontWeight:800}}>AI Acceptable Use Policy</h1>
+          <p style={{margin:"2px 0 0",fontSize:13,opacity:0.8,fontWeight:500}}>Interactive Training Course</p>
+        </div>
+      </div>
+      <div style={{fontSize:14,opacity:0.85,fontWeight:500}}>Welcome, {uName}</div>
+    </div>
+
+    {/* Horizontal section nav */}
+    <div style={{display:"flex",gap:4,padding:"14px 18px",overflowX:"auto",borderBottom:`2px solid ${B.border}`,background:"#fff"}}>
+      {secs.map((s,i)=>{
+        const cn=i===0||passed[i-1]||passed[i];
+        const ac=i===curSec&&!sCert;
+        const pd=passed[i];
+        return <button key={i} onClick={()=>goSec(i)}
+          style={{display:"flex",alignItems:"center",gap:7,padding:"10px 16px",borderRadius:8,border:ac?`2px solid ${B.teal}`:"2px solid transparent",fontSize:14,fontWeight:600,fontFamily:"inherit",whiteSpace:"nowrap",cursor:cn?"pointer":"not-allowed",background:ac?B.tealLight:"transparent",color:ac?B.tealDark:cn?B.text:B.textMuted,opacity:cn?1:0.45}}>
+          {pd?<span style={{color:B.teal}}><CkIc/></span>:!cn?<LkIc/>:<span>{s.icon}</span>} {s.title}
+        </button>
+      })}
+      {allP&&<button onClick={()=>setSC(true)}
+        style={{display:"flex",alignItems:"center",gap:7,padding:"10px 16px",borderRadius:8,border:sCert?`2px solid ${B.coral}`:"2px solid transparent",fontSize:14,fontWeight:700,fontFamily:"inherit",whiteSpace:"nowrap",cursor:"pointer",background:sCert?B.coralLight:"transparent",color:sCert?B.coralDark:B.coral}}>
+        🏆 Certificate
+      </button>}
+    </div>
+
+    {/* Main content */}
+    <div ref={mainRef} style={{flex:1,overflow:"auto",padding:"24px 18px",maxWidth:860,width:"100%",margin:"0 auto",boxSizing:"border-box"}}>
+      {sCert?<div>
+        <h2 style={{fontSize:24,fontWeight:800,color:B.primary,margin:"0 0 10px",textAlign:"center"}}>Congratulations, {uName}! 🎉</h2>
+        <p style={{color:B.textSecondary,textAlign:"center",margin:"0 0 28px",fontSize:16}}>You've passed all sections. Here's your certificate.</p>
+        <Cert name={uName} duration={dur}/>
+      </div>
+      :<>
+        <PBar current={Object.keys(passed).length} total={secs.length}/>
+        <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:24}}>
+          <span style={{fontSize:34}}>{sec.icon}</span>
+          <div>
+            <h2 style={{margin:0,fontSize:24,fontWeight:800,color:B.primary}}>{sec.title}</h2>
+            <p style={{margin:"2px 0 0",fontSize:14,color:B.textMuted,fontWeight:500}}>Section {curSec+1} of {secs.length}</p>
+          </div>
+        </div>
+
+        {sec.quiz.length>0&&<div style={{display:"flex",gap:0,marginBottom:28,borderBottom:`2px solid ${B.border}`}}>
+          {["content","quiz"].map(t=><button key={t} onClick={()=>{setTab(t);scrollTop()}}
+            style={{padding:"12px 28px",background:"none",border:"none",borderBottom:tab===t?`3px solid ${B.coral}`:"3px solid transparent",color:tab===t?B.primary:B.textMuted,fontWeight:tab===t?700:500,fontSize:15,cursor:"pointer",fontFamily:"inherit",textTransform:"capitalize",marginBottom:-2}}>
+            {t==="content"?"📖 Content":"❓ Quiz"}
+          </button>)}
+        </div>}
+        {sec.quiz.length===0&&<div style={{marginBottom:28}}/>}
+
+        {tab==="content"?<div>
+          {sec.content.map((item,i)=><CR key={i} item={item}/>)}
+          {sec.quiz.length>0?<button onClick={()=>{setTab("quiz");scrollTop()}} style={{width:"100%",padding:"16px",background:B.coral,color:"#fff",border:"none",borderRadius:10,fontSize:16,fontWeight:700,cursor:"pointer",fontFamily:"inherit",marginTop:10}}>Take the Quiz →</button>
+          :!passed[curSec]?<button onClick={()=>{passQ(curSec);if(curSec<secs.length-1){setCS(curSec+1);setTab("content")}scrollTop()}} style={{width:"100%",padding:"16px",background:B.teal,color:"#fff",border:"none",borderRadius:10,fontSize:16,fontWeight:700,cursor:"pointer",fontFamily:"inherit",marginTop:10}}>I've Read This Section — Continue →</button>
+          :null}
+        </div>
+        :sec.quiz.length>0?<Quiz quiz={sec.quiz} onPass={()=>passQ(curSec)} title={sec.title} passed={passed[curSec]} seed={sec.seed}/>:null}
+
+        {passed[curSec]&&curSec<secs.length-1&&<button onClick={()=>{setCS(curSec+1);setTab("content");scrollTop()}}
+          style={{width:"100%",padding:"16px",background:B.teal,color:"#fff",border:"none",borderRadius:10,fontSize:16,fontWeight:700,cursor:"pointer",fontFamily:"inherit",marginTop:20}}>Next Section →</button>}
+      </>}
+    </div>
+  </div>
+}
+
+ReactDOM.render(<App/>, document.getElementById("root"));
+</script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+</html>
