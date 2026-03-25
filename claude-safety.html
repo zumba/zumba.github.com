@@ -289,7 +289,7 @@ x.fillStyle=B.text;x.font="16px Georgia,serif";x.fillText(td,w/2,640);
 x.fillStyle=B.textMuted;x.font="italic 14px Georgia,serif";x.fillText("Date of Completion",w/2,665);
 x.strokeStyle=B.coral;x.lineWidth=2;x.beginPath();x.moveTo(300,720);x.lineTo(800,720);x.stroke();
 x.fillStyle=B.textMuted;x.font="12px Georgia,serif";x.fillText("Claude Safety Training Program",w/2,755);
-const a=document.createElement("a");a.download=`Claude_Safety_Certificate_${name.replace(/\s+/g,"_")}.png`;a.href=c.toDataURL("image/png");a.click();};
+const sanitizeFilename=name=>{const raw=String(name||"");const normalized=raw.normalize("NFKD");const safe=normalized.replace(/[^\w-]+/g,"_").replace(/_+/g,"_").replace(/^_+|_+$/g,"").slice(0,100);return safe||"certificate";};const safeName=sanitizeFilename(name);const a=document.createElement("a");a.download=`Claude_Safety_Certificate_${safeName}.png`;a.href=c.toDataURL("image/png");a.click();};
 return(
 <div style={{textAlign:"center"}}>
 <canvas ref={cr} style={{display:"none"}}/>
