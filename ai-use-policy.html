@@ -16,6 +16,9 @@ input{font-family:inherit}
 ::-webkit-scrollbar-thumb{background:#d5d8e2;border-radius:4px}
 ::-webkit-scrollbar-thumb:hover{background:#b0b4c4}
 </style>
+</head>
+<body>
+<div id="root"></div>
 <script type="text/babel">
 const {useState, useRef, useMemo} = React;
 
@@ -570,10 +573,9 @@ function App(){
   </div>
 }
 
-ReactDOM.render(<App/>, document.getElementById("root"));
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(<App/>);
 </script>
-</head>
-<body>
-<div id="root"></div>
 </body>
 </html>
