@@ -53,8 +53,8 @@ data_page: stack
           <div class="stack-tier-title">Business Logic</div>
           <ul class="stack-tier-list">
             <li>PHP 8 micro-framework</li>
-            <li>Domain services</li>
-            <li>Persistence rules</li>
+            <li>AWS Lambda services</li>
+            <li>Rules Engine</li>
           </ul>
         </div>
         <div class="stack-arrow" aria-hidden="true">→</div>
@@ -91,12 +91,12 @@ data_page: stack
     <h2>Deploying code</h2>
     <p>
       We use GitHub as our primary code repository storage. Engineers create feature branches
-      and open pull requests to our main branch. An Azure Pipeline CI process lints, runs tests,
+      and open pull requests to our main branch. A Github Actions CI process lints, runs tests,
       and ensures the build works.
     </p>
     <p>
       Once the pull request is reviewed by another engineer and all the tests pass, the engineer
-      merges the pull request and then tests in their changes behind a feature flag in
+      merges the pull request and then tests their changes behind a feature flag in
       production.
     </p>
     <p>

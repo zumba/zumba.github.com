@@ -76,11 +76,18 @@ sup, .tm {
   max-width: var(--max-w);
   margin: 0 auto;
   height: 100%;
-  padding: 0 var(--gutter);
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+@media (max-width: 1300px) {
+  .header-main-inner {
+    padding: 0 var(--gutter);
+  }
+}
+
 .header-brand {
   display: flex;
   align-items: center;
@@ -248,7 +255,7 @@ sup, .tm {
   padding-top: 28px;
   border-top: 1px solid rgba(255,255,255,.18);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
 .hero-stat b {

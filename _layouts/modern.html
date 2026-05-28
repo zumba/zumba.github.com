@@ -54,9 +54,9 @@
           <span class="header-toggle-bar"></span>
         </button>
         <nav class="header-nav" aria-label="Primary">
-          <a href="/jobs/"{% if page.data_page == 'jobs' %} class="is-current"{% endif %}>Jobs</a>
           <a href="/teams/"{% if page.data_page == 'teams' %} class="is-current"{% endif %}>Teams</a>
           <a href="/stack/"{% if page.data_page == 'stack' %} class="is-current"{% endif %}>Stack</a>
+          <a href="/jobs/" {% if page.data_page=='jobs' %} class="is-current" {% endif %}>Jobs</a>
           <a href="https://github.com/zumba" target="_blank" rel="noopener">Open Source</a>
           <a href="https://medium.com/zumba-tech" target="_blank" rel="noopener">Blog</a>
         </nav>
