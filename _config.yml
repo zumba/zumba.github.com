@@ -2,8 +2,6 @@ pygments: false
 exclude: [
   README.md,
   package.json,
-  gruntfile.js,
-  sass/,
   node_modules/
 ]
 

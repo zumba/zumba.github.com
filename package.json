@@ -7,17 +7,8 @@
 		"type": "git",
 		"url": "https://github.com/zumba/zumba.github.com"
 	},
-	"devDependencies": {
-		"grunt": "~1.5.3",
-		"grunt-contrib-watch": "1.1.x",
-		"grunt-contrib-compass": "0.6.x",
-		"grunt-jekyll": "0.4.x"
-	},
 	"scripts": {
-		"start": "bundle exec jekyll serve"
-	},
-	"engines": {
-		"node": ">=0.10.4 <0.12"
+		"start": "bundle exec jekyll serve --watch --config _config.yml,_config.dev.yml"
 	},
 	"license": "MIT"
 }
