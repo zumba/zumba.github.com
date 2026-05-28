@@ -1,0 +1,175 @@
+/* ==========================================================================
+   Zumba Design System — Colors & Type
+   Source: Figma (ZUMBA _ WEB GUI) + zumba/styleguide repo
+   Inter font loaded from Google Fonts (see layout <head>).
+   ========================================================================== */
+
+:root {
+  /* ===== Brand colors ===== */
+  --z-plum: #be2d93;
+  --z-neon-green: #c7ff00;
+  --z-dark-purple: #570073;
+  --z-light-purple: #a82beb;
+  --z-orange: #fa962c;
+  --z-light-pink: #ff54ab;
+  --z-dark-blue: #17009e;
+  --z-light-blue: #3d12ff;
+  --z-light-coral: #ff5e63;
+  --z-dark-coral: #d43361;
+  --z-dark-green: #032b2e;
+  --z-error-red: #d0000d;
+  --z-success-green: #2ab893;
+  --z-coral: #ff5e63;
+  --z-zumbini-pink: #ff0061;
+  --z-pink-legacy: #e73e5d;
+  --z-zumba-yellow: #dae251;
+
+  /* ===== Neutrals ===== */
+  --z-black: #141419;
+  --z-gray-800: #2c2d37;
+  --z-gray-700: #353541;
+  --z-gray-600: #484a55;
+  --z-gray-500: #606b76;
+  --z-gray-400: #95959a;
+  --z-gray-300: #cacacd;
+  --z-gray-200: #dadae2;
+  --z-gray-100: #f5f5f5;
+  --z-white: #ffffff;
+  --z-midnight: #1d1d24;
+  --z-gray-900: #222221;
+  --z-gray-250: #d4d4dc;
+  --z-gray-150: #eff0f6;
+  --z-gray-50:  #f6f6f6;
+
+  /* ===== Semantic ===== */
+  --z-success: #2ab893;
+  --z-error: #d0000d;
+  --z-warning: #fa962c;
+  --z-info: #3d12ff;
+
+  /* ===== Foreground / background tokens ===== */
+  --fg-1: var(--z-black);
+  --fg-2: var(--z-gray-600);
+  --fg-3: var(--z-gray-400);
+  --fg-inverse: var(--z-white);
+  --fg-accent: var(--z-plum);
+  --fg-link: var(--z-plum);
+
+  --bg-0: var(--z-white);
+  --bg-1: var(--z-gray-100);
+  --bg-2: var(--z-gray-150);
+  --bg-dark: var(--z-midnight);
+  --bg-accent: var(--z-plum);
+
+  --border-1: var(--z-gray-200);
+  --border-2: var(--z-gray-300);
+  --border-strong: var(--z-black);
+
+  /* ===== Type families — Inter only ===== */
+  --font-display: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* ===== Type scale ===== */
+  --display-0:        700 59px/65px var(--font-display);
+  --display-1:        700 50px/54px var(--font-display);
+  --display-2:        700 42px/50px var(--font-display);
+  --display-3:        700 36px/40px var(--font-display);
+  --display-4:        700 30px/36px var(--font-display);
+  --display-5:        700 26px/32px var(--font-display);
+  --display-6:        700 20px/26px var(--font-display);
+
+  /* ===== Body (Inter) ===== */
+  --body-xl: 400 24px/30px var(--font-body);
+  --body-xl-bold: 700 24px/30px var(--font-body);
+  --body-lg: 400 20px/26px var(--font-body);
+  --body-lg-bold: 700 20px/26px var(--font-body);
+  --body-md: 400 18px/26px var(--font-body);
+  --body-md-bold: 700 18px/26px var(--font-body);
+  --body-base: 400 16px/24px var(--font-body);
+  --body-base-bold: 700 16px/24px var(--font-body);
+  --body-sm: 400 14px/20px var(--font-body);
+  --body-sm-bold: 700 14px/20px var(--font-body);
+  --body-xs: 400 12px/18px var(--font-body);
+  --body-xs-bold: 700 12px/18px var(--font-body);
+
+  --btn-text: 700 14px/1 var(--font-display);
+  --btn-text-lg: 700 16px/1 var(--font-display);
+
+  /* ===== Spacing (4pt base) ===== */
+  --sp-0: 0;
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+
+  /* ===== Radii ===== */
+  --r-0: 0;
+  --r-1: 2px;
+  --r-2: 4px;
+  --r-3: 5px;
+  --r-4: 8px;
+  --r-card: 12px;
+  --r-xl: 25px;
+  --r-pill: 999px;
+
+  /* ===== Shadows ===== */
+  --shadow-2xs: 0 1px 0 rgba(0,0,0,0.05);
+  --shadow-xs:  0 1px 2px rgba(10,10,20,0.06);
+  --shadow-sm:  0 1px 3px rgba(10,10,20,0.08), 0 1px 2px rgba(10,10,20,0.06);
+  --shadow-md:  0 4px 6px -1px rgba(10,10,20,0.10), 0 2px 4px -2px rgba(10,10,20,0.06);
+  --shadow-lg:  0 10px 15px -3px rgba(10,10,20,0.10), 0 4px 6px -4px rgba(10,10,20,0.08);
+  --shadow-xl:  0 20px 25px -5px rgba(10,10,20,0.12), 0 8px 10px -6px rgba(10,10,20,0.08);
+  --shadow-2xl: 0 25px 50px -12px rgba(10,10,20,0.25);
+  --inset-shadow-2xs: inset 0 1px 0 rgba(0,0,0,0.05);
+  --inset-shadow-xs:  inset 0 1px 2px rgba(10,10,20,0.08);
+  --inset-shadow-sm:  inset 0 2px 4px rgba(10,10,20,0.10);
+
+  /* Motion */
+  --ease-out: cubic-bezier(.2,.7,.2,1);
+  --ease-snap: cubic-bezier(.5,0,.2,1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+}
+
+html, body {
+  font: var(--body-base);
+  color: var(--fg-1);
+  background: var(--bg-0);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 { font: var(--display-1); text-transform: uppercase; letter-spacing: -0.005em; margin: 0 0 .4em; }
+h2, .h2 { font: var(--display-2); text-transform: uppercase; letter-spacing: -0.005em; margin: 0 0 .4em; }
+h3, .h3 { font: var(--display-3); text-transform: uppercase; margin: 0 0 .4em; }
+h4, .h4 { font: var(--display-4); margin: 0 0 .4em; }
+h5, .h5 { font: var(--display-5); margin: 0 0 .4em; }
+h6, .h6 { font: var(--display-6); margin: 0 0 .4em; }
+
+p  { font: var(--body-base); margin: 0 0 1em; }
+small { font: var(--body-sm); color: var(--fg-2); }
+
+a {
+  color: var(--fg-link);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: color var(--dur-base) var(--ease-out);
+}
+a:hover, a:focus { color: var(--z-gray-700); }
+
+code, pre, kbd { font: var(--body-sm); font-family: var(--font-mono); }
+
+strong, b { font-weight: 700; }
+em, i { font-style: italic; }
+
+::selection { background: var(--z-plum); color: var(--z-white); }

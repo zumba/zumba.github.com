@@ -1,114 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="utf-8">
-	<title>{{ page.title }}</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="twitter:title" content="{{ page.title }}">
-	{% if page.description %}
-	<meta name="twitter:description" content="{{ page.description }}">
-	<meta name="description" content="{{ page.description }}">
-	{% endif %}
-	{% if page.image %}
-	<meta property="og:image" content="{{ page.image }}">
-	<meta name="twitter:image" content="{{ page.image }}">
-	<meta name="twitter:card" content="summary_large_image">
-	{% endif %}
-	<link href="{{ site.url }}{{ page.url }}" rel="canonical">
-	<link href="{{ site.url }}/css/modern.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="twitter:title" content="{{ page.title }}">
+  {% if page.description %}
+  <meta name="twitter:description" content="{{ page.description }}">
+  <meta name="description" content="{{ page.description }}">
+  {% endif %}
+  {% if page.image %}
+  <meta property="og:image" content="{{ page.image }}">
+  <meta name="twitter:image" content="{{ page.image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {% endif %}
+  <link href="{{ site.url }}{{ page.url }}" rel="canonical">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link href="{{ site.url }}/css/colors_and_type.css" rel="stylesheet">
+  <link href="{{ site.url }}/css/tech.css" rel="stylesheet">
+  <link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
 
-	<link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-	{% if site.analytics_code %}{% if site.url == 'https://tech.zumba.com' %}
-	<script type="text/javascript">
-		(function (i, s, o, g, r, a, m) {
-			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-				(i[r].q = i[r].q || []).push(arguments)
-			}, i[r].l = 1 * new Date(); a = s.createElement(o),
-				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-		ga('create', '{{ site.analytics_code }}');
-		ga('require', 'displayfeatures');
-		ga('send', 'pageview');
-	</script>
-	{% endif %}{% endif %}
-	<script>window.ga = window.ga || function () { };</script>
+  {% if site.analytics_code %}{% if site.url == 'https://tech.zumba.com' %}
+  <script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', '{{ site.analytics_code }}');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+  {% endif %}{% endif %}
+  <script>window.ga = window.ga || function () { };</script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-	<header class="header">
-		<div class="header-nav-container" role="navigation">
-			<div class="navbar-header">
-				<div class="navbar-header--blank"></div>
-				<a class="header-brand" href="{{ site.url }}/" rel="home"></a>
-				<button type="button" class="navbar-toggle">
-					<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-				</button>
-			</div>
-			<nav class="navbar-header-menu" itemscope
-				itemtype="http://schema.org/SiteNavigationElement">
-				<ul class="navbar-header-menu-list">
-					<li><a onclick="ga('send', 'event', 'GitHub', 'site')" href="https://github.com/zumba">Open
-							Source</a></li>
-					<li><a onclick="gs('send', 'event', 'Blog', 'site')" href="https://medium.com/zumba-tech">Blog</a></li>
-					<li><a onclick="ga('send', 'event', 'Speakerdeck', 'site')"
-							href="https://speakerdeck.com/zumbatech">Talks</a></li>
-					<li><a onclick="ga('send', 'event', 'Teams', 'site')" href="{{ site.url }}/teams/">Teams</a></li>
-					<li><a onclick="ga('send', 'event', 'Careers', 'site')" href="{{ site.url }}/jobs/">Jobs</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-	{{ content }}
-	<footer class="footer">
-		<div class="footer-content">
-			<div class="footer-link-list">
-				<ul>
-					<li><a href="https://www.zumba.com/"><b>Zumba.com</b></a></li>
-					<li><a href="https://www.strongnation.com/"><b>StrongNation.com</b></a></li>
-					<li><a href="https://www.zumba.com/about">About Us</a></li>
-					<li><a href="https://www.zumba.com/careers">Careers</a></li>
-				</ul>
-			</div>
-			<div class="footer-brand"></div>
-		</div>
-	</footer>
-	<script type="text/javascript">
-		// Source: https://css-tricks.com/styling-based-on-scroll-position/
-		const debounce = (fn) => {
-			let frame;
-			return (...params) => {
-				if (frame) {
-					cancelAnimationFrame(frame);
-				}
-				frame = requestAnimationFrame(() => {
-					fn(...params);
-				});
+<body>
+  <header class="header">
+    <div class="header-main">
+      <div class="header-main-inner">
+        <a class="header-brand" href="{{ site.url }}/" aria-label="ZumbaTech home">
+          <span class="header-brand-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="105 -0.5 291.2 53.5" fill="currentColor" aria-label="ZumbaTech"><g><path d="M131.1,2.2C117.8,2.2,107,13,107,26.3c0,13.3,10.8,24.1,24.1,24.1c13.3,0,24.1-10.8,24.1-24.1C155.2,13,144.4,2.2,131.1,2.2z M131.1,48c-12,0-21.7-9.7-21.7-21.7c0-12,9.7-21.7,21.7-21.7c12,0,21.7,9.7,21.7,21.7S143.1,48,131.1,48z"/><path d="M130.2,27.1L130.2,27.1c0.3,0.2,0.6,0.5,0.9,0.8L130.2,27.1c-1.6-1.1-3.9-0.6-6.1-0.7c-0.3,0-1.7-0.3-1.9-0.3c-1.9-0.6-3.9-1.4-5.1-2.9c1.8-0.9,5.1-1.7,6.3-2c0.3-0.1,0.6-0.5,0.3-0.9c-0.7-0.7-3.1-0.3-6.2,0.4c-0.2,0-2.6,0.6-3.5,1.2c-0.5,0.6-0.2,1.4,0.2,2c0.8,1.1,1.9,1.9,3.1,2.6c1.7,1.1,3.6,1.9,5.4,2.5c2.5,0.8,5.4,1.5,7.6,0.6C132.5,28.6,130.2,27.1,130.2,27.1z"/><path d="M130.2,27.2l0.9,0.8C130.8,27.6,130.5,27.4,130.2,27.2z"/><path d="M139.1,11.3c-0.4-1.2-1.4-3.2-2.9-2.5c-1.8,0.8-0.2,3.4,0.3,4.9c1.9,4.1,4.8,7.5,6.5,11.5c-0.8-0.7-1.3-1.5-2.2-2.4c-1.2-1.2-3-2.7-4.7-1.9c-1.5,0.7-1.2,2.9-1.1,4.2c0.1,1.1,0.7,6.9-0.7,10.3c-1.2,3-5.6,6.4-5.4,7.2c-0.3,0.8,2.5,1.9,3.7,2c1.5,0.3,2.7-0.5,3.6-1.7c3.4-6.5,1.7-13.6,1.2-20.4c0.3,0.2,3,2.2,4.3,4c1,1.5,2.4,2.5,3.2,1.9c1.4-1.1-4.4-13.4-4.4-13.4S139.8,13.3,139.1,11.3z"/><path d="M127.2,17.8c1.2,1.6,3,2.3,4.2,1.6c0.1,0,0.6-0.5,0.7-0.6c3.3-3.8-1.3-8.5-3.7-7.3c-1.1,0.6-1.7,1.3-2,2.1c0,0,0,0.1,0,0.1c0,0.1,0,0.1-0.1,0.2c0,0,0,0.1,0,0.1c-0.1,0.6-0.1,1.2,0,1.7C126.5,16.4,126.8,17.1,127.2,17.8z"/></g><g><path d="M166.4,32.4l11.6-13h-11.2V14h20v4.6l-11.6,13h11.6v5.4h-20.4V32.4z"/><path d="M189.8,27V14h6.5v12.8c0,3.3,1.7,4.9,4.2,4.9c2.6,0,4.2-1.5,4.2-4.7V14h6.5v12.8c0,7.4-4.2,10.7-10.8,10.7C193.9,37.5,189.8,34.2,189.8,27z"/><path d="M215,14h6.8l5.5,8.9l5.5-8.9h6.8v23h-6.4V23.8l-5.9,9h-0.1l-5.9-9v13.2H215L215,14L215,14z"/><path d="M243.6,14h11.8c2.9,0,4.9,0.7,6.3,2.1c0.9,0.9,1.5,2.1,1.5,3.7v0.1c0,2.7-1.5,4.2-3.6,5.1c2.8,0.9,4.6,2.5,4.6,5.6v0.1c0,4-3.2,6.4-8.7,6.4h-11.9L243.6,14L243.6,14z M253.9,23.2c1.9,0,3-0.7,3-2v-0.1c0-1.3-1-2-2.9-2h-4.1v4H253.9z M254.8,31.9c1.9,0,3.1-0.8,3.1-2.1v-0.1c0-1.3-1-2.1-3.1-2.1h-4.9v4.2H254.8z"/><path d="M275.1,13.9h6.2l9.8,23.2h-6.8l-1.7-4.1h-8.9l-1.6,4.1h-6.7L275.1,13.9z M280.7,28l-2.6-6.6l-2.6,6.6H280.7z"/><path d="M303.3,37.1h-2.6V16.4h-7.7V14H311v2.4h-7.7L303.3,37.1L303.3,37.1z"/><path d="M332.6,16.4h-14.1v7.9h12.6v2.4h-12.6v8.1h14.2v2.4h-16.8V14h16.7V16.4z"/><path d="M348.5,37.5c-6.7,0-11.6-5.2-11.6-11.9c0-6.6,4.9-12,11.7-12c4.2,0,6.7,1.5,9,3.7l-1.8,1.9c-1.9-1.8-4.1-3.2-7.2-3.2c-5.1,0-8.9,4.1-8.9,9.5s3.9,9.5,8.9,9.5c3.2,0,5.2-1.2,7.4-3.3l1.7,1.7C355.3,35.9,352.7,37.5,348.5,37.5z"/><path d="M364.9,26.7v10.4h-2.6V14h2.6v10.2h13.3V14h2.6v23h-2.6V26.7H364.9z"/></g><g><path d="M386.7,19.6H386v-5h-1.9v-0.6h4.4v0.6h-1.9V19.6z"/><path d="M392.4,18.1L392.4,18.1l-2.1-3v4.5h-0.6v-5.6h0.6l2,3.1l2-3.1h0.6v5.6h-0.6v-4.5L392.4,18.1z"/></g></svg>
+          </span>
+        </a>
+        <button type="button" class="header-toggle" aria-label="Open menu" aria-expanded="false">
+          <span class="header-toggle-bar"></span>
+          <span class="header-toggle-bar"></span>
+          <span class="header-toggle-bar"></span>
+        </button>
+        <nav class="header-nav" aria-label="Primary">
+          <a href="/jobs/"{% if page.data_page == 'jobs' %} class="is-current"{% endif %}>Jobs</a>
+          <a href="/teams/"{% if page.data_page == 'teams' %} class="is-current"{% endif %}>Teams</a>
+          <a href="/stack/"{% if page.data_page == 'stack' %} class="is-current"{% endif %}>Stack</a>
+          <a href="https://github.com/zumba" target="_blank" rel="noopener">Open Source</a>
+          <a href="https://medium.com/zumba-tech" target="_blank" rel="noopener">Blog</a>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-			}
-		};
-		const storeScroll = () => {
-			const header = document.getElementsByClassName('header')[0];
-			if (window.scrollY) {
-				header.classList.add('scrolled')
-			} else {
-				header.classList.remove('scrolled')
-			}
-		}
-		document.addEventListener('scroll', debounce(storeScroll), { passive: true });
-		storeScroll();
-		document.getElementsByClassName('navbar-toggle')[0].addEventListener('click', () => {
-			const header = document.getElementsByClassName('header')[0]
-			storeScroll()
-			header.classList.toggle('expanded')
-			if (header.classList.contains('expanded')) {
-				header.classList.add('scrolled')
-			}
-		})
-	</script>
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-brand-block">
+        <div class="footer-brand-mark">
+          <span class="footer-brand-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="105 -0.5 291.2 53.5" fill="currentColor" aria-label="ZumbaTech"><g><path d="M131.1,2.2C117.8,2.2,107,13,107,26.3c0,13.3,10.8,24.1,24.1,24.1c13.3,0,24.1-10.8,24.1-24.1C155.2,13,144.4,2.2,131.1,2.2z M131.1,48c-12,0-21.7-9.7-21.7-21.7c0-12,9.7-21.7,21.7-21.7c12,0,21.7,9.7,21.7,21.7S143.1,48,131.1,48z"/><path d="M130.2,27.1L130.2,27.1c0.3,0.2,0.6,0.5,0.9,0.8L130.2,27.1c-1.6-1.1-3.9-0.6-6.1-0.7c-0.3,0-1.7-0.3-1.9-0.3c-1.9-0.6-3.9-1.4-5.1-2.9c1.8-0.9,5.1-1.7,6.3-2c0.3-0.1,0.6-0.5,0.3-0.9c-0.7-0.7-3.1-0.3-6.2,0.4c-0.2,0-2.6,0.6-3.5,1.2c-0.5,0.6-0.2,1.4,0.2,2c0.8,1.1,1.9,1.9,3.1,2.6c1.7,1.1,3.6,1.9,5.4,2.5c2.5,0.8,5.4,1.5,7.6,0.6C132.5,28.6,130.2,27.1,130.2,27.1z"/><path d="M130.2,27.2l0.9,0.8C130.8,27.6,130.5,27.4,130.2,27.2z"/><path d="M139.1,11.3c-0.4-1.2-1.4-3.2-2.9-2.5c-1.8,0.8-0.2,3.4,0.3,4.9c1.9,4.1,4.8,7.5,6.5,11.5c-0.8-0.7-1.3-1.5-2.2-2.4c-1.2-1.2-3-2.7-4.7-1.9c-1.5,0.7-1.2,2.9-1.1,4.2c0.1,1.1,0.7,6.9-0.7,10.3c-1.2,3-5.6,6.4-5.4,7.2c-0.3,0.8,2.5,1.9,3.7,2c1.5,0.3,2.7-0.5,3.6-1.7c3.4-6.5,1.7-13.6,1.2-20.4c0.3,0.2,3,2.2,4.3,4c1,1.5,2.4,2.5,3.2,1.9c1.4-1.1-4.4-13.4-4.4-13.4S139.8,13.3,139.1,11.3z"/><path d="M127.2,17.8c1.2,1.6,3,2.3,4.2,1.6c0.1,0,0.6-0.5,0.7-0.6c3.3-3.8-1.3-8.5-3.7-7.3c-1.1,0.6-1.7,1.3-2,2.1c0,0,0,0.1,0,0.1c0,0.1,0,0.1-0.1,0.2c0,0,0,0.1,0,0.1c-0.1,0.6-0.1,1.2,0,1.7C126.5,16.4,126.8,17.1,127.2,17.8z"/></g><g><path d="M166.4,32.4l11.6-13h-11.2V14h20v4.6l-11.6,13h11.6v5.4h-20.4V32.4z"/><path d="M189.8,27V14h6.5v12.8c0,3.3,1.7,4.9,4.2,4.9c2.6,0,4.2-1.5,4.2-4.7V14h6.5v12.8c0,7.4-4.2,10.7-10.8,10.7C193.9,37.5,189.8,34.2,189.8,27z"/><path d="M215,14h6.8l5.5,8.9l5.5-8.9h6.8v23h-6.4V23.8l-5.9,9h-0.1l-5.9-9v13.2H215L215,14L215,14z"/><path d="M243.6,14h11.8c2.9,0,4.9,0.7,6.3,2.1c0.9,0.9,1.5,2.1,1.5,3.7v0.1c0,2.7-1.5,4.2-3.6,5.1c2.8,0.9,4.6,2.5,4.6,5.6v0.1c0,4-3.2,6.4-8.7,6.4h-11.9L243.6,14L243.6,14z M253.9,23.2c1.9,0,3-0.7,3-2v-0.1c0-1.3-1-2-2.9-2h-4.1v4H253.9z M254.8,31.9c1.9,0,3.1-0.8,3.1-2.1v-0.1c0-1.3-1-2.1-3.1-2.1h-4.9v4.2H254.8z"/><path d="M275.1,13.9h6.2l9.8,23.2h-6.8l-1.7-4.1h-8.9l-1.6,4.1h-6.7L275.1,13.9z M280.7,28l-2.6-6.6l-2.6,6.6H280.7z"/><path d="M303.3,37.1h-2.6V16.4h-7.7V14H311v2.4h-7.7L303.3,37.1L303.3,37.1z"/><path d="M332.6,16.4h-14.1v7.9h12.6v2.4h-12.6v8.1h14.2v2.4h-16.8V14h16.7V16.4z"/><path d="M348.5,37.5c-6.7,0-11.6-5.2-11.6-11.9c0-6.6,4.9-12,11.7-12c4.2,0,6.7,1.5,9,3.7l-1.8,1.9c-1.9-1.8-4.1-3.2-7.2-3.2c-5.1,0-8.9,4.1-8.9,9.5s3.9,9.5,8.9,9.5c3.2,0,5.2-1.2,7.4-3.3l1.7,1.7C355.3,35.9,352.7,37.5,348.5,37.5z"/><path d="M364.9,26.7v10.4h-2.6V14h2.6v10.2h13.3V14h2.6v23h-2.6V26.7H364.9z"/></g><g><path d="M386.7,19.6H386v-5h-1.9v-0.6h4.4v0.6h-1.9V19.6z"/><path d="M392.4,18.1L392.4,18.1l-2.1-3v4.5h-0.6v-5.6h0.6l2,3.1l2-3.1h0.6v5.6h-0.6v-4.5L392.4,18.1z"/></g></svg>
+          </span>
+        </div>
+        <p>The technology team behind Zumba &mdash; building products that help millions of people worldwide move, sweat, and feel great.</p>
+      </div>
+      <div>
+        <h6>Engineering</h6>
+        <ul>
+          <li><a href="/teams/">Teams</a></li>
+          <li><a href="/stack/">Stack</a></li>
+          <li><a href="https://github.com/zumba" target="_blank" rel="noopener">Open Source</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Read</h6>
+        <ul>
+          <li><a href="https://medium.com/zumba-tech" target="_blank" rel="noopener">Engineering Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Join Us</h6>
+        <ul>
+          <li><a href="/jobs/">Open Positions</a></li>
+          <li><a href="https://www.zumba.com/careers" target="_blank" rel="noopener">All Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span>&copy; {{ site.time | date: "%Y" }} Zumba Fitness, LLC</span>
+        <div class="footer-bottom-links">
+          <a href="https://www.zumba.com/">Zumba.com</a>
+          <a href="https://www.strongnation.com/">StrongNation</a>
+          <a href="https://www.zumba.com/about">About</a>
+          <a href="https://www.zumba.com/careers">Careers</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ site.url }}/js/site.js"></script>
 </body>
 </html>
