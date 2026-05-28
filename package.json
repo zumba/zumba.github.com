@@ -8,8 +8,7 @@
 		"url": "https://github.com/zumba/zumba.github.com"
 	},
 	"scripts": {
-		"start": "bundle exec jekyll serve --watch --config _config.yml,_config.dev.yml",
-		"build:css": "bundle exec sass --style compressed sass/modern.scss css/modern.css"
+		"start": "bundle exec jekyll serve --watch --config _config.yml,_config.dev.yml"
 	},
 	"license": "MIT"
 }
