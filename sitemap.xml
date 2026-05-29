@@ -28,4 +28,14 @@ layout: null
 		<lastmod>2022-04-21T19:53:10+00:00</lastmod>
 		<priority>0.50</priority>
 	</url>
+	<url>
+		<loc>https://tech.zumba.com/jobs/software-engineer/</loc>
+		<lastmod>2026-05-29T00:00:00+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://tech.zumba.com/jobs/ui-ux-designer/</loc>
+		<lastmod>2026-05-29T00:00:00+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
 </urlset>
