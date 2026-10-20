@@ -18,43 +18,34 @@ data_page: jobs
 
   <section class="page-card">
     <div class="card-content">
+      {% assign open_jobs = site.pages | where_exp: "p", "p.path contains 'jobs/'" | where: "open", true | sort: "order" %}
+      {% if open_jobs.size > 0 %}
       <ul class="job-list">
+        {% for job in open_jobs %}
         <li>
-          <a class="job-card" href="/jobs/software-engineer/">
+          <a class="job-card" href="{{ job.url }}">
             <div>
               <div class="meta">
-                <span class="chip is-team">Engineering</span>
-                <span class="chip is-loc">Remote</span>
-                <span class="chip">Full-time</span>
+                <span class="chip is-team">{{ job.team }}</span>
+                <span class="chip is-loc">{{ job.location }}</span>
+                <span class="chip">{{ job.employment_type }}</span>
               </div>
-              <h2>Software Engineer</h2>
-              <p>
-                Build features and solve problems across memberships, trainings, livestream and
-                video-on-demand &mdash; PHP 8, Vue 3, TypeScript and a service-oriented architecture
-                that ships to millions.
-              </p>
+              <h2>{{ job.title | split: " — " | first }}</h2>
+              <p>{{ job.summary }}</p>
             </div>
             <span class="view">View role <span aria-hidden="true">→</span></span>
           </a>
         </li>
-        <li>
-          <a class="job-card" href="/jobs/ui-ux-designer/">
-            <div>
-              <div class="meta">
-                <span class="chip is-team">Design</span>
-                <span class="chip is-loc">Remote</span>
-                <span class="chip">Full-time</span>
-              </div>
-              <h2>UI / UX Designer</h2>
-              <p>
-                End-to-end product design across Zumba.com, StrongNation.com, ClassBuzz, and Zin Play.
-                Partner with PM and engineering to ship experiences that move
-                millions of dancers.
-              </p>
-            </div>
-            <span class="view">View role <span aria-hidden="true">→</span></span>
-          </a>
-        </li>
+        {% endfor %}
       </ul>
+      {% else %}
+      <div class="job-empty">
+        <h2>No open tech positions right now</h2>
+        <p>
+          We don't have any engineering or design roles open at the moment. Check back soon, or
+          browse <a href="https://www.zumba.com/careers" target="_blank" rel="noopener">all Zumba careers</a>.
+        </p>
+      </div>
+      {% endif %}
     </div>
   </section>
