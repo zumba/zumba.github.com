@@ -28,14 +28,12 @@ layout: null
 		<lastmod>2022-04-21T19:53:10+00:00</lastmod>
 		<priority>0.50</priority>
 	</url>
+{% assign open_jobs = site.pages | where_exp: "p", "p.path contains 'jobs/'" | where: "open", true | sort: "order" %}
+{% for job in open_jobs %}
 	<url>
-		<loc>https://tech.zumba.com/jobs/software-engineer/</loc>
-		<lastmod>2026-05-29T00:00:00+00:00</lastmod>
+		<loc>{{ site.url }}{{ job.url }}</loc>
+		<lastmod>{{ job.last_modified | date_to_xmlschema }}</lastmod>
 		<priority>0.80</priority>
 	</url>
-	<url>
-		<loc>https://tech.zumba.com/jobs/ui-ux-designer/</loc>
-		<lastmod>2026-05-29T00:00:00+00:00</lastmod>
-		<priority>0.80</priority>
-	</url>
+{% endfor %}
 </urlset>

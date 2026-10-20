@@ -5,6 +5,18 @@ description: Software Engineer at Zumba — build features that help millions mo
 author: cjsaylor
 notitle: true
 data_page: jobs
+# Set to false to close this position: it is removed from /jobs/ and the
+# sitemap, and the page shows a "not currently open" notice instead of Apply.
+open: false
+order: 1
+last_modified: 2026-05-29
+team: Engineering
+location: Remote
+employment_type: Full-time
+summary: >-
+  Build features and solve problems across memberships, trainings, livestream and
+  video-on-demand &mdash; PHP 8, Vue 3, TypeScript and a service-oriented architecture
+  that ships to millions.
 ---
 
 
@@ -19,6 +31,8 @@ data_page: jobs
   <section class="page-card">
     <div class="card-content">
       <a href="/jobs/" class="back-link"><span aria-hidden="true">←</span> All open positions</a>
+
+      {% include job-closed-notice.html %}
 
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
         <span class="chip is-team">Engineering</span>
@@ -62,11 +76,6 @@ data_page: jobs
         <li><p>Has a habit of writing clear documentation on how a process works.</p></li>
       </ul>
 
-      <div style="margin-top:40px">
-        <a
-          class="page-card-cta"
-          href="https://recruiting.paylocity.com/recruiting/jobs/All/b68901e9-e73a-4474-98e1-35836391bb30/ZUMBA-FITNESS-LLC"
-        >Apply Now</a>
-      </div>
+      {% include job-apply.html %}
     </div>
   </section>

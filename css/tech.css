@@ -702,6 +702,32 @@ sup, .tm {
 .job-card:hover .view { color: var(--z-plum); }
 .job-card:hover .view span { transform: translateX(4px); }
 
+.job-empty {
+  padding: 32px 36px;
+  background: var(--z-gray-100);
+  border-left: 6px solid var(--z-gray-200);
+  border-radius: 4px;
+}
+.job-empty h2 {
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+.job-empty p {
+  font: var(--body-md);
+  color: var(--z-gray-600);
+  margin: 0;
+}
+
+.job-closed-notice {
+  margin-bottom: 28px;
+  padding: 18px 22px;
+  background: rgba(190,45,147,.08);
+  border-left: 4px solid var(--z-plum);
+  border-radius: 2px;
+  font: var(--body-md);
+}
+.job-closed-notice strong { display: block; margin-bottom: 4px; }
+
 .back-link {
   display: inline-flex;
   align-items: center;

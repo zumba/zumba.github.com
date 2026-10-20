@@ -5,6 +5,18 @@ description: UI / UX Designer at Zumba — design experiences that move millions
 author: cjsaylor
 notitle: true
 data_page: jobs
+# Set to false to close this position: it is removed from /jobs/ and the
+# sitemap, and the page shows a "not currently open" notice instead of Apply.
+open: false
+order: 2
+last_modified: 2026-05-29
+team: Design
+location: Remote
+employment_type: Full-time
+summary: >-
+  End-to-end product design across Zumba.com, StrongNation.com, ClassBuzz, and Zin Play.
+  Partner with PM and engineering to ship experiences that move
+  millions of dancers.
 ---
 
 <section class="page-heading">
@@ -18,6 +30,8 @@ data_page: jobs
   <section class="page-card">
     <div class="card-content">
       <a href="/jobs/" class="back-link"><span aria-hidden="true">←</span> All open positions</a>
+
+      {% include job-closed-notice.html %}
 
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
         <span class="chip is-team">Design</span>
@@ -78,11 +92,6 @@ data_page: jobs
         <li><p>Basic HTML5, CSS3, and JavaScript skills are a plus.</p></li>
       </ul>
 
-      <div style="margin-top:40px">
-        <a
-          class="page-card-cta"
-          href="https://recruiting.paylocity.com/recruiting/jobs/All/b68901e9-e73a-4474-98e1-35836391bb30/ZUMBA-FITNESS-LLC"
-        >Apply Now</a>
-      </div>
+      {% include job-apply.html %}
     </div>
   </section>
